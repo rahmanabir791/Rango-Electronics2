@@ -7,7 +7,7 @@
     <!-- Required meta tags -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css">
-    <link rel="stylesheet"  href="{{asset('/')}}assets/back-asset/register.css">
+    <link rel="stylesheet" href="{{asset('/')}}assets/back-asset/register.css">
 </head>
 <body>
 <div class="shimmer-bg"></div>
@@ -32,6 +32,9 @@
         </div>
         <button type="submit" class="btn btn-primary btn-block mt-3">Register</button>
     </form>
+    <div class="mt-3 text-center">
+        <p>Already have an account? <a href="login.html" class="text-primary">Login here</a></p>
+    </div>
 </div>
 </body>
 </html>
