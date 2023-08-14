@@ -14,85 +14,9 @@
         box-shadow: 5px 3px 3px 1px gold;
     }
 
-    .category {
-        position: relative;
-    }
-
-    .category a {
-        text-decoration: none;
-        color: #0a0000;
-        font-weight: bold;
-        display: block;
-        padding: 5px 0;
-    }
-
-    .category ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 100%;
-        background-color: white;
-        border: 1px solid #ccc;
-        z-index: 1;
-    }
-
-    .category:hover ul {
-        display: block;
-    }
-
-    .category ul li {
-        display: block;
-    }
-
-    /* Hover effect for subcategory */
-    .subCategory ul {
-        display: none;
-    }
-
-    .subCategory:hover ul {
-        display: block;
-    }
-
-    .subCategory a {
-        color: #333;
-        display: block;
-        padding: 5px 0;
-        text-decoration: none;
-    }
-
-    .subCategory:hover .childCategory ul {
-        display: none;
-    }
-
-    .childCategory ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 100%;
-        background-color: white;
-        border: 2px solid #ccc;
-        z-index: 1;
-    }
-
-    .childCategory:hover ul {
-        display: block;
-    }
-
-    .childCategory a {
-        color: #333;
-        display: block;
-        padding: 10px 0;
-        text-decoration: none;
-    }
 </style>
 
-<div class="container-fluid  mb-5 mt-1" style="background-color: #800000; height: 68px">
+<div class="container-fluid   mt-1" style="background-color: #800000; height: 68px">
     <div class="row border-top px-xl-6">
         <div class="col-lg-2">
             <!-- Category Bar -->
@@ -102,8 +26,7 @@
                 <h6 class="m-0" style="color: gold">Categories</h6>
                 <i class="fa fa-angle-down text-dark"></i>
             </a>
-
-                    <!-- ... (Other category links for desktop view) ... -->
+            <!-- ... (Other category links for desktop view) ... -->
         </div>
         <!-- Rest of the content (Navigation bar, Carousel, etc.) -->
 
@@ -153,98 +76,7 @@
 
 
 <div class=" col-lg-12 row">
-    <style>
-        /* Custom styles for the dropdown */
-        .category-bar {
-            background-color: #fdfdfd;
-            color: #050000;
-            width: 200px;
-            font-size: 15px;
-            box-shadow: 10px 10px 5px #ccc;
-        }
 
-        .category-list {
-            padding: 10px;
-            box-shadow: 5px 3px 3px 1px gold;
-        }
-
-        .category {
-            position: relative;
-        }
-
-        .category a {
-            text-decoration: none;
-            color: #0a0000;
-            font-weight: bold;
-            display: block;
-            padding: 5px 0;
-        }
-
-        .category ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            background-color: white;
-            border: 1px solid #ccc;
-            z-index: 1;
-        }
-
-        .category:hover ul {
-            display: block;
-        }
-
-        .category ul li {
-            display: block;
-        }
-
-        /* Hover effect for subcategory */
-        .subCategory ul {
-            display: none;
-        }
-
-        .subCategory:hover ul {
-            display: block;
-        }
-
-        .subCategory a {
-            color: #333;
-            display: block;
-            padding: 5px 0;
-            text-decoration: none;
-        }
-
-        .subCategory:hover .childCategory ul {
-            display: none;
-        }
-
-        .childCategory ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            background-color: white;
-            border: 1px solid #ccc;
-            z-index: 1;
-        }
-
-        .childCategory:hover ul {
-            display: block;
-        }
-
-        .childCategory a {
-            color: #333;
-            display: block;
-            padding: 5px 0;
-            text-decoration: none;
-        }
-    </style>
 
     <div class="col-lg-2">
         <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
