@@ -7,7 +7,7 @@
         font-size: 12px;
         position: absolute;
         box-shadow: 5px 10px 15px 1px gold;
-        z-index: 1; /* Ensure the category bar is above other elements */
+        z-index: 100; /* Ensure the category bar is above other elements */
     }
 
     .category-list {
@@ -32,6 +32,7 @@
     nav ul li {
         position: relative;
         display: block;
+
     }
 
     nav ul li a {
@@ -85,6 +86,10 @@
             display: none;
         }
 
+        .category-bar-visible {
+            display: block;
+        }
+
         /* Show the category bar when the button is clicked */
         .category-bar-visible {
             display: block;
@@ -114,15 +119,15 @@
 </style>
 
 
-<div class="container-fluid  mb-1 mt-1" style="background-color: #800000; height: 68px">
+<div class="container-fluid  mt-1" style="background-color: #800000; height: 68px">
     <div class="row border-top px-xl-6">
         <div class="col-lg-2">
             <!-- Category Bar -->
 
             <!-- Category Bar for Desktop View -->
-            <a class="btn  d-flex align-items-center justify-content-between text-white w-100 "  data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+            <a class="btn d-flex align-items-center justify-content-between text-white w-100 " data-toggle="collapse"  href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
                 <h6 class="m-0" style="color: gold">Categories</h6>
-                <i class="fa fa-angle-down text-dark "></i>
+                <i class="fa fa-angle-down text-warning "></i>
             </a>
             <!-- ... (Other category links for desktop view) ... -->
         </div>
@@ -142,32 +147,33 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" style="height: 67px; " id="navbarCollapse">
                     <div class="navbar-nav py-0" style="color: black">
-                        <a href="index.html" class="nav-item nav-link active " style="color: gold; font-weight: bold">Home</a>
-                        <a href="shop.html" class="nav-item nav-link" style="color: gold; font-weight: bold">Shop</a>
-                        <a href="detail.html" class="nav-item nav-link" style="color: gold; font-weight: bold">Shop Detail</a>
+                        <a href="index.html" class="nav-item nav-link active" style="color: gold; font-weight: bold; margin-left: 50px;">Home</a>
+                        <a href="shop.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Shop</a>
+                        <a href="detail.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Shop Detail</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: gold; font-weight: bold">Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: gold; font-weight: bold; margin-left: 50px;">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="cart.html" class="dropdown-item" style="color: gold; font-weight: bold">Shopping Cart</a>
-                                <a href="checkout.html" class="dropdown-item" style="color: gold; font-weight: bold">Checkout</a>
+                                <a href="cart.html" class="dropdown-item" style="color: gold; font-weight: bold;">Shopping Cart</a>
+                                <a href="checkout.html" class="dropdown-item" style="color: gold; font-weight: bold;">Checkout</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link" style="color: gold; font-weight: bold">Contact</a>
+                        <a href="contact.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Contact</a>
                     </div>
                 </div>
             </nav>
         </div>
+
 
     </div>
 </div>
 
 <div class=" col-lg-12 row">
     <div class="col-lg-2">
-        <nav class="collapse show navbar navbar-vertical align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
-            <div class="navbar-nav w-100 overflow-auto category-bar-visible">
-                <div class="category-bar ">
-                    <div class="category-list ">
-                        <nav class="navCategory">
+        <nav class=" collapse navbar-collapse show navbar navbar-vertical align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical" data-target="collapse" >
+            <div class="navbar-nav w-100 overflow-auto" >
+                <div class="category-bar category-bar-visible" >
+                    <div class="category-list">
+                        <nav class="navCategory" >
                             <ul class="">
                                 <li class="dropdown"><a href="#">Television<span>&rsaquo;</span></a>
                                     <ul>
@@ -249,6 +255,8 @@
         </nav>
     </div>
 
+
+
     <div class="col-lg-6">
         <!-- Carousel and Content Here -->
         <div id="header-carousel" class="carousel slide" data-ride="carousel" >
@@ -295,11 +303,3 @@
     </div>
 </div>
 
-<script>
-    const toggleButton = document.querySelector('.navbar-toggler');
-    const categoryBar = document.querySelector('.category-bar');
-
-    toggleButton.addEventListener('click', () => {
-        categoryBar.classList.toggle('category-bar-visible');
-    });
-</script>

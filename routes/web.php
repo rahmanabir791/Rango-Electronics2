@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('front.pages.home');
 });
+Route::get('Login' , [AuthenticatedSessionController::class , 'create'])->name('login');
+Route::get('Register' , [RegisteredUserController::class , 'create'])->name('register');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

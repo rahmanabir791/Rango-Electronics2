@@ -1,78 +1,67 @@
-
 body {
-    background: linear-gradient(to bottom right, #9c1820, #d4af37);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #D63C3C, #D6A269);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
 }
 
 .login-container {
-    width: 400px;
-    padding: 20px;
     background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 1s ease, scaleUp 0.5s 1s ease;
-}
-
-.login-container h2 {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-    margin-bottom: 20px;
-    color: #9c1820;
 }
 
-.form-group {
-    position: relative;
+.login-container h1 {
+    color: #722620;
 }
 
-.form-control {
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #9c1820;
-    border-radius: 0;
-    color: #9c1820;
-    transition: border-color 0.3s, box-shadow 0.3s;
+.input-group {
+    margin: 20px 0;
 }
 
-.form-control:focus {
-    outline: none;
-    border-color: #d4af37;
-    box-shadow: 0 0 10px #d4af37;
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #722620;
 }
 
-.btn-primary {
-    background-color: #d4af37;
-    border-color: #d4af37;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.btn-primary:hover {
-    background-color: #9c1820;
-    border-color: #9c1820;
-}
-
-.shimmer-bg {
-    position: absolute;
+.input-group input {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
-    background-size: 200% 200%;
-    animation: shimmer 2s infinite;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
+.input-group input:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #722620;
 }
 
-@keyframes scaleUp {
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+.login-btn {
+    background-color: #722620;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-@keyframes shimmer {
-    0% { background-position: 0 0; }
-    100% { background-position: 200% 0; }
+.login-btn:hover {
+    background-color: #8E3C23;
+}
+
+.register-link {
+    color: #722620;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
 }
