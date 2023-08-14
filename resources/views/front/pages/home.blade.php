@@ -38,54 +38,38 @@
     <!-- Featured End -->
 
 {{--Slider Cards --}}
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>card slider</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-</head>
-<body>
+
 
 <h1 style="text-align: center;">Autoplay card slider</h1>
 
 <div class="owl-carousel owl-theme">
+    <div class="container-fluid row">
     <div class="item">
-        <img src="img/1.jpg" alt="image">
-    </div>
-    <div class="item">
-        <img src="img/2.jpg" alt="image">
-    </div>
-    <div class="item">
-        <img src="img/3.jpg" alt="image">
-    </div>
-    <div class="item">
-        <img src="img/4.jpg" alt="image">
-    </div>
-    <div class="item">
-        <img src="img/5.jpg" alt="image">
-    </div>
-    <div class="item">
-        <img src="img/6.jpg" alt="image">
-    </div>
-    <div class="item">
-        <img src="img/7.jpg" alt="image">
-    </div>
-    <div class="item">
-        <img src="img/8.jpg" alt="image">
-    </div>
-    <div class="item">
-        <img src="img/9.jpg" alt="image">
-    </div>
-    <div class="item">
-        <img src="img/10.jpg" alt="image">
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">-
+            <div class="card product-item border-0 mb-4">
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-4.jpg" alt="">
+                </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="d-flex justify-content-center">
+                        <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between bg-light border">
+                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                </div>
+            </div>
+        </div>
     </div>
 
+    </div>
 </div>
 
 
@@ -97,6 +81,7 @@
 <script type="text/javascript">
     $('.owl-carousel').owlCarousel({
         loop:true,
+        duration:10,
         margin:10,
         nav:false,
         autoplay:true,
@@ -114,8 +99,7 @@
         }
     })
 </script>
-</body>
-</html>
+
 
 {{--Slider Cards End--}}
 
