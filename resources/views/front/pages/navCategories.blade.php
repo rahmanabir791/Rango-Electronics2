@@ -5,9 +5,18 @@
         color: #050000;
         width: 200px;
         font-size: 12px;
+        display: block;
         position: absolute;
         box-shadow: 5px 10px 15px 1px gold;
         z-index: 100; /* Ensure the category bar is above other elements */
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out; /* Add transition property */
+    }
+
+    .category-bar.show {
+        max-height: 1000px; /* Adjust the max-height as needed */
+        /* ... (Other styles) ... */
     }
 
     .category-list {
@@ -119,20 +128,19 @@
 </style>
 
 
-<div class="container-fluid  mt-1" style="background-color: #800000; height: 68px">
+<div class="container-fluid  mb-1 mt-1" style="background-color: #800000; height: 68px">
     <div class="row border-top px-xl-6">
         <div class="col-lg-2">
             <!-- Category Bar -->
 
             <!-- Category Bar for Desktop View -->
-            <a class="btn d-flex align-items-center justify-content-between text-white w-100 " data-toggle="collapse"  href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+            <a class="btn d-flex align-items-center justify-content-between text-white w-100 " data-toggle="collapse" data-target="#category-bar"  href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
                 <h6 class="m-0" style="color: gold">Categories</h6>
                 <i class="fa fa-angle-down text-warning "></i>
             </a>
             <!-- ... (Other category links for desktop view) ... -->
         </div>
         <!-- Rest of the content (Navigation bar, Carousel, etc.) -->
-
         <div class="col-lg-10">
             <!-- Navigation Bar -->
             <nav class="navbar navbar-expand-lg py-3 py-lg-0 px-0">
@@ -162,16 +170,14 @@
                 </div>
             </nav>
         </div>
-
-
     </div>
 </div>
 
 <div class=" col-lg-12 row">
     <div class="col-lg-2">
-        <nav class=" collapse navbar-collapse show navbar navbar-vertical align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical" data-target="collapse" >
+        <nav class="  navbar-collapse show navbar navbar-vertical align-items-start p-0 border border-top-0 border-bottom-0"    >
             <div class="navbar-nav w-100 overflow-auto" >
-                <div class="category-bar category-bar-visible" >
+                <div class="category-bar  collapse show" >
                     <div class="category-list">
                         <nav class="navCategory" >
                             <ul class="">
@@ -255,8 +261,6 @@
         </nav>
     </div>
 
-
-
     <div class="col-lg-6">
         <!-- Carousel and Content Here -->
         <div id="header-carousel" class="carousel slide" data-ride="carousel" >
@@ -302,4 +306,23 @@
 
     </div>
 </div>
+<!-- ... (Your HTML and CSS) ... -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const categoryBar = document.querySelector(".category-bar");
+        const categoryButton = document.querySelector("[data-target='#category-bar']");
+
+        categoryButton.addEventListener("click", function () {
+            categoryBar.classList.toggle("show"); // Toggle the show class
+
+            // Adjust the max-height of the category bar based on its visibility
+            if (categoryBar.classList.contains("show")) {
+                categoryBar.style.maxHeight = categoryBar.scrollHeight + "px";
+            } else {
+                categoryBar.style.maxHeight = "0";
+            }
+        });
+    });
+</script>
 
