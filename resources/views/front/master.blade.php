@@ -19,7 +19,7 @@
 @yield('body')
 
 <!-- Footer Start -->
-{{--@include('front.includes.footer')--}}
+@include('front.includes.footer')
 <!-- Footer End -->
 
 @include('front.includes.script')
