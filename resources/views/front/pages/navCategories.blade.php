@@ -1,95 +1,158 @@
 <style>
-    /* Custom styles for the dropdown */
-    .category-bar {
-        background-color: #fdfdfd;
-        color: #050000;
-        width: 200px;
-        font-size: 15px;
+
+    nav{
+
         position: absolute;
-        box-shadow: 10px 10px 5px gold;
+        top: 0;
+        bottom: 0;
+        background: rgb(247, 248, 250);
     }
 
-    .category-list {
-        padding: 10px;
-        box-shadow: 5px 3px 3px 1px gold;
+    nav ul{
+        position: relative;
+        list-style-type: none;
     }
 
-    .category {
+    nav ul li a{
+        display: flex;
+        align-items: center;
+        font-size: 1.15em;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: black;
+        padding: 0px;
+        height: 50px;
+        transition: .5s ease;
+    }
+
+    nav ul li a:hover{
+        background: rgb(225, 226, 230);
+        color: black;
+    }
+
+    nav ul ul{
+        position: absolute;
+        left: 250px;
+        width:250px;
+        display: none;
+        top: 0;
+        background: rgb(247, 248, 250);
+    }
+    nav ul span{
+        position: absolute;
+        right: 20px;
+        font-size: 1.5rem;
+    }
+
+    nav ul .dropdown{
         position: relative;
     }
 
-    .category a {
-        text-decoration: none;
-        color: #0a0000;
-        font-weight: bold;
-        display: block;
-        padding: 5px 0;
+    nav ul .dropdown:hover > ul{
+        display: initial;
     }
 
-    .category ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: none;
+    nav ul .dropdown_two ul{
         position: absolute;
+        left: 200px;
         top: 0;
-        left: 100%;
-        background-color: white;
-        border: 1px solid #ccc;
-        z-index: 1;
     }
 
-    .category:hover ul {
-        display: block;
+    nav ul .dropdown_two:hover ul {
+        display: initial;
     }
 
-    .category ul li {
-        display: block;
-    }
+    /* Custom styles for the dropdown */
+    /*.category-bar {*/
+    /*    background-color: #fdfdfd;*/
+    /*    color: #050000;*/
+    /*    width: 200px;*/
+    /*    font-size: 15px;*/
+    /*    position: absolute;*/
+    /*    box-shadow: 10px 10px 5px gold;*/
+    /*}*/
 
-    /* Hover effect for subcategory */
-    .subCategory ul {
-        display: none;
-    }
+    /*.category-list {*/
+    /*    padding: 10px;*/
+    /*    box-shadow: 5px 3px 3px 1px gold;*/
+    /*}*/
 
-    .subCategory:hover ul {
-        display: block;
-    }
+    /*.category {*/
+    /*    position: relative;*/
+    /*}*/
 
-    .subCategory a {
-        color: #333;
-        display: block;
-        padding: 5px 0;
-        text-decoration: none;
-    }
+    /*.category a {*/
+    /*    text-decoration: none;*/
+    /*    color: #0a0000;*/
+    /*    font-weight: bold;*/
+    /*    display: block;*/
+    /*    padding: 5px 0;*/
+    /*}*/
 
-    .subCategory:hover .childCategory ul {
-        display: none;
-    }
+    /*.category ul {*/
+    /*    list-style: none;*/
+    /*    padding: 0;*/
+    /*    margin: 0;*/
+    /*    display: none;*/
+    /*    position: absolute;*/
+    /*    top: 0;*/
+    /*    left: 100%;*/
+    /*    background-color: white;*/
+    /*    border: 1px solid #ccc;*/
+    /*    z-index: 1;*/
+    /*}*/
 
-    .childCategory ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 100%;
-        background-color: white;
-        border: 2px solid #ccc;
-        z-index: 1;
-    }
+    /*.category:hover ul {*/
+    /*    display: block;*/
+    /*}*/
 
-    .childCategory:hover ul {
-        display: block;
-    }
+    /*.category ul li {*/
+    /*    display: block;*/
+    /*}*/
 
-    .childCategory a {
-        color: #333;
-        display: block;
-        padding: 10px 0;
-        text-decoration: none;
-    }
+    /*!* Hover effect for subcategory *!*/
+    /*.subCategory ul {*/
+    /*    display: none;*/
+    /*}*/
+
+    /*.subCategory:hover ul {*/
+    /*    display: block;*/
+    /*}*/
+
+    /*.subCategory a {*/
+    /*    color: #333;*/
+    /*    display: block;*/
+    /*    padding: 5px 0;*/
+    /*    text-decoration: none;*/
+    /*}*/
+
+    /*.subCategory:hover .childCategory ul {*/
+    /*    display: none;*/
+    /*}*/
+
+    /*.childCategory ul {*/
+    /*    list-style: none;*/
+    /*    padding: 0;*/
+    /*    margin: 0;*/
+    /*    display: none;*/
+    /*    position: absolute;*/
+    /*    top: 0;*/
+    /*    left: 100%;*/
+    /*    background-color: white;*/
+    /*    border: 2px solid #ccc;*/
+    /*    z-index: 1;*/
+    /*}*/
+
+    /*.childCategory:hover ul {*/
+    /*    display: block;*/
+    /*}*/
+
+    /*.childCategory a {*/
+    /*    color: #333;*/
+    /*    display: block;*/
+    /*    padding: 10px 0;*/
+    /*    text-decoration: none;*/
+    /*}*/
 </style>
 
 <div class="container-fluid  mb-5 mt-1" style="background-color: #800000; height: 68px">
@@ -153,118 +216,84 @@
 
 
 <div class=" col-lg-12 row">
-    <style>
-        /* Custom styles for the dropdown */
-        .category-bar {
-            background-color: #fdfdfd;
-            color: #050000;
-            width: 200px;
-            font-size: 15px;
-            box-shadow: 10px 10px 5px #ccc;
-        }
 
-        .category-list {
-            padding: 10px;
-            box-shadow: 5px 3px 3px 1px gold;
-        }
-
-        .category {
-            position: relative;
-        }
-
-        .category a {
-            text-decoration: none;
-            color: #0a0000;
-            font-weight: bold;
-            display: block;
-            padding: 5px 0;
-        }
-
-        .category ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            background-color: white;
-            border: 1px solid #ccc;
-            z-index: 1;
-        }
-
-        .category:hover ul {
-            display: block;
-        }
-
-        .category ul li {
-            display: block;
-        }
-
-        /* Hover effect for subcategory */
-        .subCategory ul {
-            display: none;
-        }
-
-        .subCategory:hover ul {
-            display: block;
-        }
-
-        .subCategory a {
-            color: #333;
-            display: block;
-            padding: 5px 0;
-            text-decoration: none;
-        }
-
-        .subCategory:hover .childCategory ul {
-            display: none;
-        }
-
-        .childCategory ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            background-color: white;
-            border: 1px solid #ccc;
-            z-index: 1;
-        }
-
-        .childCategory:hover ul {
-            display: block;
-        }
-
-        .childCategory a {
-            color: #333;
-            display: block;
-            padding: 5px 0;
-            text-decoration: none;
-        }
-    </style>
 
     <div class="col-lg-2">
-        <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
-            <div class="navbar-nav w-100 overflow-auto">
-                <div class="category-bar">
-                    <div class="category-list">
-                        <div class="category">
-                            <a href="#">Category</a>
-                            <ul class="subCategory">
-                                <li class="subCategory">
-                                    <a href="#">Subcategory</a>
-                                    <ul class="child-category">
-                                        <li><a href="#">Child Category</a></li>
-                                    </ul>
-                                </li>
+        <nav>
+            <ul>
+                <li class="dropdown"><a href="#">Television<span>&rsaquo;</span></a>
+                    <ul>
+                        <li class="dropdown_two"><a href="#">Samsung TV<span>&rsaquo;</span></a>
+                            <ul>
+                                <li><a href="#">Samsung LED TV</a></li>
+                                <li><a href="#">Samsung Smart TV</a></li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </li>
+                        <li><a href="#">Sony TV</a></li>
+                        <li><a href="#">LG TV</a></li>
+                        <li><a href="#">Xiaomi Smart TV</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Air conditionar<span>&rsaquo;</span></a>
+                    <ul>
+                        <li class="dropdown_two"><a href="#">Gree<span>&rsaquo;</span></a>
+                            <ul>
+                                <li><a href="#">Gree split type</a></li>
+                                <li><a href="#">Gree window type</a></li>
+                                <li><a href="#">Gree Ceilling type</a></li>
+                                <li><a href="#">Gree Cassette type</a></li>
+                                <li><a href="#">Gree Portable type</a></li>
+                                <li><a href="#">Gree Floor type</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">General</a></li>
+                        <li><a href="#">Sharp</a></li>
+                        <li><a href="#">Maidea</a></li>
+                        <li><a href="#">Daikin</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Water purifier<span>&rsaquo;</span></a>
+                    <ul>
+                        <li><a href="#">Pureit water purifier</a></li>
+                        <li><a href="#">Havells water purifier</a></li>
+                        <li><a href="#">kent water purifier</a></li>
+                        <li><a href="#">China water purifier</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Washing Machine<span>&rsaquo;</span></a>
+                    <ul>
+                        <li><a href="#">Sharp Washing Machine</a></li>
+                        <li><a href="#">LG Washing Machine</a></li>
+                        <li><a href="#">Xiaomi Washing Machine</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Electric Items<span>&rsaquo;</span></a>
+                    <ul>
+                        <li><a href="#">Click</a></li>
+                        <li><a href="#">Ceilling Fan</a></li>
+                        <li><a href="#">XPART TOOLS</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Refrigerators<span>&rsaquo;</span></a>
+                    <ul>
+                        <li><a href="#">Sharp Refrigerator</a></li>
+                        <li><a href="#">Danaz Refrigerator</a></li>
+                        <li><a href="#">Hitachi Refrigerator</a></li>
+                        <li><a href="#">Panasonic Refrigerator</a></li>
+                        <li><a href="#">Konka Refrigerator</a></li>
+                        <li><a href="#">Samsung Refrigerator</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Water heater</a>
+                    <ul>
+                        <li><a href="#">Tropica Geyser</a></li>
+                        <li><a href="#">Havells Geyser</a></li>
+                        <li><a href="#">Tropica Geyser</a></li>
+                        <li><a href="#">DewanCo Geyser</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
     </div>
 
