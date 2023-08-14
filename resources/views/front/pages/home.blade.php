@@ -1,6 +1,6 @@
 @extends('front.master')
 @section('title')
-    home
+    Home
 @endsection
 
 @section('body')

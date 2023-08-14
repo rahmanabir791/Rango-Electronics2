@@ -1,7 +1,5 @@
 {{--Small Golden Bar--}}
-<div class="row" style="background-color: gold; height: 35px">
-    <div class="col-lg-12 ">
-
+    <div class="col-lg-12 "  style="background-color: gold; height: 35px">
 {{--First Bar--}}
 <div class="row" style="background-color: maroon; color: white;">
     <div class="col-lg-6 d-none d-lg-block">
@@ -38,8 +36,6 @@
     </div>
 </div>
 {{--First Bar finished--}}
-
-
     </div>
-</div>
+
 {{--Small Golden Bar finished--}}

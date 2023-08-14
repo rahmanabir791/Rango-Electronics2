@@ -4,6 +4,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Front\HomeController;
+
+//Back Controllers
+use App\Http\Controllers\Back\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,20 +20,24 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 |
 */
 
-Route::get('/', function () {
-    return view('front.pages.home');
-});
+Route::get('/' , [HomeController::class , 'home' ])->name('home');
 Route::get('Login' , [AuthenticatedSessionController::class , 'create'])->name('login');
 Route::get('Register' , [RegisteredUserController::class , 'create'])->name('register');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::middleware('auth' , 'verified')->group(function () {
+    Route::get('/Rango' , [HomeController::class , 'home' ])->name('home');
 });
 
+
+//Admin Panel
+Route::prefix('/Rango/Admin')->middleware('rangoAdmin', 'auth')->group(function () {
+    Route::get('/dashboard' , [DashboardController::class , 'dashboard'])->name('dashboard');
+
+
+
+
+
+
+});
 require __DIR__.'/auth.php';

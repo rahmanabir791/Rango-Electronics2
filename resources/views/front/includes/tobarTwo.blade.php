@@ -28,10 +28,10 @@
             <div class="col-md-3">
                 <!-- Logo and Branding -->
                 <div class="d-flex justify-content-start align-items-center">
-                    <a href="#" class="text-decoration-none ml-3">
+                    <a href="{{route('home')}}" class="text-decoration-none ml-3">
                         <img style="max-width: 100%;" src="{{asset('/')}}assets/front-asset/img/rongologo.png" alt="Rongo Logo">
                     </a>
-                    <a href="#" class="text-decoration-none">
+                    <a href="{{route('home')}}" class="text-decoration-none">
                         <img style="max-width: 100%;" src="{{asset('/')}}assets/front-asset/img/rongotext.png" alt="Rongo Text">
                     </a>
                 </div>
@@ -52,11 +52,34 @@
             <div class="col-md-3">
                 <!-- Navigation Icons and Toggle Button -->
                 <div class="d-flex justify-content-center align-items-center">
+                    @if(Auth::user()->role == 1)
+                        <a href="{{ route('dashboard') }}" class="text-decoration-none pr-3">
+                            <i class="fa-solid fa-user" style="color: gold;"> Admin</i>  {{ Auth::user()->name }}
+                        </a>
+
+                        <a href="#" class="text-decoration-none pr-3" onclick="event.preventDefault();document.getElementById('logoutabir').submit();">
+                            <i class="fa-solid fa-right-from-bracket" style="color: #f3bd29;"></i>
+                        </a>
+                        <form action="{{ route('logout') }}" method="POST" id="logoutabir">@csrf</form>
+
+                    @elseif(Auth::check())
+                        <a href="{{ route('dashboard') }}" class="text-decoration-none pr-3">
+                            <i class="fa-solid fa-user" style="color: gold;"></i> {{ Auth::user()->name }}
+                        </a>
+
+                        <a href="#" class="text-decoration-none pr-3" onclick="event.preventDefault();document.getElementById('logoutabir').submit();">
+                            <i class="fa-solid fa-right-from-bracket" style="color: #f3bd29;"></i>
+                        </a>
+                        <form action="{{ route('logout') }}" method="POST" id="logoutabir">@csrf</form>
+
+                    @else
+                        <a href="{{ route('login') }}" class="text-decoration-none pr-3">
+                            <i class="fa-solid fa-user"style="color: gold;"></i>
+                        </a>
+                    @endif
+
                     <a href="#" class="text-decoration-none pr-3">
-                        <i class="fa-solid fa-user"></i>
-                    </a>
-                    <a href="#" class="text-decoration-none pr-3">
-                        <i class="fas fa-shopping-cart"> 1</i>
+                        <i class="fas fa-shopping-cart" style="color: gold"> 1</i>
                     </a>
                 </div>
             </div>

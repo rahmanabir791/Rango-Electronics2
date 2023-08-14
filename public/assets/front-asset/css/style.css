@@ -3219,7 +3219,7 @@ input[type="button"].btn-block {
   height: 0;
   margin: 0.5rem 0;
   overflow: hidden;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid #800000;
 }
 
 .dropdown-item {
@@ -3238,11 +3238,11 @@ input[type="button"].btn-block {
 .dropdown-item:hover, .dropdown-item:focus {
   color: #16181b;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #800000;
 }
 
 .dropdown-item.active, .dropdown-item:active {
-  color: #fff;
+  color: #800000;
   text-decoration: none;
   background-color: #D19C97;
 }
