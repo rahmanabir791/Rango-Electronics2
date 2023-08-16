@@ -9,6 +9,7 @@
         position: absolute;
         box-shadow: 5px 10px 15px 1px gold;
         z-index: 100; /* Ensure the category bar is above other elements */
+        overflow: hidden;
         max-height: 0;
         transition: max-height 0.3s ease-in-out; /* Add transition property */
     }

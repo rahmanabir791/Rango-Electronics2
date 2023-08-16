@@ -8,7 +8,7 @@
 
     <!-- Featured Start -->
     <div class="container-fluid pt-5">
-        <div class="row px-xl-5 pb-3">
+        <div class="row px-xl-5 ">
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
                     <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
@@ -45,21 +45,21 @@
 
 
 
-<h1 style="text-align: center;">Autoplay card slider</h1>
-
+<!--slider row-1 -->
+<h2 style="margin-left: 35%;: text-align: center; color: #1b2658" >Tending Products</h2>
 <div class="owl-carousel owl-theme">
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-          <img src="{{asset('/')}}assets/front-asset/img/cat-1.jpg" alt="image">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-1.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
             <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-            <div class="d-flex justify-content-center">--}}
-                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
+            <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
             </div>
-            <div class="card-footer d-flex justify-content-between bg-light border">--}}
-                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark "><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
             </div>
         </div>
     </div>
@@ -67,14 +67,14 @@
 
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" alt="image">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="200px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
             <h6 class="text-truncate mb-3">Women dress </h6>
-            <div class="d-flex justify-content-center">--}}
-                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
+            <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
             </div>
-            <div class="card-footer d-flex justify-content-between bg-light border">--}}
+            <div class="card-footer d-flex justify-content-between bg-light border">
                 <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                 <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
             </div>
@@ -84,9 +84,9 @@
 
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <img src="{{asset('/')}}assets/front-asset/img/cat-3.jpg" alt="image">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-3.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
             <h6 class="text-truncate mb-3">baby Dress</h6>
             <div class="d-flex justify-content-center">
                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
@@ -101,11 +101,11 @@
 
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <img src="{{asset('/')}}assets/front-asset/img/cat-4.jpg" alt="image">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-4.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
             <h6 class="text-truncate mb-3">Sony Camera</h6>
-            <div class="d-flex justify-content-center">--}}
+            <div class="d-flex justify-content-center">
                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
             </div>
             <div class="card-footer d-flex justify-content-between bg-light border">
@@ -119,11 +119,11 @@
 
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <img src="{{asset('/')}}assets/front-asset/img/cat-5.jpg" alt="image">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-5.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
             <h6 class="text-truncate mb-3">Stylist bag</h6>
-            <div class="d-flex justify-content-center">--}}
+            <div class="d-flex justify-content-center">
                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
             </div>
             <div class="card-footer d-flex justify-content-between bg-light border">
@@ -136,11 +136,11 @@
 
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <img src="{{asset('/')}}assets/front-asset/img/cat-6.jpg" alt="image">
+            <a href=""><img src="{{asset('/')}}assets/front-asset/img/cat-6.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
             <h6 class="text-truncate mb-3">Smart Shoe</h6>
-            <div class="d-flex justify-content-center">--}}
+            <div class="d-flex justify-content-center">
                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
             </div>
             <div class="card-footer d-flex justify-content-between bg-light border">
@@ -153,11 +153,11 @@
 
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <img src="{{asset('/')}}assets/front-asset/img/product-1.jpg" alt="image">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/product-1.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
             <h6 class="text-truncate mb-3">Short Dress</h6>
-            <div class="d-flex justify-content-center">--}}
+            <div class="d-flex justify-content-center">
                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
             </div>
             <div class="card-footer d-flex justify-content-between bg-light border">
@@ -170,11 +170,11 @@
 
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <img src="{{asset('/')}}assets/front-asset/img/product-2.jpg" alt="image">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/product-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
             <h6 class="text-truncate mb-3">Smart baby dresses</h6>
-            <div class="d-flex justify-content-center">--}}
+            <div class="d-flex justify-content-center">
                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
             </div>
             <div class="card-footer d-flex justify-content-between bg-light border">
@@ -187,9 +187,9 @@
 
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <img src="{{asset('/')}}assets/front-asset/img/product-3.jpg" alt="image">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/product-3.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
             <h6 class="text-truncate mb-3">Winter Dresses</h6>
             <div class="d-flex justify-content-center">--}}
                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
@@ -204,11 +204,11 @@
 
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <img src="{{asset('/')}}assets/front-asset/img/product-4.jpg" alt="image">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/product-4.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
             <h6 class="text-truncate mb-3">Shocs</h6>
-            <div class="d-flex justify-content-center">--}}
+            <div class="d-flex justify-content-center">
                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
             </div>
             <div class="card-footer d-flex justify-content-between bg-light border">
@@ -219,10 +219,293 @@
     </div>
 </div>
 
+<!--slider row-2-->
+
+<div class="owl-carousel owl-theme">
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-1.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+            <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark "><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Women dress </h6>
+            <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-3.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">baby Dress</h6>
+            <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-4.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Sony Camera</h6>
+            <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-5.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Stylist bag</h6>
+            <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href=""><img src="{{asset('/')}}assets/front-asset/img/cat-6.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Smart Shoe</h6>
+            <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/product-1.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Short Dress</h6>
+            <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/product-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Smart baby dresses</h6>
+            <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/product-3.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Winter Dresses</h6>
+            <div class="d-flex justify-content-center">--}}
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/product-4.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Shocs</h6>
+            <div class="d-flex justify-content-center">
+                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light border">
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1  style=" margin-left:45%; margin-bottom: 12px; text-align: center; color: #0f1531; background-color:slategray; border-radius: 50px;">Brands</h1>
+<!--last row-->
+<div class="owl-carousel owl-theme">
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-1.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Women dress </h6>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Women dress </h6>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Women dress </h6>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Women dress </h6>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Women dress </h6>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Women dress </h6>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Women dress </h6>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Women dress </h6>
+        </div>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+        </div>
+        <div class="card-body border-left border-right text-center p-0 pt-4 ">
+            <h6 class="text-truncate mb-3">Women dress </h6>
+        </div>
+    </div>
+</div>
+
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+
+<!--script for last row-->
+
 
 
 <script type="text/javascript">
@@ -283,13 +566,13 @@
 {{--        <div class="text-center mb-4">--}}
 {{--            <h2 class="section-title px-5"><span class="px-2">Trandy Products</span></h2>--}}
 {{--        </div>--}}
-{{--        <div class="row px-xl-5 pb-3">--}}
+{{--        <div class="row px-xl-5 ">--}}
 {{--            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">--}}
 {{--                <div class="card product-item border-0 mb-4">--}}
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-1.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -306,7 +589,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100" src="{{asset('/')}}assets/front-asset/img/product-2.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -323,7 +606,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100" src="{{asset('/')}}assets/front-asset/img/product-3.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -340,7 +623,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100" src="{{asset('/')}}assets/front-asset/img/product-4.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -357,7 +640,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100" src="{{asset('/')}}assets/front-asset/img/product-5.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -374,7 +657,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-6.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -391,7 +674,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-7.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -408,7 +691,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-8.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -452,13 +735,13 @@
 {{--        <div class="text-center mb-4">--}}
 {{--            <h2 class="section-title px-5"><span class="px-2">Just Arrived</span></h2>--}}
 {{--        </div>--}}
-{{--        <div class="row px-xl-5 pb-3">--}}
+{{--        <div class="row px-xl-5 ">--}}
 {{--            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">--}}
 {{--                <div class="card product-item border-0 mb-4">--}}
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-1.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -475,7 +758,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-2.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -492,7 +775,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-3.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -509,7 +792,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-4.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -526,7 +809,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-5.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -543,7 +826,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-6.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -560,7 +843,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-7.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
@@ -577,7 +860,7 @@
 {{--                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">--}}
 {{--                        <img class="img-fluid w-100"src="{{asset('/')}}assets/front-asset/img/product-8.jpg" alt="">--}}
 {{--                    </div>--}}
-{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">--}}
+{{--                    <div class="card-body border-left border-right text-center p-0 pt-4 ">--}}
 {{--                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>--}}
 {{--                        <div class="d-flex justify-content-center">--}}
 {{--                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>--}}
