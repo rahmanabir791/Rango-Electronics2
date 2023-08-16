@@ -11,25 +11,50 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{route('dashboard')}}">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
             </a>
         </li>
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" data-bs-toggle="collapse" href="#All_add" aria-expanded="false" aria-controls="ui-basic">--}}
+{{--                <span class="menu-title">All ADD Section</span>--}}
+{{--                <i class="menu-arrow"></i>--}}
+{{--                <i class="mdi mdi-contacts menu-icon"></i>--}}
+{{--            </a>--}}
+{{--            <div class="collapse" id="All_add">--}}
+{{--                <ul class="nav flex-column sub-menu">--}}
+{{--                    <li class="nav-item"> <a class="nav-link" href="{{route('addslider')}}">Add Slider</a></li>--}}
+{{--                    <li class="nav-item"> <a class="nav-link" href="{{route('add-category')}}">Add Category</a></li>--}}
+{{--                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Add Brand</a></li>--}}
+{{--                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Add Products</a></li>--}}
+{{--                </ul>--}}
+{{--            </div>--}}
+{{--        </li>--}}
+
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">All ADD Section</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-contacts menu-icon"></i>
+            <a class="nav-link" href="{{route('Add-manageSlider')}}">
+                <span class="menu-title">ADD & Manage Slider</span>
+                <i class="mdi mdi-play-box-outline menu-icon" style="color: #c8b7ef;"></i>
             </a>
-            <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Add Slider</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Add Category</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Add Brand</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Add Products</a></li>
-                </ul>
-            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('add_manage-category')}}">
+                <span class="menu-title">ADD & Manage Category</span>
+                <i class="mdi mdi-sitemap menu-icon" style="color: #d6c8f9;"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="pages/forms/basic_elements.html">
+                <span class="menu-title">ADD & Manage Brands</span>
+                <i class="mdi mdi-account-badge menu-icon" style="color: #cbbaf2;"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">
+                <span class="menu-title">ADD Product</span>
+                <i class="mdi mdi-play-box-outline menu-icon" style="color: #c8b7ef;"></i>
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-manage" aria-expanded="false" aria-controls="ui-basic">
@@ -39,62 +64,34 @@
             </a>
             <div class="collapse" id="ui-manage">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Manage Product Category</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Manage Product Brand</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Manage Products</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Add Products</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html"> Category</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">a</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">b</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">A</a></li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="pages/forms/basic_elements.html">
-                <span class="menu-title">Forms</span>
-                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                <span class="menu-title">Buyer Status</span>
+                <i class="mdi mdi-cash-multiple menu-icon" style="color: #cfbef9;"></i>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="pages/charts/chartjs.html">
-                <span class="menu-title">Charts</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">Contact INFO</span>
+                <i class="mdi mdi-message-alert menu-icon" style="color: #d7c9f8;"></i>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-title">Tables</span>
-                <i class="mdi mdi-table-large menu-icon"></i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-                <span class="menu-title">Sample Pages</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-medical-bag menu-icon"></i>
-            </a>
-            <div class="collapse" id="general-pages">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-                </ul>
-            </div>
-        </li>
+
+
         <li class="nav-item sidebar-actions">
               <span class="nav-link">
                 <div class="border-bottom">
-                  <h6 class="font-weight-normal mb-3">Projects</h6>
+                  <h6 class="font-weight-normal mb-3">Front View</h6>
                 </div>
-                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>
-                <div class="mt-4">
-                  <div class="border-bottom">
-                    <p class="text-secondary">Categories</p>
-                  </div>
-                  <ul class="gradient-bullet-list mt-4">
-                    <li>Free</li>
-                    <li>Pro</li>
-                  </ul>
-                </div>
+                <button class="btn btn-block btn-lg btn-gradient-primary mt-4"><i class="fa-solid fa-users-viewfinder menu-icon" style="color: #6c46f6;"></i> Front View</button>
+
               </span>
         </li>
     </ul>

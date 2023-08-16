@@ -23,6 +23,8 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('/')}}assets/front-asset/css/style.css" rel="stylesheet">
+{{--    Tostr--}}
+
 
 
 

@@ -52,9 +52,9 @@
             <div class="col-md-3">
                 <!-- Navigation Icons and Toggle Button -->
                 <div class="d-flex justify-content-center align-items-center">
-                    @if(Auth::user()->role == 1)
+                    @if(optional(Auth::user())->role == 1)
                         <a href="{{ route('dashboard') }}" class="text-decoration-none pr-3">
-                            <i class="fa-solid fa-user" style="color: gold;"> Admin</i>  {{ Auth::user()->name }}
+                            <i class="fa-solid fa-user" style="color: gold;"> Admin</i> <label for="">{{ Auth::user()->name }}</label>
                         </a>
 
                         <a href="#" class="text-decoration-none pr-3" onclick="event.preventDefault();document.getElementById('logoutabir').submit();">
@@ -77,9 +77,8 @@
                             <i class="fa-solid fa-user"style="color: gold;"></i>
                         </a>
                     @endif
-
                     <a href="#" class="text-decoration-none pr-3">
-                        <i class="fas fa-shopping-cart" style="color: gold"> 1</i>
+                        <i class="fas fa-shopping-cart" style="color: gold"> 838201</i>
                     </a>
                 </div>
             </div>

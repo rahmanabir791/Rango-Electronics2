@@ -8,6 +8,8 @@ use App\Http\Controllers\Front\HomeController;
 
 //Back Controllers
 use App\Http\Controllers\Back\DashboardController;
+use App\Http\Controllers\Back\Slider\SliderController;
+use App\Http\Controllers\Category\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +36,17 @@ Route::middleware('auth' , 'verified')->group(function () {
 Route::prefix('/Rango/Admin')->middleware('rangoAdmin', 'auth')->group(function () {
     Route::get('/dashboard' , [DashboardController::class , 'dashboard'])->name('dashboard');
 
+//    Slider
+    Route::get('/dashboard/Add_Slider/Manage_Slider' , [SliderController::class , 'ADDmanageSlider'])->name('Add-manageSlider');
+    Route::post('/dashboard/New_slider' , [SliderController::class , 'newSlider'])->name('newSlider');
+    Route::get('/dashboard/Delete_Slider-{id}' , [SliderController::class , 'deleteSlider'])->name('delete-slider');
 
+//    Category
+    Route::get('/dashboard/ADD_Category/Manage_Category/Electronics' , [CategoryController::class , 'addManageCategory'])->name('add_manage-category');
+    Route::post('/dashboard/New_Category_upload/Electronics' , [CategoryController::class , 'newCategory'])->name('new-category');
+    Route::get('/dashboard/Old_Category_Edit/Electronics/{id}' , [CategoryController::class , 'editCategory'])->name('edit-categorys');
+    Route::post('/dashboard/Old_Category_Update/Electronics/{id}' , [CategoryController::class , 'updateCategory'])->name('update-Category');
+    Route::get('/dashboard/Old_Category_Delete/Electronics/{id}' , [CategoryController::class , 'deleteCategory'])->name('delete-categorys');
 
 
 
