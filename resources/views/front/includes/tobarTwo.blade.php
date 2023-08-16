@@ -8,7 +8,7 @@
             z-index: 1000;
         }
 
-        /* Additional styles for mobile responsiveness */
+         /*Additional styles for mobile responsiveness */
         @media (max-width: 767px) {
             .sticky-nav .col-md-6 {
                 text-align: left;
@@ -18,6 +18,9 @@
                 text-align: right;
             }
         }
+
+
+
     </style>
 
 

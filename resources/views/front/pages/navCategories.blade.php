@@ -9,7 +9,6 @@
         position: absolute;
         box-shadow: 5px 10px 15px 1px gold;
         z-index: 100; /* Ensure the category bar is above other elements */
-        overflow: hidden;
         max-height: 0;
         transition: max-height 0.3s ease-in-out; /* Add transition property */
     }
@@ -308,24 +307,23 @@
         <img src="{{asset('/')}}assets/front-asset/img/ad2.jpg" alt="" style="height: 200px; width: 400px;">
     </div>
 
-
+</div>
     <!-- ... (Your HTML and CSS) ... -->
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const categoryBar = document.querySelector(".category-bar");
-        const categoryButton = document.querySelector("[data-target='#category-bar']");
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const categoryBar = document.querySelector(".category-bar");
+            const categoryButton = document.querySelector("[data-target='#category-bar']");
 
-        categoryButton.addEventListener("click", function () {
-            categoryBar.classList.toggle("show"); // Toggle the show class
+            categoryButton.addEventListener("click", function () {
+                categoryBar.classList.toggle("show"); // Toggle the show class
 
-            // Adjust the max-height of the category bar based on its visibility
-            if (categoryBar.classList.contains("show")) {
-                categoryBar.style.maxHeight = categoryBar.scrollHeight + "px";
-            } else {
-                categoryBar.style.maxHeight = "0";
-            }
+                // Adjust the max-height of the category bar based on its visibility
+                if (categoryBar.classList.contains("show")) {
+                    categoryBar.style.maxHeight = categoryBar.scrollHeight + "px";
+                } else {
+                    categoryBar.style.maxHeight = "0";
+                }
+            });
         });
-    });
-</script>
-
+    </script>

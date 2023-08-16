@@ -7,33 +7,43 @@
 @include('front.pages.navCategories')
 
     <!-- Featured Start -->
-    <div class="container-fluid pt-5">
+    <div  class="container-fluid pt-5" style="margin:0; padding: 0; " >
         <div class="row px-xl-5 ">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
-                </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1 " >
+
+                    <a href="#"><img src="{{asset('/')}}assets/front-asset/img/banner-1.jpg" style="margin-right: 10px; overflow: hidden; height: 300px;" width="400;" alt="image; " ></a>
+
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
-                    <h5 class="font-weight-semi-bold m-0"> Shipping</h5>
+
+
+
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="row px-xl-5">
+
+                            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/banner-2.jpg" style="height: 150px;" width="400px;" alt="image"></a>
+
+                        <br>
+
+                            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/banner-3.jpg" style="height: 150px;" width="400px;" alt="image"></a>
+
+
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">7-Day Return</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
-                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="row px-xl-5">
+
+                            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/banner-5.jpg" style="height: 150px;" width="400px;" alt="image"></a>
+
+
+
+                            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/banner-3.jpg" style="height: 150px;" width="400px;" alt="image"></a>
+
+
+                    </div>
+                  </div>
             </div>
         </div>
+
     </div>
     <!-- Featured End -->
 
@@ -44,9 +54,9 @@
 
 
 
-
+<h1 class="text-center " style="background-color: maroon; color: lightyellow"   >Tending Products</h1>
 <!--slider row-1 -->
-<h2 style="margin-left: 35%;: text-align: center; color: #1b2658" >Tending Products</h2>
+
 <div class="owl-carousel owl-theme">
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
@@ -393,15 +403,19 @@
     </div>
 </div>
 
-<h1  style=" margin-left:45%; margin-bottom: 12px; text-align: center; color: #0f1531; background-color:slategray; border-radius: 50px;">Brands</h1>
+<h1 class="text-center bg-danger">Brands</h1>
 <!--last row-->
 <div class="owl-carousel owl-theme">
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
             <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-1.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 ">
-            <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
     </div>
 
@@ -410,8 +424,12 @@
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
             <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 ">
-            <h6 class="text-truncate mb-3">Women dress </h6>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
     </div>
 
@@ -420,8 +438,12 @@
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
             <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 ">
-            <h6 class="text-truncate mb-3">Women dress </h6>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
     </div>
 
@@ -430,8 +452,12 @@
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
             <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 ">
-            <h6 class="text-truncate mb-3">Women dress </h6>
+    </div>
+
+
+    <div class="card product-item border-0 mb-4">
+        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
     </div>
 
@@ -440,58 +466,12 @@
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
             <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 ">
-            <h6 class="text-truncate mb-3">Women dress </h6>
-        </div>
     </div>
 
 
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
             <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 ">
-            <h6 class="text-truncate mb-3">Women dress </h6>
-        </div>
-    </div>
-
-
-    <div class="card product-item border-0 mb-4">
-        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 ">
-            <h6 class="text-truncate mb-3">Women dress </h6>
-        </div>
-    </div>
-
-
-    <div class="card product-item border-0 mb-4">
-        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 ">
-            <h6 class="text-truncate mb-3">Women dress </h6>
-        </div>
-    </div>
-
-
-    <div class="card product-item border-0 mb-4">
-        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 ">
-            <h6 class="text-truncate mb-3">Women dress </h6>
-        </div>
-    </div>
-
-
-    <div class="card product-item border-0 mb-4">
-        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-2.jpg" style="height: 150px;" width="150px;" alt="image"></a>
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 ">
-            <h6 class="text-truncate mb-3">Women dress </h6>
         </div>
     </div>
 </div>
