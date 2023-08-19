@@ -1,8 +1,8 @@
 <!-- partial:partials/_sidebar.html -->
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
-        <li class="nav-item nav-profile">
-            <a href="#" class="nav-link">
+        <li class="nav-item nav-profile active">
+            <a href="{{route('dashboard')}}" class="nav-link">
                 <div class="nav-profile-text d-flex flex-column">
                     <span class="font-weight-bold mb-2">{{ Auth::user()->name }}</span>
                     <span class="text-secondary text-small">Admin</span>
@@ -45,13 +45,13 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
+            <a class="nav-link" href="{{route('add_manage-Brands')}}">
                 <span class="menu-title">ADD & Manage Brands</span>
                 <i class="mdi mdi-account-badge menu-icon" style="color: #cbbaf2;"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('add-product')}}">
                 <span class="menu-title">ADD Product</span>
                 <i class="mdi mdi-play-box-outline menu-icon" style="color: #c8b7ef;"></i>
             </a>
@@ -64,10 +64,12 @@
             </a>
             <div class="collapse" id="ui-manage">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html"> Category</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">a</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">b</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">A</a></li>
+                    @php
+                        $categories = \App\Models\Back\Category\Category::orderBy('id', 'DESC')->get();
+                    @endphp
+                    @foreach($categories as $category)
+                    <li class="nav-item"> <a class="nav-link" href="{{route('manage-product', [ 'category_id' => $category->id])}}"> {{$category->CategoryName}}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </li>
@@ -90,7 +92,7 @@
                 <div class="border-bottom">
                   <h6 class="font-weight-normal mb-3">Front View</h6>
                 </div>
-                <button class="btn btn-block btn-lg btn-gradient-primary mt-4"><i class="fa-solid fa-users-viewfinder menu-icon" style="color: #6c46f6;"></i> Front View</button>
+                <a href="{{route('home')}}"><button class="btn btn-block btn-lg btn-gradient-primary mt-4"><i class="fa-solid fa-users-viewfinder menu-icon" style="color: #6c46f6;"></i> Front View</button></a>
 
               </span>
         </li>

@@ -54,7 +54,7 @@
 
 
 
-<h1 class="text-center " style="background-color: maroon; color: lightyellow"   >Tending Products</h1>
+<h1 class="text-center " style="background-color: maroon; color: lightyellow"   >All Products</h1>
 <!--slider row-1 -->
 
 <div class="owl-carousel owl-theme">

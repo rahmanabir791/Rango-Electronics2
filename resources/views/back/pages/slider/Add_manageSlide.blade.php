@@ -21,8 +21,10 @@
                                     <input type="text" name="sliderBtext" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Below Line | Name ">
                                 </div>
                                 <div class="input-group mb-2 mr-sm-2">
-
-                                    <input type="file" accept="image/*" name="slidImage" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Slider Image" required>
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">Slider Image</div>
+                                    </div>
+                                    <input type="file" name="slidImage" class="form-control" id="brandImage" accept="image/*" required>
                                 </div>
                                 <button type="submit" class="btn btn-gradient-primary mb-2">Submit</button>
                             </form>
@@ -54,7 +56,7 @@
                         <td>{{ $SliderDetail->sliderStext }}</td>
                         <td>{{ $SliderDetail->sliderBtext}}</td>
                         <td>
-                            <img src="{{ asset($SliderDetail->slidImage) }}" alt="" style="height: 100px; width: 100px">
+                            <img src="{{ asset($SliderDetail->slidImage) }}" alt="Slider_image" style="height: 100px; width: 100px">
                         </td>
                         <td>
                             <a href="{{ route('delete-slider', ['id' => $SliderDetail->id]) }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</a>

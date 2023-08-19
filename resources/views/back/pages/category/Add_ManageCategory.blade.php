@@ -1,6 +1,6 @@
 @extends('back.master')
 @section('title')
-    ADD Category
+    ADD && Manage Category
 @endsection
 
 @section('body')

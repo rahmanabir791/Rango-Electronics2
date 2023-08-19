@@ -1,14 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Category;
+namespace App\Http\Controllers\Back\Category;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Back\Category\Category;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
+
 
 class CategoryController extends Controller
 {
-    protected $newCategory;
+
 
 
     public function addManageCategory()
@@ -20,9 +23,22 @@ class CategoryController extends Controller
 
     public function newCategory(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'CategoryName' => 'required|string|max:255|unique:categories,CategoryName',
+            // Add more validation rules as needed
+        ]);
+
+        // Check for validation errors
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        // Validation passed, create and save the new category
         Category::newCategorys($request);
+
         return redirect()->back()->with('message', 'Category created successfully.');
     }
+
 
 
     public function editCategory($id)
