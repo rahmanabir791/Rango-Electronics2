@@ -7,36 +7,37 @@
 @include('front.pages.navCategories')
 
     <!-- Featured Start -->
-    <div  class="container-fluid pt-5" style="margin:0; padding: 0; " >
-        <div class="row px-xl-5 ">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1 " >
+    <div  class="container-fluid pt-5" style=" padding: 0; " >
+        <div class="row ">
+            <div class="col-lg-4" >
 
-                    <a href="#"><img src="{{asset('/')}}assets/front-asset/img/banner-1.jpg" style="margin-right: 10px; overflow: hidden; height: 300px;" width="400;" alt="image; " ></a>
+                    <a href="#"><img class="mb-0 ml-2" src="{{asset('/')}}assets/front-asset/img/banner-1.jpg" style=" margin-left: 2px; height: 303px;" width="405;" alt="image; " ></a>
 
             </div>
 
 
 
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                    <div class="row px-xl-5">
+                <div class="col-lg-4 ">
+                    <div class="row">
 
-                            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/banner-2.jpg" style="height: 150px;" width="400px;" alt="image"></a>
+                            <a href="#"><img class="mb-2 ml-2" src="{{asset('/')}}assets/front-asset/img/banner-2.jpg" style="height: 148px;" width="405px;" alt="image"></a>
 
-                        <br>
 
-                            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/banner-3.jpg" style="height: 150px;" width="400px;" alt="image"></a>
+
+                            <a href="#"><img class="mb-2 ml-2" src="{{asset('/')}}assets/front-asset/img/banner-3.jpg" style="height: 148px;" width="405px;" alt="image"></a>
 
 
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                    <div class="row px-xl-5">
+                <div class="col-lg-4 ">
+                    <div class="row">
 
-                            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/banner-5.jpg" style="height: 150px;" width="400px;" alt="image"></a>
+                        <a href="#"><img class="mb-2 ml-0 " src="{{asset('/')}}assets/front-asset/img/banner-5.jpg" style="height: 148px;" width="405px;" alt="image"></a>
 
 
 
-                            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/banner-3.jpg" style="height: 150px;" width="400px;" alt="image"></a>
+                        <a href="#"><img class="mb-2 ml-0" src="{{asset('/')}}assets/front-asset/img/banner-3.jpg" style="height: 148px;" width="405px;" alt="image"></a>
+
 
 
                     </div>
@@ -53,10 +54,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
+<style>
+    .image-slider .owl-nav button{
+        position: absolute;
+        background: green !important;
+        margin-left: 20px;
+        height: 30%;
+        font-size: 62px !important;
+        color: #FFFFFF;
+        overflow: hidden;
+        z-index: 100;
+    }
+    .image-slider .owl-nav .owl-prev {
+     left: 0px;
+     top: 35px;
+    }
 
-<h1 class="text-center " style="background-color: maroon; color: lightyellow"   >All Products</h1>
+</style>
+<h1 class="text-center " style="background-color: maroon; color: lightyellow" >All Products</h1>
 <!--slider row-1 -->
-
+<section class="image-wraper">
 <div class="owl-carousel owl-theme">
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
@@ -228,10 +245,11 @@
         </div>
     </div>
 </div>
+</section>
 
 <!--slider row-2-->
-
-<div class="owl-carousel owl-theme">
+<h1 class="text-center bg-primary text-white">Category wise product</h1>
+<div class="owl-carousel owl-theme image-slider">
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
             <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-1.jpg" style="height: 150px;" width="150px;" alt="image"></a>
@@ -492,7 +510,7 @@
     $('.owl-carousel').owlCarousel({
         loop:true,
         margin:10,
-        nav:false,
+        nav:true,
         autoplay:true,
         dots:false,
         responsive:{
