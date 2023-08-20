@@ -57,36 +57,98 @@
 <style>
     .image-slider .owl-nav button{
         position: absolute;
-        background: green !important;
-        margin-left: 20px;
-        height: 30%;
-        font-size: 62px !important;
-        color: #FFFFFF;
-        overflow: hidden;
-        z-index: 100;
+        background: maroon !important;
+        margin-left: 3px;
+        height: 17%;
+        width: 35px;
+        font-size: 30px !important;
+        color: yellow !important;
+        box-shadow: black;
+
     }
-    .image-slider .owl-nav .owl-prev {
+    .image-slider .owl-nav .owl-prev{
      left: 0px;
-     top: 35px;
+        border-radius: 3px;
+     top: 100px;
     }
 
+    .image-slider .owl-nav .owl-next {
+        right: 0px;
+        border-radius: 3px;
+        top: 100px;
+    }
+/*show arrow in hover*/
+
+    .image-slider .owl-nav{
+        opacity: 0;
+        transition: 0.5s all ease;
+    }
+
+    .image-slider:hover .owl-nav{
+        opacity: 1;
+        transition: 0.5s all ease;
+    }
+    .image-slider .ow-nav disabled{
+        opacity: 0;
+        transition: 0.5s all ease;
+    }
+
+/*    slider row names style*/
+
+    .slider-name{
+        margin-left: 4px;
+        margin-bottom: 0;
+        padding: 0;
+        font-size: 23px;
+
+    }
+    .divider{
+        height: 3px;
+        width: 100px;
+        margin-left: 4px;
+        background: maroon;
+        display: inline-block;
+    }
+    /*For view all text */
+    .view-all{
+        display: inline-block;
+        text-align: right;
+        margin-left: 80%;
+        text-decoration: none;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        transform-origin: right;
+    }
+    .view-all a{
+        text-decoration: none;
+
+    }
+    .view-all a:hover{
+        animation-name: bounceOutLeft;
+        animation-timing-function: ease;
+    }
+
+
 </style>
-<h1 class="text-center " style="background-color: maroon; color: lightyellow" >All Products</h1>
+<p class="slider-name text-dark font-weight-bold " >All Products</p>
+<span class="divider"></span>
+<p class="view-all"><a href="#">View All ></a></p>
+
 <!--slider row-1 -->
-<section class="image-wraper">
-<div class="owl-carousel owl-theme">
+
+<div class="owl-carousel  image-slider">
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-1.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-3.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
         <div class="card-body border-left border-right text-center p-0 pt-4 ">
-            <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+            <h6 class="text-truncate mb-3">baby Dress</h6>
             <div class="d-flex justify-content-center">
                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
             </div>
             <div class="card-footer d-flex justify-content-between bg-light border">
-                <a href="" class="btn btn-sm text-dark "><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                <a href="" class="btn btn-sm text-dark"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
             </div>
         </div>
     </div>
@@ -245,23 +307,25 @@
         </div>
     </div>
 </div>
-</section>
+
 
 <!--slider row-2-->
-<h1 class="text-center bg-primary text-white">Category wise product</h1>
-<div class="owl-carousel owl-theme image-slider">
+<p class="slider-name text-dark font-weight-bold">Category wise product</p>
+<span class="divider"></span>
+<p class="view-all"><a href="#">View All ></a></p>
+<div class="owl-carousel  image-slider">
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-1.jpg" style="height: 150px;" width="150px;" alt="image"></a>
+            <a href="#"><img src="{{asset('/')}}assets/front-asset/img/cat-3.jpg" style="height: 150px;" width="150px;" alt="image"></a>
         </div>
         <div class="card-body border-left border-right text-center p-0 pt-4 ">
-            <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+            <h6 class="text-truncate mb-3">baby Dress</h6>
             <div class="d-flex justify-content-center">
                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
             </div>
             <div class="card-footer d-flex justify-content-between bg-light border">
-                <a href="" class="btn btn-sm text-dark "><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                <a href="" class="btn btn-sm text-dark"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
             </div>
         </div>
     </div>
