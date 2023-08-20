@@ -9,6 +9,7 @@ use App\Http\Controllers\Front\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\back\brands\BrandsController;
 use App\Http\Controllers\Back\Products\ProductController;
+use App\Http\Controllers\SearchController;
 
 //Back Controllers
 
@@ -67,7 +68,7 @@ Route::prefix('/Rango/Admin')->middleware('rangoAdmin', 'auth')->group(function 
     Route::post('/Electronics/Dashboard/Update-Product/{id}', [ProductController::class, 'updateProduct'])->name('update-product');
     Route::post('/Electronics/Dashboard/Update-stockAvailability/Product/{id}', [ProductController::class, 'stockAvailability'])->name('update-stockAvailability');
     Route::get('/Electronics/Dashboard/Delete-Product/{id}', [ProductController::class, 'deleteProduct'])->name('delete-product');
-
+    Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 
 });

@@ -9,12 +9,14 @@
             <span class="mdi mdi-menu"></span>
         </button>
         <div class="search-field d-none d-md-block">
-            <form class="d-flex align-items-center h-100" action="#">
+            <form class="d-flex align-items-center h-100" action="{{ route('search') }}" method="GET">
+                @csrf
                 <div class="input-group">
                     <div class="input-group-prepend bg-transparent">
                         <i class="input-group-text border-0 mdi mdi-magnify"></i>
                     </div>
-                    <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
+                    <input type="text" name="query" class="form-control bg-transparent border-0" placeholder="Search...">
+                    <button type="submit">Search</button>
                 </div>
             </form>
         </div>
