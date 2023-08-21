@@ -17,12 +17,13 @@ return new class extends Migration
             $table->integer('category_id')->nullable();
             $table->integer('brand_id')->nullable();
             $table->string('product_type')->nullable();
-            $table->string('MRP_price')->nullable();
-            $table->string('O_price')->nullable();
+            $table->integer('MRP_price')->nullable();
+            $table->integer('O_price')->nullable();
             $table->text('image')->nullable();
             $table->text('warranty')->nullable();
             $table->text('features')->nullable();
             $table->text('specifications')->nullable();
+            $table->tinyInteger('special_offer')->default(1)->comment('In special offer = 1 , Out of special offer = 0');
             $table->tinyInteger('stockAvailability')->default(1)->comment('In Stock = 1 , Out of Stock = 0');
             $table->timestamps();
         });

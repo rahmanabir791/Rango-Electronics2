@@ -4,6 +4,8 @@ namespace App\Models\Back\Products;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Back\Category\Category;
+use App\Models\Back\Brands\Brands;
 
 class Products extends Model
 {
@@ -50,6 +52,7 @@ class Products extends Model
         self::$product->warranty              = $request->warranty;
         self::$product->features              = $request->features;
         self::$product->specifications        = $request->specifications;
+        self::$product->special_offer         = $request->special_offer;
         self::$product->stockAvailability     = $request->stockAvailability;
         self::$product->save();
     }
@@ -76,4 +79,25 @@ class Products extends Model
         self::$product->stockAvailability     = $request->stockAvailability;
         self::$product->save();
     }
+    public static function specialOffer ($request, $id)
+    {
+        self::$product                        = Products::find($id);
+        self::$product->special_offer         = $request->special_offer;
+        self::$product->save();
+    }
+
+    // Products.php (Model)
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function brand()
+    {
+        return $this->belongsTo(Brands::class, 'brand_id');
+    }
+
+
+
 }

@@ -1,0 +1,75 @@
+
+.image-slider .owl-nav button{
+    position: absolute;
+    background: maroon !important;
+    margin-left: 3px;
+    height: 17%;
+    width: 35px;
+    font-size: 30px !important;
+    color: yellow !important;
+    box-shadow: black;
+
+}
+.image-slider .owl-nav .owl-prev{
+    left: 0px;
+    border-radius: 3px;
+    top: 100px;
+}
+
+.image-slider .owl-nav .owl-next {
+    right: 0px;
+    border-radius: 3px;
+    top: 100px;
+}
+/*show arrow in hover*/
+
+.image-slider .owl-nav{
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.image-slider:hover .owl-nav{
+    opacity: 1;
+    transition: 0.5s all ease;
+}
+.image-slider .ow-nav disabled{
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+/*    slider row names style*/
+
+.slider-name{
+    margin-left: 4px;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 23px;
+
+}
+.divider{
+    height: 3px;
+    width: 100px;
+    margin-left: 4px;
+    background: maroon;
+    display: inline-block;
+}
+/*For view all text */
+.view-all{
+    display: inline-block;
+    text-align: right;
+    margin-left: 80%;
+    text-decoration: none;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    transform-origin: right;
+}
+.view-all a{
+    text-decoration: none;
+
+}
+.view-all a:hover{
+    animation-name: bounceOutLeft;
+    animation-timing-function: ease;
+}
+
+

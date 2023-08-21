@@ -58,6 +58,12 @@ class ProductController extends Controller
         return redirect()->back()->with('message', 'Stock Availability updated successfully');
     }
 
+    public function specialOffer (Request $request, $id)
+    {
+        Products::specialOffer($request, $id);
+        return redirect()->back()->with('message', 'Update Special Offer successfully');
+    }
+
     public function deleteProduct($id)
     {
         $this->product = Products::find($id);

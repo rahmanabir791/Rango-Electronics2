@@ -48,38 +48,49 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Category Name</th>
                             <th>Brands Name</th>
                             <th>Brands Image</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @php
+                            $currentCategory = null;
+                        @endphp
+
                         @foreach($newBrands as $newBrand)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>
-                                    @foreach ($allCategorys as $category)
-                                        @if ($newBrand->category_id == $category->id)
-                                            {{ $category->CategoryName }}
-                                        @endif
-                                    @endforeach
-                                </td>
-                                <td>{{ $newBrand->BrandName }}</td>
-                                <td>
-                                    <img src="{{ asset($newBrand->BrandImage) }}" alt="brand_image" style="height: 100px; width: 100px">
-                                </td>
-                                <td>
-                                    <a href="{{ route('edit-Brands', ['id' => $newBrand->id]) }}" class="btn btn-sm btn-secondary btn-outline-info">Edit</a>
-                                    <br>
-                                    <a href="{{ route('delete-brands', ['id' => $newBrand->id]) }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure Delete this Brand?')">Delete</a>
-                                </td>
-                            </tr>
+                            @foreach ($allCategorys as $category)
+                                @if ($newBrand->category_id == $category->id)
+                                    @if ($currentCategory != $category->CategoryName)
+                                        @php
+                                            $currentCategory = $category->CategoryName;
+                                        @endphp
+                                        <tr>
+                                            <td colspan="4">
+                                                <h3>{{ $currentCategory }}</h3>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $newBrand->BrandName }}</td>
+                                        <td>
+                                            <img src="{{ asset($newBrand->BrandImage) }}" alt="brand_image" style="height: 100px; width: 100px">
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('edit-Brands', ['id' => $newBrand->id]) }}" class="btn btn-sm btn-secondary btn-outline-info">Edit</a>
+                                            <br>
+                                            <a href="{{ route('delete-brands', ['id' => $newBrand->id]) }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete this Brand?')">Delete</a>
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
                         @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
+
         </div>
     </div>
 

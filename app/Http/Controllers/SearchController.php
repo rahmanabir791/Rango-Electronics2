@@ -16,9 +16,17 @@ class SearchController extends Controller
         $categories = Category::where('CategoryName', 'LIKE', "%$query%")->get();
         $brands = Brands::where('BrandName', 'LIKE', "%$query%")->get();
         $products = Products::where('productName', 'LIKE', "%$query%")
+            ->orWhere('category_id', 'LIKE', "%$query%")
+            ->orWhere('brand_id', 'LIKE', "%$query%")
+            ->orWhere('product_type', 'LIKE', "%$query%")
+            ->orWhere('warranty', 'LIKE', "%$query%")
+            ->orWhere('features', 'LIKE', "%$query%")
+            ->orWhere('specifications', 'LIKE', "%$query%")
             ->orWhere('MRP_price', 'LIKE', "%$query%")
             ->orWhere('O_price', 'LIKE', "%$query%")
-            ->orWhere('product_type', 'LIKE', "%$query%")
+            ->orWhere('special_offer', 'LIKE', "%$query%")
+            ->orWhere('stockAvailability', 'LIKE', "%$query%")
+            ->with('category', 'brand') // Load associated category and brand
             ->get();
 
         return view('search_results', compact('categories', 'brands', 'products'));

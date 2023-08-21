@@ -92,6 +92,22 @@
                                     <textarea  class="form-control" name="specifications" id="productSpecifications" rows="4"></textarea>
                                 </div>
                                 <div class="form-group">
+                                    <label>Special offer Product</label>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="special_offer" id="inSpecialOffer" value="1" >
+                                            In Special Offer
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="special_offer" id="outOfSpecialOffer" value="0" checked >
+                                            Out of Special Offer
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
                                     <label>Stock Availability</label>
                                     <div class="form-check">
                                         <label class="form-check-label">

@@ -17,6 +17,7 @@
 
 
 @yield('body')
+@yield('scriptsCart')
 
 <!-- Footer Start -->
 @include('front.includes.footer')

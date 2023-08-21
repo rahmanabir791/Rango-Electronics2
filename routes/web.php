@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\back\brands\BrandsController;
 use App\Http\Controllers\Back\Products\ProductController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CartController;
 
 //Back Controllers
 
@@ -24,14 +25,23 @@ use App\Http\Controllers\SearchController;
 |
 */
 
-Route::get('/' , [HomeController::class , 'home' ])->name('home');
+Route::get('/' , [HomeController::class , 'home' ])->name('home.w.l');
+Route::get('/Check/Out/Rango/Electronics' , [HomeController::class , 'checkOut' ])->name('check.out');
+Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
+Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
+Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
+
+
+Route::get('/search/Result', [SearchController::class, 'search'])->name('search');
 
 Route::get('Login' , [AuthenticatedSessionController::class , 'create'])->name('login');
 Route::get('Register' , [RegisteredUserController::class , 'create'])->name('register');
 
 
 Route::middleware('auth' , 'verified')->group(function () {
-    Route::get('/Rango' , [HomeController::class , 'home' ])->name('home');
+        Route::get('/Rango' , [HomeController::class , 'home' ])->name('home');
 
 
 });
@@ -67,6 +77,7 @@ Route::prefix('/Rango/Admin')->middleware('rangoAdmin', 'auth')->group(function 
     Route::get('/Electronics/Dashboard/Edit-product/{id}', [ProductController::class, 'editProduct'])->name('edit-product');
     Route::post('/Electronics/Dashboard/Update-Product/{id}', [ProductController::class, 'updateProduct'])->name('update-product');
     Route::post('/Electronics/Dashboard/Update-stockAvailability/Product/{id}', [ProductController::class, 'stockAvailability'])->name('update-stockAvailability');
+    Route::post('/Electronics/Dashboard/Update-special_offer/Product/{id}', [ProductController::class, 'specialOffer'])->name('update-special_Offer');
     Route::get('/Electronics/Dashboard/Delete-Product/{id}', [ProductController::class, 'deleteProduct'])->name('delete-product');
     Route::get('/search', [SearchController::class, 'search'])->name('search');
 
