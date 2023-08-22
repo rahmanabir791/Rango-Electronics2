@@ -155,17 +155,10 @@
                 </a>
 
                 <div class="collapse navbar-collapse justify-content-center category-bar-visible" style="height: 67px;" id="navbarCollapse">
-                    <div class="navbar-nav py-0" style="color: black">
+                    <div class="navbar-nav py-0" style="color: black; margin-right: 300px">
                         <a href="{{route('home')}}" class="nav-item nav-link active" style="color: gold; font-weight: bold; margin-left: 50px;">Home</a>
-                        <a href="shop.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Shop</a>
-                        <a href="detail.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Shop Detail</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: gold; font-weight: bold; margin-left: 50px;">Pages</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="cart.html" class="dropdown-item" style="color: gold; font-weight: bold;">Shopping Cart</a>
-                                <a href="checkout.html" class="dropdown-item" style="color: gold; font-weight: bold;">Checkout</a>
-                            </div>
-                        </div>
+                        <a href="shop.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Brands</a>
+                        <a href="detail.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Installation & Services  </a>
                         <a href="contact.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Contact</a>
                     </div>
                 </div>
