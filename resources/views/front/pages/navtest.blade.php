@@ -18,22 +18,17 @@
         /* ... (Other styles) ... */
     }
 
-
     .category-list {
         padding: 10px;
         box-shadow: 2px 1px 3px 1px gold;
     }
 
-    /*Additional styles for the navigation */
+    /* Additional styles for the navigation */
     .navCategory {
         top: 0;
         bottom: 0;
         background: rgb(247, 248, 250);
-
     }
-
-
-
 
     nav ul {
         position: relative;
@@ -84,18 +79,6 @@
     nav ul .dropdown_two {
         position: relative;
     }
-    .navbar{
-        z-index: 100;
-
-    }
-    /*.navbar-nav{*/
-    /*    background: maroon;*/
-    /*    color: white;*/
-    /*}*/
-
-    /*.navbar .show {*/
-    /*    max-height: 1000px;*/
-    /*}*/
 
     nav ul span {
         position: absolute;
@@ -111,9 +94,8 @@
             display: none;
         }
 
-
         .category-bar-visible {
-            display: none;
+            display: block;
         }
 
         /* Show the category bar when the button is clicked */
@@ -122,23 +104,12 @@
         }
 
         /* Hide the navigation toggle button */
-        .navbar-nav{
-            display: block;
+        .navbar-toggler {
+            display: none;
         }
-
-       .navbar-nav .navbar-toggler disable{
-            display: block;
-        }
-        /*.navbar-toggler disable {*/
-        /*    display: none;*/
-        /*}*/
 
         /* Show the navigation menu in mobile view */
-        .navbar-nav-visible{
-            display: block;
-            z-index: 1;
-        }
-      .navbar-nav  .navbar-collapse {
+        .navbar-collapse {
             display: block !important;
         }
 
@@ -173,25 +144,35 @@
             <!-- Navigation Bar -->
             <nav class="navbar navbar-expand-lg py-3 py-lg-0 px-0">
                 <!-- ... (Existing Navigation Links) ... -->
-                <a href="" class="text-decoration-none d-block d-lg-none">
+                <a href="#navbarCollapse" class="text-decoration-none d-block d-lg-none">
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon bg"></span>
+                    </button>
                     <h1 class="m-0 display-5 font-weight-semi-bold">
-                        <span class="text-primary font-weight-bold border px-3 mr-1">Rango</span>Electronics
+                        <span class="text-primary font-weight-bold border px-3 mr-1">Rabgo</span>Electronics
                     </h1>
-                </a>
-                <button type="button" class="navbar-toggler bg-primary" style="position: relative" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon "></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center category-bar-visible" style="height: 67px; " id="navbarCollapse">
-                    <div class="navbar-nav " style="color: black; margin-right: 298px">
-                        <a href="{{route('home')}}" class="nav-item nav-link active" style="color: gold; font-weight: bold; margin-left: 50px;">Home</a>
-                        <a href="shop.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Brands</a>
-                        <a href="detail.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">installation & Service </a>
 
+                </a>
+
+                <div class="collapse navbar-collapse justify-content-center category-bar-visible" style="height: 67px;" id="navbarCollapse">
+                    <div class="navbar-nav py-0" style="color: black">
+                        <a href="{{route('home')}}" class="nav-item nav-link active" style="color: gold; font-weight: bold; margin-left: 50px;">Home</a>
+                        <a href="shop.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Shop</a>
+                        <a href="detail.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Shop Detail</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: gold; font-weight: bold; margin-left: 50px;">Pages</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="cart.html" class="dropdown-item" style="color: gold; font-weight: bold;">Shopping Cart</a>
+                                <a href="checkout.html" class="dropdown-item" style="color: gold; font-weight: bold;">Checkout</a>
+                            </div>
+                        </div>
                         <a href="contact.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Contact</a>
                     </div>
                 </div>
             </nav>
+
         </div>
+
     </div>
 </div>
 
@@ -202,7 +183,7 @@
                 <div class="category-bar  collapse show category-bar-visible" >
                     <div class="category-list">
                         <nav class="navCategory" >
-                            <ul>
+                            <ul class="">
                                 <li class="dropdown"><a href="#">Television<span>&rsaquo;</span></a>
                                     <ul>
                                         <li class="dropdown_two"><a href="#">Samsung TV<span>&rsaquo;</span></a>
@@ -331,6 +312,8 @@
     </div>
 </div>
 <!-- ... (Your HTML and CSS) ... -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -349,23 +332,3 @@
         });
     });
 </script>
-
-
-{{--script for navbar--}}
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const navbarNav = document.querySelector(".navbar-nav");
-        const navButton = document.querySelector("[data-target='#navbarCollapse']");
-
-        navButton.addEventListener("click", function () {
-            navbarNav.classList.toggle("show"); // Toggle the show class
-            // Adjust the max-height of the category bar based on its visibility
-            if (navbarNav.classList.contains("show")) {
-                navbarNav.style.maxHeight = navbarNav.scrollHeight + "px";
-            } else {
-                navbarNav.style.maxHeight = "0";
-            }
-        });
-    });
-</script>
-
