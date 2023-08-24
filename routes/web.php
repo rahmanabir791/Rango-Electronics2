@@ -54,7 +54,7 @@ Route::middleware('auth' , 'verified')->group(function () {
 //Admin Panel
 Route::prefix('/Rango/Admin')->middleware('rangoAdmin', 'auth')->group(function () {
     Route::get('/dashboard' , [DashboardController::class , 'dashboard'])->name('dashboard');
-
+    Route::get('/download-invoice/{invoiceNumber}' , [DashboardController::class, 'downloadInvoice'])->name('downloadInvoice');
 //    Slider
     Route::get('/dashboard/Add_Slider/Manage_Slider' , [SliderController::class , 'ADDmanageSlider'])->name('Add-manageSlider');
     Route::post('/dashboard/New_slider' , [SliderController::class , 'newSlider'])->name('newSlider');

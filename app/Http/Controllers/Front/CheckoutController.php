@@ -34,6 +34,7 @@ class CheckoutController extends Controller
             'address' => 'required',
             // Add validation rules for other form fields if needed
         ]);
+        $invoiceNumber = 'INV' . date('Ymd') . '-' . uniqid();
 
         $productData = $request->input('products');
 
@@ -47,11 +48,13 @@ class CheckoutController extends Controller
             $orderItem->quantity = $productQuantity;
             $orderItem->price = $productPrice;
             $orderItem->user_id = Auth::user()->id;
+            $orderItem->p_status = $request->p_status;
+            $orderItem->invoiceNumber = $invoiceNumber;
             $orderItem->save();
         }
 
 
-        $invoiceNumber = 'INV' . date('Ymd') . '-' . uniqid();
+
 
         $data = [
             'productData' => $productData,
@@ -86,7 +89,7 @@ class CheckoutController extends Controller
 
 
 
-        Mail::send('back.forClient.rangoEmail', $data, function($message) use ($data, $pdfFilePath, $pdfFileName) {
+        Mail::send('back.forClient.rangoEmail', $data, function($message) use ($data ,$pdfFileName , $pdfFilePath ) {
             $message->to($data['email'])
                 ->subject('Thanks for placing your Order')
                 ->attach($pdfFilePath, ['as' => $pdfFileName, 'mime' => 'application/pdf']);
@@ -94,8 +97,8 @@ class CheckoutController extends Controller
 
 
 
-        OrderSubmit::newOrder($request, $invoiceNumber);
-
+        OrderSubmit::newOrder($request , $invoiceNumber);
+//
         return redirect()->back()->with('message', 'Your Order has been placed successfully. An invoice has been sent to your email. Thank you!');
     }
 

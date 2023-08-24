@@ -13,8 +13,8 @@ class OrderSubmit extends Model
 
 
 
-
-    public static function newOrder($request, $invoiceNumber)
+//
+    public static function newOrder($request , $invoiceNumber)
     {
 
 

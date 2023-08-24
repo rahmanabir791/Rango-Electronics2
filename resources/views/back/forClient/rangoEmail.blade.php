@@ -44,7 +44,7 @@
         <p>Rango Electronics</p>
     </div>
     <div class="email-content">
-        <p>Dear {{ $name }} sir,</p>
+        <p>Dear {{ $name }} sir/Madam,</p>
         <p>Thank you for choosing Rango Electronics for your recent purchase. We're thrilled to have you as our customer!</p>
         <p>Your order details:</p>
         @if (session('resent'))
@@ -53,9 +53,9 @@
             </div>
         @endif
         <ul>
-{{--            @foreach($productName as $index => $name)--}}
-{{--                <li>{{ $name }} - {{ $productQuantity[$index] }} x ৳{{ $productPrice[$index] }} = ৳{{ $productQuantity[$index] * $productPrice[$index] }}</li>--}}
-{{--            @endforeach--}}
+            @foreach($productData as $product)
+                <li>{{ $product['name'] }} - {{ $product['quantity'] }} x ৳{{ $product['price']  }} = ৳{{ $product['quantity']  * $product['price']  }}</li>
+            @endforeach
         </ul>
         <p>Total Amount: ৳{{ $totalAmount }}</p>
         @if ($p_status == 0)
@@ -64,6 +64,7 @@
             <p>Payment Method: {{ $f_service }}</p>
             <p>Transaction Number: {{ $Transaction_num }}</p>
         @endif
+        <br>
         <h4>Your Invoice Given Below</h4>
         <p>If you have any questions or need further assistance, feel free to contact us. We hope you enjoy your new electronics!</p>
     </div>

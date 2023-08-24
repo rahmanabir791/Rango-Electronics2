@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->integer('quantity');
             $table->decimal('price', 10, 2);
+            $table->tinyInteger('p_status')->comment("cash = 1 , online = 0");
             $table->unsignedBigInteger('user_id');
+            $table->string('invoiceNumber');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
