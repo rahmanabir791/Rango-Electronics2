@@ -2,15 +2,16 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\back\brands\BrandsController;
 use App\Http\Controllers\Back\Category\CategoryController;
 use App\Http\Controllers\Back\DashboardController;
-use App\Http\Controllers\Back\Slider\SliderController;
-use App\Http\Controllers\Front\HomeController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\back\brands\BrandsController;
 use App\Http\Controllers\Back\Products\ProductController;
+use App\Http\Controllers\Back\Slider\SliderController;
+use App\Http\Controllers\Front\CartController;
+use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\SearchController;
-use App\Http\Controllers\CartController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\CheckoutController;
 
 //Back Controllers
 
@@ -26,7 +27,6 @@ use App\Http\Controllers\CartController;
 */
 
 Route::get('/' , [HomeController::class , 'home' ])->name('home.w.l');
-Route::get('/Check/Out/Rango/Electronics' , [HomeController::class , 'checkOut' ])->name('check.out');
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
 Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
 Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
@@ -42,6 +42,10 @@ Route::get('Register' , [RegisteredUserController::class , 'create'])->name('reg
 
 Route::middleware('auth' , 'verified')->group(function () {
         Route::get('/Rango' , [HomeController::class , 'home' ])->name('home');
+
+    Route::get('/Check/Out/Rango/Electronics' , [CheckoutController::class , 'checkOut' ])->name('check.out');
+    Route::post('/Check/Out/Submit/Rango/Electronics/Order/Placed' , [CheckoutController::class , 'checkOutSubmit' ])->name('check.out.submit');
+
 
 
 });

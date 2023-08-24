@@ -3,134 +3,56 @@
     Check Out
 @endsection
 @section('body')
-
-    <style>
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .form-group label {
-            font-weight: bold;
-            color: #8c1c1c;
-        }
-        .form-control {
-            border-color: #8c1c1c;
-            color: #333;
-            background-color: #f8f9fa;
-            transition: border-color 0.3s;
-        }
-        .form-control:focus {
-            border-color: #5b0f0f;
-        }
-        .btn-primary {
-            background-color: #8c1c1c;
-            border-color: #8c1c1c;
-            color: gold;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s, border-color 0.3s;
-            display: inline-block;
-            margin-right: 10px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .btn-primary:hover {
-            background-color: #5b0f0f;
-            border-color: #5b0f0f;
-        }
-        .cart-item {
-            border-bottom: 1px solid #ddd;
-            padding: 15px 0;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            animation: fadeInUp 0.5s ease-in-out;
-        }
-        .cart-item img {
-            max-width: 100px;
-            max-height: 100px;
-            margin-right: 15px;
-            border-radius: 5px;
-        }
-        .cart-item-details {
-            flex-grow: 1;
-        }
-        .cart-item-name {
-            font-weight: bold;
-            color: #8c1c1c;
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-        .cart-item-price {
-            color: #5b0f0f;
-            font-size: 16px;
-        }
-        .checkout-btn,
-        .continue-shopping-link {
-            background-color: #8c1c1c;
-            color: gold;
-            padding: 12px 25px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            display: inline-block;
-            margin-right: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .checkout-btn:hover,
-        .continue-shopping-link:hover {
-            background-color: #5b0f0f;
-            color: white;
-        }
-    </style>
-    <div class="container mt-5 text-center">
+    <link href="{{asset('/')}}assets/front-asset/css/checkout.css" rel="stylesheet">
+    <div class="container-fluid mt-5 text-center">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h2 class="mb-4">Checkout</h2>
                 <h5 class="mb-3 animate__animated animate__fadeIn">Order Summary</h5>
-                <form action="" method="" enctype="multipart/form-data">
-                    @csrf
-                    @foreach ($cartItems as $item)
-                    <div class="cart-item animate__animated animate__fadeInUp">
-                            <img src="{{ $item->attributes->image }}" alt="Thumbnail" class="img-thumbnail">
-                            <div class="cart-item-details">
-                                <input type="hidden" name="id" value="{{ $item->id }}">
-                                <p class="cart-item-name">{{ $item->name }}</p>
-                                <input type="hidden" value="{{ $item->name }}" name="productName">
-                                <p class="cart-item-price">Price: ৳{{ $item->price }}</p>
-                                <input type="hidden" value="{{ $item->price }}" name="productPrice">
-                            </div>
-                    </div>
-                    @endforeach
-                        <h4 class="cart-item-price" style="background-color: maroon; color: gold">Total Amount: ৳{{ Cart::getTotal() }}</h4>
-                         <input type="hidden" value="{{ Cart::getTotal() }}" name="totalAmount">
+                <div class="data-input-form">
+                    <form action="{{ route('check.out.submit') }}" method="post" enctype="multipart/form-data">
+                        @csrf
 
-                    <div class="form-group">
-                            <div class="form-group">
-                                <label>Payment System</label>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="p_status" id="cash" value="1" checked>
-                                        Pay cash directly
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="p_status" id="advancePaymentOnline" value="0">
-                                        Pay in advance online
-                                    </label>
-                                </div>
+
+                    <!-- Loop through cart items -->
+                @foreach ($cartItems as $index => $item)
+                    <div class="cart-item animate__animated animate__fadeInUp">
+                        <img src="{{ $item->attributes->image }}" alt="Thumbnail" class="img-thumbnail">
+                        <div class="cart-item-details">
+                            <p class="cart-item-name">{{ $item->name }}</p>
+                            <input type="hidden" name="products[{{ $index }}][name]" value="{{ $item->name }}">
+                            <label for="quantity">Product Quantity: {{ $item->quantity }}</label>
+                            <input type="hidden" name="products[{{ $index }}][quantity]" value="{{ $item->quantity }}">
+                            <label for="price">Price: {{ $item->price }}</label>
+                            <input type="hidden" name="products[{{ $index }}][price]" value="{{ $item->price }}">
+                        </div>
+                    </div>
+                @endforeach
+
+
+
+                <!-- Form input section with collected item data -->
+
+                        <!-- Total amount display -->
+                        <h4 class="cart-item-price" style="background-color: maroon; color: gold">Total Amount: ৳{{ Cart::getTotal() }}</h4>
+                        <input type="hidden" value="{{ Cart::getTotal() }}" name="totalAmount">
+
+                        <!-- Payment method selection -->
+                        <div class="form-group">
+                            <label>Payment Method</label>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="p_status" id="cash" value="1" checked>
+                                    Pay cash directly
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="p_status" id="advancePaymentOnline" value="0">
+                                    Pay in advance online
+                                </label>
                             </div>
                         </div>
-
 
                     {{-- Start For Online Payment --}}
                     <div id="onlinePaymentSection" style="display: none;">
@@ -194,9 +116,9 @@
                         <br>
                         <br>
                         <br>
-                        <a href="{{ route('home') }}" class="continue-shopping-link animate__animated animate__fadeIn">Continue Shopping</a>
                     </div>
                 </form>
+                <a href="{{ route('home') }}" class="continue-shopping-link animate__animated animate__fadeIn">Continue Shopping</a>
             </div>
         </div>
     </div>

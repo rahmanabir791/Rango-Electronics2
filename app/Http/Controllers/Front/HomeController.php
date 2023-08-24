@@ -18,11 +18,5 @@ class HomeController extends Controller
         ]);
     }
 
-    public function checkOut ()
-    {
-        $cartItems = \Cart::getContent();
-        // dd($cartItems);
-        return view('front.pages.cart.checkout', compact('cartItems'));
 
-    }
 }
