@@ -18,6 +18,10 @@
         /* ... (Other styles) ... */
     }
 
+    .navbar-collapse .show{
+        max-height: 1000px;
+    }
+
 
     .category-list {
         padding: 10px;
@@ -112,10 +116,6 @@
         }
 
 
-        .category-bar-visible {
-            display: none;
-        }
-
         /* Show the category bar when the button is clicked */
         .category-bar-visible {
             display: block;
@@ -125,10 +125,18 @@
         .navbar-nav{
             display: block;
         }
-
-        .navbar-nav .navbar-toggler disable{
+        .navbar-nav-visible{
             display: block;
+            background: maroon;
         }
+
+        .navbar-nav-disabled{
+            display: none;
+        }
+
+        /*.navbar-nav .navbar-toggler disable{*/
+        /*    display: none;*/
+        /*}*/
         /*.navbar-toggler disable {*/
         /*    display: none;*/
         /*}*/
@@ -136,17 +144,17 @@
         /* Show the navigation menu in mobile view */
         .navbar-nav-visible{
             display: block;
-            z-index: 1;
+
         }
         .navbar-nav  .navbar-collapse {
             display: block !important;
         }
 
         /* Hide the menu dropdown in mobile view */
-        nav ul .dropdown > ul,
-        nav ul .dropdown_two > ul {
-            display: none !important;
-        }
+        /*nav ul .dropdown > ul,*/
+        /*nav ul .dropdown_two > ul {*/
+        /*    display: none !important;*/
+        /*}*/
 
         /* Adjust the margin-top of the slider for mobile view */
         #header-carousel {
@@ -181,7 +189,7 @@
                 <button type="button" class="navbar-toggler" style="position: relative; background-color: maroon; " data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon "></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-center category-bar-visible" style="height: 67px; margin-right: 300px;" id="navbarCollapse">
+                <div class="collapse navbar-collapse justify-content-center navbar-nav-visible" style="height: 67px; margin-right: 300px;" id="navbarCollapse">
                     <div class="navbar-nav " style="color: black;">
                         <a href="{{route('home')}}" class="nav-item nav-link active" style="color: gold; font-weight: bold; margin-left: 50px;">Home</a>
                         <a href="shop.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Brands</a>
@@ -356,7 +364,7 @@
         const navbarNav = document.querySelector(".navbar-nav");
         const navButton = document.querySelector("[data-target='#navbarCollapse']");
 
-        navButton.addEventListener("click", function () {
+        navbarNav.addEventListener("click", function () {
             navbarNav.classList.toggle("show"); // Toggle the show class
             // Adjust the max-height of the category bar based on its visibility
             if (navbarNav.classList.contains("show")) {

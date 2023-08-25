@@ -18,17 +18,26 @@
         /* ... (Other styles) ... */
     }
 
+    .navbar-collapse .show{
+        max-height: 1000px;
+    }
+
+
     .category-list {
         padding: 10px;
         box-shadow: 2px 1px 3px 1px gold;
     }
 
-    /* Additional styles for the navigation */
+    /*Additional styles for the navigation */
     .navCategory {
         top: 0;
         bottom: 0;
         background: rgb(247, 248, 250);
+
     }
+
+
+
 
     nav ul {
         position: relative;
@@ -79,6 +88,18 @@
     nav ul .dropdown_two {
         position: relative;
     }
+    .navbar{
+        z-index: 100;
+
+    }
+    /*.navbar-nav{*/
+    /*    background: maroon;*/
+    /*    color: white;*/
+    /*}*/
+
+    /*.navbar .show {*/
+    /*    max-height: 1000px;*/
+    /*}*/
 
     nav ul span {
         position: absolute;
@@ -94,9 +115,6 @@
             display: none;
         }
 
-        .category-bar-visible {
-            display: block;
-        }
 
         /* Show the category bar when the button is clicked */
         .category-bar-visible {
@@ -104,20 +122,39 @@
         }
 
         /* Hide the navigation toggle button */
-        .navbar-toggler {
+        .navbar-nav{
+            display: block;
+        }
+        .navbar-nav-visible{
+            display: block;
+            background: maroon;
+        }
+
+        .navbar-nav-disabled{
             display: none;
         }
 
+        /*.navbar-nav .navbar-toggler disable{*/
+        /*    display: none;*/
+        /*}*/
+        /*.navbar-toggler disable {*/
+        /*    display: none;*/
+        /*}*/
+
         /* Show the navigation menu in mobile view */
-        .navbar-collapse {
+        .navbar-nav-visible{
+            display: block;
+
+        }
+        .navbar-nav  .navbar-collapse {
             display: block !important;
         }
 
         /* Hide the menu dropdown in mobile view */
-        nav ul .dropdown > ul,
-        nav ul .dropdown_two > ul {
-            display: none !important;
-        }
+        /*nav ul .dropdown > ul,*/
+        /*nav ul .dropdown_two > ul {*/
+        /*    display: none !important;*/
+        /*}*/
 
         /* Adjust the margin-top of the slider for mobile view */
         #header-carousel {
@@ -146,24 +183,17 @@
                 <!-- ... (Existing Navigation Links) ... -->
                 <a href="" class="text-decoration-none d-block d-lg-none">
                     <h1 class="m-0 display-5 font-weight-semi-bold">
-                        <span class="text-primary font-weight-bold border px-3 mr-1">Rabgo</span>Electronics
+                        <span class="text-primary font-weight-bold border px-3 mr-1">Rango</span>Electronics
                     </h1>
                 </a>
-                <button type="button" class="navbar-toggler bg-black" style="position: relative" data-toggle="collapse" data-target="#navbarCollapse">
+                <button type="button" class="navbar-toggler" style="position: relative; background-color: maroon; " data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon "></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-center category-bar-visible" style="height: 67px; " id="navbarCollapse">
-                    <div class="navbar-nav py-0" style="color: black">
+                <div class="collapse navbar-collapse justify-content-center navbar-nav-visible" style="height: 67px; margin-right: 300px;" id="navbarCollapse">
+                    <div class="navbar-nav " style="color: black;">
                         <a href="{{route('home')}}" class="nav-item nav-link active" style="color: gold; font-weight: bold; margin-left: 50px;">Home</a>
-                        <a href="shop.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Shop</a>
-                        <a href="detail.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Shop Detail</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: gold; font-weight: bold; margin-left: 50px;">Pages</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="cart.html" class="dropdown-item" style="color: gold; font-weight: bold;">Shopping Cart</a>
-                                <a href="checkout.html" class="dropdown-item" style="color: gold; font-weight: bold;">Checkout</a>
-                            </div>
-                        </div>
+                        <a href="shop.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Brands</a>
+                        <a href="detail.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Installation & Services</a>
                         <a href="contact.html" class="nav-item nav-link" style="color: gold; font-weight: bold; margin-left: 50px;">Contact</a>
                     </div>
                 </div>
@@ -263,42 +293,42 @@
     <div class="col-lg-6">
         <!-- Carousel and Content Here -->
 
-            <!-- ... (Carousel content here) ... -->
-            <div id="header-carousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" style="height: 410px;">
-                        <img class="img-fluid" src="{{asset('/')}}assets/front-asset/img/slider.jpeg" alt="Image">
-                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                            <div class="p-3" style="max-width: 700px;">
-                                <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                                <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
-                                {{--                                <a href="" class="btn btn-light py-2 px-3">Shop Now</a>--}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item" style="height: 410px;">
-                        <img class="img-fluid" src="{{asset('/')}}assets/front-asset/img/slider.jpeg" alt="Image">
-                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                            <div class="p-3" style="max-width: 700px;">
-                                <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                                <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
-                                {{--                                <a href="" class="btn btn-light py-2 px-3">Shop Now</a>--}}
-                            </div>
+        <!-- ... (Carousel content here) ... -->
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="height: 410px;">
+                    <img class="img-fluid" src="{{asset('/')}}assets/front-asset/img/slider.jpeg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 700px;">
+                            <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
+                            {{--                                <a href="" class="btn btn-light py-2 px-3">Shop Now</a>--}}
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-                    <div class="btn btn-dark" style="width: 45px; height: 45px;">
-                        <span class="carousel-control-prev-icon mb-n2"></span>
+                <div class="carousel-item" style="height: 410px;">
+                    <img class="img-fluid" src="{{asset('/')}}assets/front-asset/img/slider.jpeg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 700px;">
+                            <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
+                            {{--                                <a href="" class="btn btn-light py-2 px-3">Shop Now</a>--}}
+                        </div>
                     </div>
-                </a>
-                <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-                    <div class="btn btn-dark" style="width: 45px; height: 45px;">
-                        <span class="carousel-control-next-icon mb-n2"></span>
-                    </div>
-                </a>
+                </div>
             </div>
+            <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-prev-icon mb-n2"></span>
+                </div>
+            </a>
+            <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-next-icon mb-n2"></span>
+                </div>
+            </a>
         </div>
+    </div>
 
 
 
@@ -309,20 +339,39 @@
 </div>
 <!-- ... (Your HTML and CSS) ... -->
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const categoryBar = document.querySelector(".category-bar");
-            const categoryButton = document.querySelector("[data-target='#category-bar']");
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const categoryBar = document.querySelector(".category-bar");
+        const categoryButton = document.querySelector("[data-target='#category-bar']");
 
-            categoryButton.addEventListener("click", function () {
-                categoryBar.classList.toggle("show"); // Toggle the show class
+        categoryButton.addEventListener("click", function () {
+            categoryBar.classList.toggle("show"); // Toggle the show class
 
-                // Adjust the max-height of the category bar based on its visibility
-                if (categoryBar.classList.contains("show")) {
-                    categoryBar.style.maxHeight = categoryBar.scrollHeight + "px";
-                } else {
-                    categoryBar.style.maxHeight = "0";
-                }
-            });
+            // Adjust the max-height of the category bar based on its visibility
+            if (categoryBar.classList.contains("show")) {
+                categoryBar.style.maxHeight = categoryBar.scrollHeight + "px";
+            } else {
+                categoryBar.style.maxHeight = "0";
+            }
         });
-    </script>
+    });
+</script>
+
+
+{{--script for navbar--}}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navbarNav = document.querySelector(".navbar-nav");
+        const navButton = document.querySelector("[data-target='#navbarCollapse']");
+
+        navbarNav.addEventListener("click", function () {
+            navbarNav.classList.toggle("show"); // Toggle the show class
+            // Adjust the max-height of the category bar based on its visibility
+            if (navbarNav.classList.contains("show")) {
+                navbarNav.style.maxHeight = navbarNav.scrollHeight + "px";
+            } else {
+                navbarNav.style.maxHeight = "0";
+            }
+        });
+    });
+</script>

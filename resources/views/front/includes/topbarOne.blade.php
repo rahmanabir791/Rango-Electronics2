@@ -7,7 +7,7 @@
             <a class="text-white px-2" href="">
                 <i class="fa-solid fa-phone-volume"></i>
             </a>
-            <span class="text-white px-1">+8801800000000</span>
+            <span class="text-white px-1">+88 017 985 65001</span>
             <span class="text-muted px-2">|</span>
             <a class="text-white px-2" href="">
                 <i class="fa-solid fa-envelope"></i>

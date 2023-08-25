@@ -1,9 +1,11 @@
-
+ .owl-carousel .owl-nav .disabled{
+    display: block;
+}
 .image-slider .owl-nav button{
     position: absolute;
     background: maroon !important;
     margin-left: 3px;
-    height: 17%;
+    height: 15%;
     width: 35px;
     font-size: 30px !important;
     color: yellow !important;
@@ -32,10 +34,10 @@
     opacity: 1;
     transition: 0.5s all ease;
 }
-.image-slider .ow-nav disabled{
-    opacity: 0;
-    transition: 0.5s all ease;
-}
+/*.image-slider .ow-nav disabled{*/
+/*    opacity: 0;*/
+/*    transition: 0.5s all ease;*/
+/*}*/
 
 /*    slider row names style*/
 
