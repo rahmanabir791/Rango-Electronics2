@@ -34,7 +34,7 @@ class CheckoutController extends Controller
             'address' => 'required',
             // Add validation rules for other form fields if needed
         ]);
-        $invoiceNumber = 'INV' . date('Ymd') . '-' . uniqid();
+        $invoiceNumber = 'RAN' . date('Ymd') . '-' . rand(10,1000);
 
         $productData = $request->input('products');
 

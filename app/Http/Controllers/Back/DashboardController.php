@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
+    protected $client;
+    protected $item;
     public function dashboard ()
     {
         return view('back.pages.home', [
@@ -18,6 +20,40 @@ class DashboardController extends Controller
             'items'   => OrderItem::orderBy('id' , 'DESC')->get()->all(),
         ]);
     }
+
+
+    public function Delivery (Request $request, $id)
+    {
+        OrderSubmit::deliveryReport($request, $id);
+        return redirect()->back()->with('message', 'Delivery Done successfully');
+    }
+
+    public function deleteClient($invoiceNumber)
+    {
+        try {
+            // Find the client by invoice number
+            $client = OrderSubmit::where('invoiceNumber', $invoiceNumber)->first();
+
+            if (!$client) {
+                return redirect()->back()->with('message-for-delete', 'Client not found');
+            }
+
+            // Delete associated order items
+            OrderItem::where('invoiceNumber', $client->invoiceNumber)->delete();
+
+            // Delete the client
+            $client->delete();
+
+            return redirect()->back()->with('message-for-delete', 'Client and associated items deleted successfully');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('message-for-delete', 'An error occurred while deleting: ' . $e->getMessage());
+        }
+    }
+
+
+
+
+
 
 
     public function downloadInvoice($invoiceNumber)
@@ -31,7 +67,4 @@ class DashboardController extends Controller
             return response()->json(['error' => 'File not found'], 404);
         }
     }
-
-
-
 }

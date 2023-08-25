@@ -18,5 +18,19 @@ class HomeController extends Controller
         ]);
     }
 
+    public function brandAll($ids)
+    {
+        $brandIds = explode(',', $ids); // Split comma-separated IDs into an array
+        $products = Products::whereIn('brand_id', $brandIds)->orderBy('id', 'DESC')->get();
+
+        return view('front.pages.all.brandAll.brandAll', [
+            'products' => $products,
+        ]);
+    }
+
+
+
+
+
 
 }

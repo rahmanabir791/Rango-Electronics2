@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en,bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +67,7 @@
         <p><strong>Billed To:</strong></p>
         <p>{!! $name !!}</p>
         <p>{!! $address !!}</p>
-        <p>{!! $city !!}, {!! $zip !!} Country</p>
+        <p>{!! $city !!}, {!! $zip !!} </p>
     </div>
     <table class="invoice-table">
         <thead>
@@ -83,24 +83,24 @@
             <tr>
                 <td>{{ $product['name'] }}</td>
                 <td>{{ $product['quantity'] }}</td>
-                <td>৳{{ $product['price'] }}</td>
-                <td>৳{{ $product['quantity'] * $product['price'] }}</td>
+                <td>Tk: {{ $product['price'] }}</td>
+                <td>Tk: {{ $product['quantity'] * $product['price'] }}</td>
             </tr>
         @endforeach
         </tbody>
         <tfoot>
         <tr>
             <td colspan="3" class="invoice-total">Total:</td>
-            <td>৳{{$totalAmount}}</td>
+            <td>Tk: {{$totalAmount}}</td>
         </tr>
         @if($p_status == 0)
             <tr>
                 <td colspan="3" class="invoice-total">Advance Payment:</td>
-                <td>৳{!! $A_payment !!}</td>
+                <td>Tk: {!! $A_payment !!}</td>
             </tr>
             <tr>
                 <td colspan="3" class="invoice-total">Remain Total Amount:</td>
-                <td>৳{!! $remainAmount !!}</td>
+                <td>Tk: {!! $remainAmount !!}</td>
             </tr>
             <tr>
                 <td colspan="4">Payment Method: {{ $f_service }}</td>

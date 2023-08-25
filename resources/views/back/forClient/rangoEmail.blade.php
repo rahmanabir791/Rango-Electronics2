@@ -46,6 +46,7 @@
     <div class="email-content">
         <p>Dear {{ $name }} sir/Madam,</p>
         <p>Thank you for choosing Rango Electronics for your recent purchase. We're thrilled to have you as our customer!</p>
+        <br>
         <p>Your order details:</p>
         @if (session('resent'))
             <div class="alert alert-success" role="alert">
@@ -65,7 +66,7 @@
             <p>Transaction Number: {{ $Transaction_num }}</p>
         @endif
         <br>
-        <h4>Your Invoice Given Below</h4>
+{{--        <h4>Your Invoice Given Below</h4>--}}
         <p>If you have any questions or need further assistance, feel free to contact us. We hope you enjoy your new electronics!</p>
     </div>
     <div class="thank-you">

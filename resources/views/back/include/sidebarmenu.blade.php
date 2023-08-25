@@ -75,7 +75,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="pages/forms/basic_elements.html">
-                <span class="menu-title">Buyer Status</span>
+                <span class="menu-title">Add and Manage Services</span>
                 <i class="mdi mdi-cash-multiple menu-icon" style="color: #cfbef9;"></i>
             </a>
         </li>

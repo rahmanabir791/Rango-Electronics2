@@ -5,6 +5,7 @@
 
 @section('body')
     <!-- partial -->
+
     <div class="main-panel">
         <div class="content-wrapper">
             <div class="page-header">
@@ -65,51 +66,28 @@
                                                 <td> {{$client->address}} </td>
                                                 <td> {{$client->phone}} </td>
                                                 <td>
-                                                    <label class="badge badge-gradient-success">DONE</label>
+                                                    <label class="badge {{ $client->delivered == 1 ? 'badge-gradient-success' : 'badge-gradient-danger' }}">
+                                                        {{ $client->delivered == 1 ? 'Delivered' : 'Not Delivered' }}
+                                                    </label>
                                                 </td>
+
                                                 <td> {{$client->created_at}} </td>
                                                 <td> {{ $client->email }} </td>
                                                 <td><a href="{{route('downloadInvoice' , ['invoiceNumber' => $client->invoiceNumber ])}}">{{ $client->invoiceNumber }}</a></td>
                                                 <td>
-
+                                                    <a href="{{ route('delete-clint', ['invoiceNumber' => $client->invoiceNumber]) }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure Delete this Client Details ?')">Delete</a>
+                                                    <form method="POST" action="{{ route('update-Delivery', ['id' => $client->id]) }}" style="display: inline;">
+                                                        @csrf
+                                                        <input type="hidden" name="delivered" value="{{ $client->delivered == 1 ? 0 : 1 }}">
+                                                        <button type="submit" class="btn btn-sm {{ $client->delivered == 1 ? 'btn-danger' : 'btn-success' }}" style="margin-top: 5px;">
+                                                            {{ $client->delivered == 1 ? 'Set Not Delivered' : 'Set Delivered' }}
+                                                        </button>
+                                                    </form>
                                                 </td>
 
                                             </tr>
                                         @endif
                                     @endforeach
-                                    {{--                                    <tr>--}}
-                                    {{--                                        <td>--}}
-                                    {{--                                            <img src="{{asset('/')}}assets/back-asset/images/faces/face2.jpg" class="me-2" alt="image"> Stella Johnson--}}
-                                    {{--                                        </td>--}}
-                                    {{--                                        <td> High loading time </td>--}}
-                                    {{--                                        <td>--}}
-                                    {{--                                            <label class="badge badge-gradient-warning">PROGRESS</label>--}}
-                                    {{--                                        </td>--}}
-                                    {{--                                        <td> Dec 12, 2017 </td>--}}
-                                    {{--                                        <td> WD-12346 </td>--}}
-                                    {{--                                    </tr>--}}
-                                    {{--                                    <tr>--}}
-                                    {{--                                        <td>--}}
-                                    {{--                                            <img src="{{asset('/')}}assets/back-asset/images/faces/face3.jpg" class="me-2" alt="image"> Marina Michel--}}
-                                    {{--                                        </td>--}}
-                                    {{--                                        <td> Website down for one week </td>--}}
-                                    {{--                                        <td>--}}
-                                    {{--                                            <label class="badge badge-gradient-info">ON HOLD</label>--}}
-                                    {{--                                        </td>--}}
-                                    {{--                                        <td> Dec 16, 2017 </td>--}}
-                                    {{--                                        <td> WD-12347 </td>--}}
-                                    {{--                                    </tr>--}}
-                                    {{--                                    <tr>--}}
-                                    {{--                                        <td>--}}
-                                    {{--                                            <img src="{{asset('/')}}assets/back-asset/images/faces/face4.jpg" class="me-2" alt="image"> John Doe--}}
-                                    {{--                                        </td>--}}
-                                    {{--                                        <td> Loosing control on server </td>--}}
-                                    {{--                                        <td>--}}
-                                    {{--                                            <label class="badge badge-gradient-danger">REJECTED</label>--}}
-                                    {{--                                        </td>--}}
-                                    {{--                                        <td> Dec 3, 2017 </td>--}}
-                                    {{--                                        <td> WD-12348 </td>--}}
-                                    {{--                                    </tr>--}}
 
                                     </tbody>
                                 </table>
@@ -161,7 +139,9 @@
                                         <td> {{$client->address}} </td>
                                         <td> {{$client->phone}} </td>
                                         <td>
-                                            <label class="badge badge-gradient-success">DONE</label>
+                                            <label class="badge {{ $client->delivered == 1 ? 'badge-gradient-success' : 'badge-gradient-danger' }}">
+                                                {{ $client->delivered == 1 ? 'Delivered' : 'Not Delivered' }}
+                                            </label>
                                         </td>
                                         <td> {{$client->created_at}} </td>
                                         <td> {{ $client->A_payment }} </td>
@@ -170,45 +150,19 @@
                                         <td> {{ $client->email }} </td>
                                         <td><a href="{{route('downloadInvoice' , ['invoiceNumber' => $client->invoiceNumber ])}}">{{ $client->invoiceNumber }}</a></td>
                                         <td>
-
+                                            <a href="{{ route('delete-clint', ['invoiceNumber' => $client->invoiceNumber]) }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure Delete this Client Details ?')">Delete</a>
+                                            <form method="POST" action="{{ route('update-Delivery', ['id' => $client->id]) }}" style="display: inline;">
+                                                @csrf
+                                                <input type="hidden" name="delivered" value="{{ $client->delivered == 1 ? 0 : 1 }}">
+                                                <button type="submit" class="btn btn-sm {{ $client->delivered == 1 ? 'btn-danger' : 'btn-success' }}" style="margin-top: 5px;">
+                                                    {{ $client->delivered == 1 ? 'Set Not Delivered' : 'Set Delivered' }}
+                                                </button>
+                                            </form>
                                         </td>
 
                                     </tr>
                                     @endif
                                     @endforeach
-{{--                                    <tr>--}}
-{{--                                        <td>--}}
-{{--                                            <img src="{{asset('/')}}assets/back-asset/images/faces/face2.jpg" class="me-2" alt="image"> Stella Johnson--}}
-{{--                                        </td>--}}
-{{--                                        <td> High loading time </td>--}}
-{{--                                        <td>--}}
-{{--                                            <label class="badge badge-gradient-warning">PROGRESS</label>--}}
-{{--                                        </td>--}}
-{{--                                        <td> Dec 12, 2017 </td>--}}
-{{--                                        <td> WD-12346 </td>--}}
-{{--                                    </tr>--}}
-{{--                                    <tr>--}}
-{{--                                        <td>--}}
-{{--                                            <img src="{{asset('/')}}assets/back-asset/images/faces/face3.jpg" class="me-2" alt="image"> Marina Michel--}}
-{{--                                        </td>--}}
-{{--                                        <td> Website down for one week </td>--}}
-{{--                                        <td>--}}
-{{--                                            <label class="badge badge-gradient-info">ON HOLD</label>--}}
-{{--                                        </td>--}}
-{{--                                        <td> Dec 16, 2017 </td>--}}
-{{--                                        <td> WD-12347 </td>--}}
-{{--                                    </tr>--}}
-{{--                                    <tr>--}}
-{{--                                        <td>--}}
-{{--                                            <img src="{{asset('/')}}assets/back-asset/images/faces/face4.jpg" class="me-2" alt="image"> John Doe--}}
-{{--                                        </td>--}}
-{{--                                        <td> Loosing control on server </td>--}}
-{{--                                        <td>--}}
-{{--                                            <label class="badge badge-gradient-danger">REJECTED</label>--}}
-{{--                                        </td>--}}
-{{--                                        <td> Dec 3, 2017 </td>--}}
-{{--                                        <td> WD-12348 </td>--}}
-{{--                                    </tr>--}}
 
                                     </tbody>
                                 </table>
@@ -222,14 +176,7 @@
 
         </div>
         <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-            <div class="container-fluid d-flex justify-content-between">
-                <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
-                <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
-            </div>
-        </footer>
-        <!-- partial -->
+
     </div>
     <!-- main-panel ends -->
 @endsection

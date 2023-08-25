@@ -40,5 +40,12 @@ class OrderSubmit extends Model
         }
 
 
+    public static function deliveryReport ($request, $id)
+    {
+        self::$order                    =      OrderSubmit::find($id);
+        self::$order->delivered         =      $request->delivered;
+        self::$order->save();
+    }
+
 
 }

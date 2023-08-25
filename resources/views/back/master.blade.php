@@ -17,6 +17,7 @@
     </div>
     <!-- page-body-wrapper ends -->
 </div>
+    @include('back.include.footer')
     @include('back.include.js')
 </body>
 

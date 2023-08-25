@@ -27,7 +27,7 @@ return new class extends Migration
             $table->integer('zip');
             $table->text('address');
             $table->string('invoiceNumber')->nullable();
-            $table->string('delivered')->default(0)->comment("Delivered = 1 , Not delivered = 0")->nullable();
+            $table->string('delivered')->default(0)->comment("Delivered = 1 , Not delivered = 0");
             $table->timestamps();
         });
     }

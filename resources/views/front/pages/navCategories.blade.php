@@ -210,10 +210,13 @@
                     <div class="category-list">
                         <nav class="navCategory" >
                             <ul class="">
+                                {{--              Category                  --}}
                                 <li class="dropdown"><a href="#">Television<span>&rsaquo;</span></a>
                                     <ul>
+                                    {{--                  Brands                      --}}
                                         <li class="dropdown_two"><a href="#">Samsung TV<span>&rsaquo;</span></a>
                                             <ul>
+                                        {{--                    Type Of Products                     --}}
                                                 <li><a href="#">Samsung LED TV</a></li>
                                                 <li><a href="#">Samsung Smart TV</a></li>
                                             </ul>
@@ -223,6 +226,7 @@
                                         <li><a href="#">Xiaomi Smart TV</a></li>
                                     </ul>
                                 </li>
+                                {{--                End Category Bar                --}}
                                 <li class="dropdown"><a href="#">Air conditionar<span>&rsaquo;</span></a>
                                     <ul>
                                         <li class="dropdown_two"><a href="#">Gree<span>&rsaquo;</span></a>

@@ -28,6 +28,9 @@ use App\Http\Controllers\Front\SeeAllController;
 */
 
 Route::get('/' , [HomeController::class , 'home' ])->name('home.w.l');
+
+Route::get('Rango/All/Brand/Products/Electronics{ids}' , [HomeController::class , 'brandAll'])->name('brand.all.products');
+
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
 Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
 Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
@@ -60,6 +63,8 @@ Route::middleware('auth' , 'verified')->group(function () {
 //Admin Panel
 Route::prefix('/Rango/Admin')->middleware('rangoAdmin', 'auth')->group(function () {
     Route::get('/dashboard' , [DashboardController::class , 'dashboard'])->name('dashboard');
+    Route::post('/Electronics/Dashboard/Delivered/NotDeliverd/Update/Client/{id}', [DashboardController::class, 'Delivery'])->name('update-Delivery');
+    Route::get('/Electronics/Dashboard/Rango/Delete-Clint/{invoiceNumber}', [DashboardController::class, 'deleteClient'])->name('delete-clint');
     Route::get('/download-invoice/{invoiceNumber}' , [DashboardController::class, 'downloadInvoice'])->name('downloadInvoice');
 //    Slider
     Route::get('/dashboard/Add_Slider/Manage_Slider' , [SliderController::class , 'ADDmanageSlider'])->name('Add-manageSlider');
