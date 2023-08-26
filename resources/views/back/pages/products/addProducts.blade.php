@@ -53,7 +53,7 @@
 
                                 <div class="form-group">
                                     <label for="productBrand">Brand</label>
-                                    <select class="form-control" id="productBrand" name="brand_id" required>
+                                    <select class="form-control" id="productBrand" name="brand_id" >
                                         <option value="">Select a Category first</option>
                                     </select>
                                 </div>

@@ -19,9 +19,6 @@
                                 <th class="border-5">MRP Price</th>
                                 <th class="border-5">Offer Price</th>
                                 <th class="border-5">Warranty</th>
-                                <th class="border-5">Features</th>
-                                <th class="border-5">Specifications</th>
-                                <th class="border-5">Special Offer</th>
                                 <th class="border-5">Stock</th>
                                 <th class="border-5">Action</th>
                             </tr>
@@ -43,11 +40,8 @@
                                             <td class="border-5">{{ $product->product_type }}</td>
                                             <td class="border-5">{{ $product->MRP_price }}</td>
                                             <td class="border-5">{{ $product->O_price }}</td>
-                                            <td class="border-5">{!! $product->warranty !!}</td>
-                                            <td class="border-5">{!! $product->features  !!}</td>
-                                            <td class="border-5">{!! $product->specifications !!}</td>
                                             <td class="border-5" style="text-align: center; padding: 10px;">
-                                            <span style="font-weight: bold; color: {{ $product->stockAvailability == 1 ? 'green' : 'red' }};">
+                                            <span style="font-weight: bold; color: {{ $product->special_offer == 1 ? 'green' : 'red' }};">
                                                 {{ $product->special_offer == 1 ? 'In Special Offer' : 'Out Of Special Offer' }}
                                             </span>
                                                 <form method="POST" action="{{ route('update-special_Offer', ['id' => $product->id]) }}" style="display: inline;">
@@ -60,9 +54,9 @@
                                             </td>
 
                                             <td class="border-5" style="text-align: center; padding: 10px;">
-                                                <span style="font-weight: bold; color: {{ $product->stockAvailability == 1 ? 'green' : 'red' }};">
-                                                    {{ $product->stockAvailability == 1 ? 'In Stock' : 'Out Of Stock' }}
-                                                </span>
+                                            <span style="font-weight: bold; color: {{ $product->stockAvailability == 1 ? 'green' : 'red' }};">
+                                                {{ $product->stockAvailability == 1 ? 'In Stock' : 'Out Of Stock' }}
+                                            </span>
                                                 <form method="POST" action="{{ route('update-stockAvailability', ['id' => $product->id]) }}" style="display: inline;">
                                                     @csrf
                                                     <input type="hidden" name="stockAvailability" value="{{ $product->stockAvailability == 1 ? 0 : 1 }}">
@@ -71,6 +65,7 @@
                                                     </button>
                                                 </form>
                                             </td>
+
 
                                             <td class="border-5">
                                                 {{-- Edit and delete buttons --}}
@@ -96,13 +91,10 @@
                                         <td class="border-5">{{ $product->product_type }}</td>
                                         <td class="border-5">{{ $product->MRP_price }}</td>
                                         <td class="border-5">{{ $product->O_price }}</td>
-                                        <td class="border-5">{!!$product->warranty !!}</td>
-                                        <td class="border-5">{!!$product->features !!}</td>
-                                        <td class="border-5">{!!$product->specifications !!}</td>
                                         <td class="border-5" style="text-align: center; padding: 10px;">
-                                            <span style="font-weight: bold; color: {{ $product->stockAvailability == 1 ? 'green' : 'red' }};">
-                                                {{ $product->special_offer == 1 ? 'In Special Offer' : 'Out Of Special Offer' }}
-                                            </span>
+    <span style="font-weight: bold; color: {{ $product->special_offer == 1 ? 'green' : 'red' }};">
+        {{ $product->special_offer == 1 ? 'In Special Offer' : 'Out Of Special Offer' }}
+    </span>
                                             <form method="POST" action="{{ route('update-special_Offer', ['id' => $product->id]) }}" style="display: inline;">
                                                 @csrf
                                                 <input type="hidden" name="special_offer" value="{{ $product->special_offer == 1 ? 0 : 1 }}">
@@ -111,6 +103,7 @@
                                                 </button>
                                             </form>
                                         </td>
+
 
                                         <td class="border-5" style="text-align: center; padding: 10px;">
                                             <span style="font-weight: bold; color: {{ $product->stockAvailability == 1 ? 'green' : 'red' }};">

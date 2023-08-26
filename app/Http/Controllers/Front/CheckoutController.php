@@ -80,19 +80,19 @@ class CheckoutController extends Controller
 
         // Generate PDF (uncomment if you're ready to use PDF generation)
 
-        $pdf = PDF::loadView('back.forClient.rangoInvoice', $data);
-        $pdfFileName = "{$invoiceNumber}_Rango_Electronics.pdf";
-        $pdfFilePath = storage_path("invoice/{$pdfFileName}");
-        Storage::makeDirectory(dirname($pdfFilePath));
-        $pdf->save($pdfFilePath);
+//        $pdf = PDF::loadView('back.forClient.rangoInvoice', $data);
+//        $pdfFileName = "{$invoiceNumber}_Rango_Electronics.pdf";
+//        $pdfFilePath = storage_path("invoice/{$pdfFileName}");
+//        Storage::makeDirectory(dirname($pdfFilePath));
+//        $pdf->save($pdfFilePath);
 
 
 
 
-        Mail::send('back.forClient.rangoEmail', $data, function($message) use ($data ,$pdfFileName , $pdfFilePath ) {
+        Mail::send('back.forClient.rangoEmail', $data, function($message) use ($data  ) {
             $message->to($data['email'])
-                ->subject('Thanks for placing your Order')
-                ->attach($pdfFilePath, ['as' => $pdfFileName, 'mime' => 'application/pdf']);
+                ->subject('Thanks for placing your Order');
+//                ->attach($pdfFilePath, ['as' => $pdfFileName, 'mime' => 'application/pdf']);
         });
 
 
