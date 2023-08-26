@@ -44,7 +44,7 @@ class CategoryController extends Controller
     public function editCategory($id)
     {
         return view('back.pages.category.edit_category', [
-            'Categorys'   => Category::find($id),
+            'Category'   => Category::find($id),
         ]);
     }
 

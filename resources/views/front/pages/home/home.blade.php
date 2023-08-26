@@ -39,7 +39,7 @@
 
     <p class="slider-name text-dark font-weight-bold ">Special Offer Products</p>
     <span class="divider"></span>
-    <p class="view-all"><a href="#">View All ></a></p>
+    <p class="view-all"><a href="{{ route('Special-seeAll') }}">View All ></a></p>
     <!--slider row-1 for Special Offer Products -->
     <div class="owl-carousel  image-slider">
 
@@ -84,7 +84,7 @@
 
     <p class="slider-name text-dark font-weight-bold ">All Products</p>
     <span class="divider"></span>
-    <p class="view-all"><a href="#">View All ></a></p>
+    <p class="view-all"><a href="{{ route('AllProduct-seeAll') }}">View All ></a></p>
     <!--slider row-1 for Special Offer Products -->
     <div class="owl-carousel  image-slider">
         @foreach($products as $product)
@@ -101,7 +101,7 @@
                         </h6>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>
+                        <a href="{{route('productDetail')}}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>
                             View Detail</a>
                         <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -127,7 +127,7 @@
         <!--slider row-2-->
         <p class="slider-name text-dark font-weight-bold">{{$category->CategoryName}}</p>
         <span class="divider"></span>
-        <p class="view-all"><a href="#">View All ></a></p>
+        <p class="view-all"><a href="{{ route('edit-categorys', ['id' => $category->id]) }}">View All></a></p>
         <div class="owl-carousel  image-slider">
 
             @foreach($products as $product)
@@ -203,5 +203,21 @@
 
     </div>
     <!--script for last row-->
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3651.2766210342043!2d90.426187!3d23.773162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDQ2JzIzLjQiTiA5MMKwMjUnMzQuMyJF!5e0!3m2!1sen!2sbd!4v1693077221396!5m2!1sen!2sbd" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
+    </iframe>
+
+{{--    <div>--}}
+{{--        <div class="row" style="padding: 35px;">--}}
+{{--            <div class="col-md-8">--}}
+{{--                <h4>Join Us To Get A Special Gift</h4>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-4">--}}
+{{--                <input type="email" placeholder="Enter Your Email">--}}
+{{--                <button class="btn"  type="button" style="border-radius: 10px; background-color: maroon; color: #FFFFFF" ; >Subscribe</button>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
 @endsection

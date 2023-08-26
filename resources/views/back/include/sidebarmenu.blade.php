@@ -74,7 +74,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
+            <a class="nav-link" href="{{ route('add.manage.service') }}">
                 <span class="menu-title">Add and Manage Services</span>
                 <i class="mdi mdi-cash-multiple menu-icon" style="color: #cfbef9;"></i>
             </a>

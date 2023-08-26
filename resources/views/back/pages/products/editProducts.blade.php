@@ -101,7 +101,7 @@
                                     <textarea  class="form-control" name="specifications" id="productSpecifications" rows="4">{{$product->specifications}}</textarea>
                                 </div>
 
-                                <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+                                <button type="submit" class="btn btn-gradient-primary me-2">Edit Product Submit</button>
                             </form>
                         </div>
                     </div>

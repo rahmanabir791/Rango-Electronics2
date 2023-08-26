@@ -47,7 +47,7 @@
                                 <div class="alert alert-danger">{{ $errors->first('BrandImage') }}</div>
                             @endif
 
-                            <button type="submit" class="btn btn-gradient-primary mb-2">Add brands to categories</button>
+                            <button type="submit" class="btn btn-gradient-primary mb-2">Edit brands to categories</button>
                         </form>
                     </div>
                 </div>

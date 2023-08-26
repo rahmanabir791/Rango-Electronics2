@@ -18,7 +18,7 @@
                             <label class="sr-only" for="categoryName">Category Name</label>
                             <input type="text" name="CategoryName" value="{{$Categorys->CategoryName}}" class="form-control mb-2 mr-sm-2" id="categoryName" placeholder="Category Name" required>
 
-                            <button type="submit" class="btn btn-gradient-primary mb-2">Add Category</button>
+                            <button type="submit" class="btn btn-gradient-primary mb-2">Edti Category</button>
                         </form>
                     </div>
                 </div>

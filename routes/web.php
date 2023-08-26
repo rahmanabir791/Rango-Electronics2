@@ -13,6 +13,9 @@ use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\SeeAllController;
+use App\Http\Controllers\Back\Service\ServiceController;
+use App\Http\Controllers\Front\MenuController;
+
 
 //Back Controllers
 
@@ -29,17 +32,26 @@ use App\Http\Controllers\Front\SeeAllController;
 
 Route::get('/' , [HomeController::class , 'home' ])->name('home.w.l');
 
+Route::get('productDetails', [HomeController::class, 'productDetails'])->name('productDetail');
+
 Route::get('Rango/All/Brand/Products/Electronics{ids}' , [HomeController::class , 'brandAll'])->name('brand.all.products');
 
-Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
-Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
-Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
-Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
-Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
-Route::get('cat-seeAll', [SeeAllController::class, 'Category_seeAll'])->name('Category-seeAll');
-Route::get('special-seeAll', [SeeAllController::class, 'SpecialOffer_seeAll'])->name('Special-seeAll');
-Route::get('allProductseeAll', [SeeAllController::class, 'allProduct_seeAll'])->name('AllProduct-seeAll');
-Route::get('brandseeAll', [SeeAllController::class, 'brand_seeAll'])->name('All-Brands');
+Route::get('Rango/cart/List', [CartController::class, 'cartList'])->name('cart.list');
+Route::post('Rango/cart/Store', [CartController::class, 'addToCart'])->name('cart.store');
+Route::post('Rango/update/cart', [CartController::class, 'updateCart'])->name('cart.update');
+Route::post('Rango/remove/Cart', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('Rango/clear/List', [CartController::class, 'clearAllCart'])->name('cart.clear');
+
+Route::get('Rango/special/seeAll/Electronics', [SeeAllController::class, 'SpecialOffer_seeAll'])->name('Special-seeAll');
+Route::get('Rango/All/Product/seeAll/Electronics', [SeeAllController::class, 'allProduct_seeAll'])->name('AllProduct-seeAll');
+Route::get('Rango/Categories/see/All/{id}', [SeeAllController::class, 'Category_seeAll'])->name('Category-seeAll');
+
+
+Route::get('Rango/Brand/All/seeAll/Electronics', [MenuController::class, 'brand_seeAll'])->name('All-Brands');
+Route::get('installationAndService', [MenuController::class, 'installation'])->name('menu.installation');
+Route::get('installationAndServiceDetails', [MenuController::class, 'installationDetails'])->name('menu.installationDetails');
+Route::get('menuContact', [MenuController::class, 'contact'])->name('menu.contact');
+
 
 
 
@@ -66,26 +78,26 @@ Route::prefix('/Rango/Admin')->middleware('rangoAdmin', 'auth')->group(function 
     Route::post('/Electronics/Dashboard/Delivered/NotDeliverd/Update/Client/{id}', [DashboardController::class, 'Delivery'])->name('update-Delivery');
     Route::get('/Electronics/Dashboard/Rango/Delete-Clint/{invoiceNumber}', [DashboardController::class, 'deleteClient'])->name('delete-clint');
     Route::get('/download-invoice/{invoiceNumber}' , [DashboardController::class, 'downloadInvoice'])->name('downloadInvoice');
-//    Slider
+//  Slider
     Route::get('/dashboard/Add_Slider/Manage_Slider' , [SliderController::class , 'ADDmanageSlider'])->name('Add-manageSlider');
     Route::post('/dashboard/New_slider' , [SliderController::class , 'newSlider'])->name('newSlider');
     Route::get('/dashboard/Delete_Slider-{id}' , [SliderController::class , 'deleteSlider'])->name('delete-slider');
 
-//    Category
+//  Category
     Route::get('/dashboard/ADD_Category/Manage_Category/Electronics' , [CategoryController::class , 'addManageCategory'])->name('add_manage-category');
     Route::post('/dashboard/New_Category_upload/Electronics' , [CategoryController::class , 'newCategory'])->name('new-category');
     Route::get('/dashboard/Old_Category_Edit/Electronics/{id}' , [CategoryController::class , 'editCategory'])->name('edit-categorys');
     Route::post('/dashboard/Old_Category_Update/Electronics/{id}' , [CategoryController::class , 'updateCategory'])->name('update-Category');
     Route::get('/dashboard/Old_Category_Delete/Electronics/{id}' , [CategoryController::class , 'deleteCategory'])->name('delete-categorys');
 
-//Brands
+//  Brands
     Route::get('/dashboard/ADD_Brands/Manage_Brands/Electronics' , [BrandsController::class , 'addManageBrands'])->name('add_manage-Brands');
     Route::post('/dashboard/New_Brands_upload/Electronics' , [BrandsController::class , 'newBrands'])->name('new-Brands');
     Route::get('/dashboard/Old_Brands_Edit/Electronics/{id}' , [BrandsController::class , 'editBrand'])->name('edit-Brands');
     Route::post('/dashboard/Old_Brands_Update/Electronics/{id}' , [BrandsController::class , 'updateBrand'])->name('update-Brand');
     Route::get('/dashboard/Old_Brands_Delete/Electronics/{id}' , [BrandsController::class , 'deleteBrand'])->name('delete-brands');
 
-//    Products
+//  Products
     Route::get('/Electronics/Dashboard/Add-product/', [ProductController::class, 'addProduct'])->name('add-product');
     Route::post('/Electronics/Dashboard/New-product', [ProductController::class, 'newProduct'])->name('new-product');
     Route::get('/Electronics/Dashboard/Manage-product/{category_id}', [ProductController::class, 'manageProduct'])->name('manage-product');
@@ -96,6 +108,12 @@ Route::prefix('/Rango/Admin')->middleware('rangoAdmin', 'auth')->group(function 
     Route::get('/Electronics/Dashboard/Delete-Product/{id}', [ProductController::class, 'deleteProduct'])->name('delete-product');
     Route::get('/search', [SearchController::class, 'search'])->name('search');
 
+//  Service
+    Route::get('/dashboard/ADD/Service/Manage_Service/Electronics' , [ServiceController::class , 'addManageService'])->name('add.manage.service');
+    Route::post('/dashboard/New/upload/Service/Electronics' , [ServiceController::class , 'newService'])->name('new-service');
+    Route::get('/dashboard/Old/Service/Edit/Electronics/{id}' , [ServiceController::class , 'editService'])->name('edit-Service');
+    Route::post('/dashboard/Old/Service/Update/Electronics/{id}' , [ServiceController::class , 'updateService'])->name('update-service');
+    Route::get('/dashboard/Old/Service/Delete/Electronics/{id}' , [ServiceController::class , 'deleteService'])->name('delete-Service');
 
 });
 require __DIR__.'/auth.php';
