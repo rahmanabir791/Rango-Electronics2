@@ -23,6 +23,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+{{--<script src="{{asset('/')}}assets/front-asset/lib/owlcarousel/owl.carousel.min.js"></script>--}}
+{{--<script src="{{asset('/')}}assets/front-asset/lib/owlcarousel/owl.carousel.js"></script>--}}
+
 <script type="text/javascript">
     $('.owl-carousel').owlCarousel({
         loop:true,
@@ -35,7 +39,7 @@
                 items:1
             },
             600:{
-                items:3
+                items:1
             },
             1000:{
                 items:5

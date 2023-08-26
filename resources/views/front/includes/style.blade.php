@@ -21,6 +21,7 @@
     <!-- Libraries Stylesheet -->
     <link href="{{asset('/')}}assets/front-asset/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="{{asset('/')}}assets/front-asset/css/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+{{--    <link href="{{asset('/')}}assets/front-asset/lib/owlcarousel_two/assets/owl.carousel.min.css" rel="stylesheet">--}}
     <link href="{{asset('/')}}assets/front-asset/css/cards.css" rel="stylesheet">
 
 

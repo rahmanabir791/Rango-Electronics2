@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home(){
-        return view('front.pages.home', [
+        return view('front.pages.home.home', [
             'categories' => Category::orderBy('id', 'DESC')->get(),
             'brands' => Brands::orderBy('id', 'DESC')->get(),
             'products' => Products::orderBy('id', 'DESC')->get(),
