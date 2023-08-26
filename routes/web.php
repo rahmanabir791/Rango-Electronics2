@@ -13,6 +13,7 @@ use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\SeeAllController;
+use App\Http\Controllers\Front\menuController;
 
 //Back Controllers
 
@@ -40,6 +41,10 @@ Route::get('cat-seeAll', [SeeAllController::class, 'Category_seeAll'])->name('Ca
 Route::get('special-seeAll', [SeeAllController::class, 'SpecialOffer_seeAll'])->name('Special-seeAll');
 Route::get('allProductseeAll', [SeeAllController::class, 'allProduct_seeAll'])->name('AllProduct-seeAll');
 Route::get('brandseeAll', [SeeAllController::class, 'brand_seeAll'])->name('All-Brands');
+Route::get('installationAndService', [menuController::class, 'installation'])->name('menu.installation');
+Route::get('installationAndServiceDetails', [menuController::class, 'installationDetails'])->name('menu.installationDetails');
+Route::get('menuContact', [menuController::class, 'contact'])->name('menu.contact');
+Route::get('productDetails', [HomeController::class, 'productDetails'])->name('productDetail');
 
 
 

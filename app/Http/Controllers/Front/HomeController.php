@@ -27,6 +27,10 @@ class HomeController extends Controller
             'products' => $products,
         ]);
     }
+        public function productDetails(){
+            return view('front.pages.details_pages.product_details');
+
+    }
 
 
 
