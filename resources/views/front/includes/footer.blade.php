@@ -64,7 +64,7 @@
             </p>
         </div>
         <div class=" col-md-4 ">
-            <a class=" text-center px-1 text-white" href="">
+            <a class=" text-center px-1 text-white" href="" style="margin-left: 130px;">
                 <i class="fab fa-facebook-f"></i>
             </a>
             <a class="text-white px-1" href="">
