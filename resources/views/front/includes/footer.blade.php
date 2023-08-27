@@ -15,7 +15,7 @@
             </div>
             <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3" ></i>House: 5, Road: 12, DIT project, Merul Badda, Dhaka</p>
             <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@rangoelectronics.com</p>
-            <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+017 985 65001</p>
+            <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+88017 985 65001</p>
         </div>
         <div class="col-lg-8 col-md-12">
             <div class="row">

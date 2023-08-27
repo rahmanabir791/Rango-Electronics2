@@ -41,19 +41,13 @@
                 </div>
             </div>
             <div class="col-lg-5 mb-5">
-                <h5 class="font-weight-semi-bold mb-3">Get In Touch</h5>
-                <p style="color: black">Justo sed diam ut sed amet duo amet lorem amet stet sea ipsum, sed duo amet et. Est elitr dolor elitr erat sit sit. Dolor diam et erat clita ipsum justo sed.</p>
+                <h5 class="font-weight-semi-bold mb-3">we are Avialable 24/7 for you</h5>
+
                 <div class="d-flex flex-column mb-3">
-                    <h5 class="font-weight-semi-bold mb-3">Store 1</h5>
-                    <p class="mb-2 text-dark"><i class="fa fa-map-marker-alt mr-3" style="color: maroon;"></i>123 Street, New York, USA</p>
-                    <p class="mb-2 text-dark"><i class="fa fa-envelope  mr-3" style="color:maroon;"></i>info@example.com</p>
-                    <p class="mb-2 text-dark"><i class="fa fa-phone-alt  mr-3" style="color: maroon;"></i>+012 345 67890</p>
-                </div>
-                <div class="d-flex flex-column">
-                    <h5 class="font-weight-semi-bold mb-3">Store 2</h5>
-                    <p class="mb-2 text-dark"><i class="fa fa-map-marker-alt mr-3" style="color: maroon;"></i>123 Street, New York, USA</p>
-                    <p class="mb-2 text-dark"><i class="fa fa-envelope  mr-3" style="color: maroon;"></i>info@example.com</p>
-                    <p class="mb-0 text-dark"><i class="fa fa-phone-alt  mr-3" style="color: maroon;"></i>+012 345 67890</p>
+                    <p class="mb-2 text-dark " style="font-size: 20px;"><i class="fa fa-map-marker-alt mr-3" style=" font-size: 25px; color: maroon; margin-top: 20px;"></i>Address
+                        <br> <p class="text-dark" style="margin-left: 35px;">House: 5, Road: 12, DIT project, Merul Badda, Dhaka</p></p>
+                    <p class="mb-2 text-dark" style="font-size: 20px;"><i class="fa fa-envelope  mr-3 k" style="color:maroon;"></i>Email <br> <p class="text-dark" style="margin-left: 30px;">info@rangoelectronic.com</p></p>
+                    <p class="mb-2 text-dark" style="font-size: 20px;"><i class="fa fa-phone-alt  mr-3" style="color: maroon;"></i>Phone <br> <p class="text-dark" style="margin-left: 25px;">+017 985 65001</p></p>
                 </div>
             </div>
         </div>
