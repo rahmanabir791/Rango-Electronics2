@@ -63,7 +63,7 @@ Route::post('Rango/menu/Contact/Send/Massage/Electronics', [MenuController::clas
 
 
 
-Route::get('/search/Result', [SearchController::class, 'search'])->name('search');
+Route::get('Rango/search/Result/Electronics', [SearchController::class, 'frontSearch'])->name('search.result');
 
 Route::get('Login' , [AuthenticatedSessionController::class , 'create'])->name('login');
 Route::get('Register' , [RegisteredUserController::class , 'create'])->name('register');

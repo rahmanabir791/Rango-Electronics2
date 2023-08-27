@@ -41,11 +41,12 @@
             </div>
             <div class="col-md-6">
                 <!-- Search Form -->
-                <form class="form-inline" action="">
+                <form class="form-inline" action="{{ route('search.result') }}" method="GET">
+                    @csrf
                     <div class="input-group w-100">
-                        <input type="text" class="form-control" placeholder="Search for products">
+                        <input type="text" name="query" class="form-control" placeholder="Search for products">
                         <div class="input-group-append">
-                            <button class="btn bg-danger" type="button">
+                            <button class="btn bg-danger" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>
