@@ -127,7 +127,7 @@
         <!--slider row-2-->
         <p class="slider-name text-dark font-weight-bold">{{$category->CategoryName}}</p>
         <span class="divider"></span>
-        <p class="view-all"><a href="{{ route('edit-categorys', ['id' => $category->id]) }}">View All></a></p>
+        <p class="view-all"><a href="{{ route('Category-seeAll', ['id' => $category->id]) }}">View All></a></p>
         <div class="owl-carousel  image-slider">
 
             @foreach($products as $product)
@@ -208,16 +208,16 @@
 
     </iframe>
 
-{{--    <div>--}}
-{{--        <div class="row" style="padding: 35px;">--}}
-{{--            <div class="col-md-8">--}}
-{{--                <h4>Join Us To Get A Special Gift</h4>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-4">--}}
-{{--                <input type="email" placeholder="Enter Your Email">--}}
-{{--                <button class="btn"  type="button" style="border-radius: 10px; background-color: maroon; color: #FFFFFF" ; >Subscribe</button>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    <div>
+        <div class="row" style="padding: 35px;">
+            <div class="col-md-8">
+                <h4>Join Us To Get A Special Gift</h4>
+            </div>
+            <div class="col-md-4">
+                <input type="email" placeholder="Enter Your Email">
+                <button class="btn"  type="button" style="border-radius: 10px; background-color: maroon; color: #FFFFFF" ; >Subscribe</button>
+            </div>
+        </div>
+    </div>
 
 @endsection
