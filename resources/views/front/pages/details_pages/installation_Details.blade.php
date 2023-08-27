@@ -1,6 +1,6 @@
 @extends('front.master')
 @section('title')
-    Installation Details
+    Service Details
 @endsection
 @section('body')
     <!-- Page Header Start -->
@@ -21,7 +21,7 @@
             <div class="col-lg-7 pb-5">
                 <h3 class="font-weight-semi-bold">{{ $service->ServiceName }}</h3>
                 <br>
-                <h5 class="font-weight-semi-bold mb-4" style="color: maroon;"> Price: ৳{{number_format($service->ServicePrice)}} </h5>
+                <h5 class="font-weight-semi-bold mb-4" style="color: maroon;">Offer Price: ৳{{number_format($service->ServicePrice)}} </h5>
 
                 <p class="mb-4">{!! $service->description !!}</p>
 
@@ -69,10 +69,10 @@
                                     </button>
                                 </div>
                             </div>
-                            <input type="hidden" value="{{ $product->id }}" name="id">
-                            <input type="hidden" value="{{ $product->ServiceName }}" name="name">
-                            <input type="hidden" value="{{ asset($product->ServiceImage)}}" name="image">
-                            <input type="hidden" value="{{ $product->ServicePrice }}" name="price">
+                            <input type="hidden" value="{{ $service->id }}" name="id">
+                            <input type="hidden" value="{{ $service->ServiceName }}" name="name">
+                            <input type="hidden" value="{{ asset($service->ServiceImage)}}" name="image">
+                            <input type="hidden" value="{{ $service->ServicePrice }}" name="price">
                             <button type="submit" class="btn btn-maroon px-3" style="color: gold; background-color: maroon"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button>
                         </form>
                     @endforeach

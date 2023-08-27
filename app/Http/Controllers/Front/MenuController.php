@@ -35,6 +35,16 @@ class MenuController extends Controller
     {
         return view('front.pages.details_pages.installation_Details' , [
             'service' => Service::find($id),
+            'cartItems' => \Cart::getContent(),
+            'products' => Products::inRandomOrder()->first()->get(),
+            'categories' => Category::orderBy('id', 'DESC')->get(),
+            'brands' => Brands::orderBy('id', 'DESC')->get(),
+        ]);
+    }
+
+    public function contact ()
+    {
+        return view('front.pages.menu.contact',[
             'products' => Products::inRandomOrder()->first()->get(),
             'categories' => Category::orderBy('id', 'DESC')->get(),
             'brands' => Brands::orderBy('id', 'DESC')->get(),

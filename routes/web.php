@@ -57,7 +57,7 @@ Route::get('Rango/Type/of/Products/All/{id}', [CategoryBarController::class, 'ty
 Route::get('Rango/Brand/All/seeAll/Electronics', [MenuController::class, 'brand_seeAll'])->name('All-Brands');
 Route::get('Rango/installation/And/Service/Electronics', [MenuController::class, 'installation'])->name('menu.installation');
 Route::get('Rango/installation/And/Service/Details/Electronics/{id}', [MenuController::class, 'installationDetails'])->name('installation.Details');
-Route::get('menuContact', [MenuController::class, 'contact'])->name('menu.contact');
+Route::get('Rango/menu/Contact/Electronics', [MenuController::class, 'contact'])->name('menu.contact');
 
 
 
