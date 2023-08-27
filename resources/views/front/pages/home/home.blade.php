@@ -53,13 +53,13 @@
                     <div class="card-body border-left border-right text-center p-0 pt-4 ">
                         <h6 class="text-truncate mb-3">{{$product->productName}}</h6>
                         <div class="d-flex justify-content-center">
-                            <h6>৳{{$product->O_price}}</h6>
+                            <h6>৳{{number_format($product->O_price)}}</h6>
                             <h6 class="text-muted ml-2">
-                                <del>৳{{$product->MRP_price}}</del>
+                                <del>৳{{number_format($product->MRP_price) }}</del>
                             </h6>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>
+                            <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>
                                 View Detail</a>
                             <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
@@ -95,14 +95,13 @@
                 <div class="card-body border-left border-right text-center p-0 pt-4 ">
                     <h6 class="text-truncate mb-3">{{$product->productName}}</h6>
                     <div class="d-flex justify-content-center">
-                        <h6>৳{{$product->O_price}}</h6>
+                        <h6>৳{{number_format($product->O_price)}}</h6>
                         <h6 class="text-muted ml-2">
-                            <del>৳{{$product->MRP_price}}</del>
+                            <del>৳{{number_format($product->MRP_price) }}</del>
                         </h6>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="{{route('productDetail')}}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>
-                            View Detail</a>
+                        <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>View Detail</a>
                         <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" value="{{ $product->id }}" name="id">
@@ -135,19 +134,19 @@
                     <div class="card product-item border-0 mb-4">
                         <div
                             class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <a href="#"><img src="{{asset($product->image)}}" style="height: 300px;" width="150px;"
+                            <a href="#"><img src="{{asset($product->image)}}"
                                              alt="image"></a>
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 ">
                             <h6 class="text-truncate mb-3">{{$product->productName}}</h6>
                             <div class="d-flex justify-content-center">
-                                <h6>৳{{$product->O_price}}</h6>
+                                <h6>৳{{number_format($product->O_price)}}</h6>
                                 <h6 class="text-muted ml-2">
-                                    <del>৳{{$product->MRP_price}}</del>
+                                    <del>৳{{number_format($product->MRP_price) }}</del>
                                 </h6>
                             </div>
                             <div class="card-footer d-flex justify-content-between bg-light border">
-                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>
+                                <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>
                                     View Detail</a>
                                 <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -208,16 +207,25 @@
 
     </iframe>
 
-    <div>
-        <div class="row" style="padding: 35px;">
-            <div class="col-md-8">
-                <h4>Join Us To Get A Special Gift</h4>
-            </div>
-            <div class="col-md-4">
-                <input type="email" placeholder="Enter Your Email">
-                <button class="btn"  type="button" style="border-radius: 10px; background-color: maroon; color: #FFFFFF" ; >Subscribe</button>
+    <div class="subscription-section bg-light py-4">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <h4 class="subscription-title mb-0">Join Us To Get A Special Gift</h4>
+                </div>
+                <div class="col-md-4">
+                    <form class="subscription-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="Email" aria-describedby="subscribe-button">
+                            <div class="input-group-append">
+                                <button class="btn btn-subscribe" style="background-color: maroon; color: gold" type="submit">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+
 
 @endsection

@@ -18,7 +18,12 @@
 
                             <div class="input-group mb-2 mr-sm-2">
                                 <label class="sr-only" for="ServiceName">Service Name</label>
-                                <input type="text" name="ServiceName" value="{{$service->ServiceName}}" class="form-control mb-2 mr-sm-2" id="serviceName" placeholder="Brand Name" required/>
+                                <input type="text" name="ServiceName" value="{{$service->ServiceName}}" class="form-control mb-2 mr-sm-2" id="serviceName" placeholder="Service Name" required/>
+                            </div>
+
+                            <div class="input-group mb-2 mr-sm-2">
+                                <label class="sr-only" for="ServicePrice">Service Price</label>
+                                <input type="number" name="ServicePrice" value="{{$service->ServicePrice}}" class="form-control mb-2 mr-sm-2" id="ServicePrice" placeholder="Service Price" required/>
                             </div>
 
                             <div class="input-group mb-2 mr-sm-2">

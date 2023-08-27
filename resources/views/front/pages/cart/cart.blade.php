@@ -35,6 +35,7 @@
                 color: white;
             }
         </style>
+        @include('front.includes.navCategoryForOthers')
 
         <div class="container-fluid cart-container">
             <div class="row">
@@ -65,7 +66,7 @@
                                         <input type="number" name="quantity" value="{{ $item->quantity }}" class="form-control text-center quantity-input" >
                                     </form>
                                 </td>
-                                <td>${{ $item->price }}</td>
+                                <td>৳{{ number_format($item->price) }}</td>
                                 <td>
                                     <form action="{{ route('cart.remove') }}" method="POST">
                                         @csrf
@@ -78,7 +79,7 @@
                         </tbody>
                     </table>
                     <div class="text-end">
-                        <p class="h5">Total: ${{ Cart::getTotal() }}</p>
+                        <p class="h5">Total: ৳{{ number_format(Cart::getTotal()) }}</p>
                     </div>
                     <div class="text-center mt-3">
                         <a href="{{ route('home.w.l') }}" class="continue-shopping-link">Continue Shopping</a>

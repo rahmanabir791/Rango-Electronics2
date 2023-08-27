@@ -41,6 +41,7 @@ class Service extends Model
     {
         self::$service                      = new Service();
         self::$service->ServiceName         = $request->ServiceName;
+        self::$service->ServicePrice        = $request->ServicePrice;
         self::$service->ServiceCategory     = $request->ServiceCategory;
         self::$service->ServiceImage        = self::imageUpload($request);
         self::$service->description         = $request->description;
@@ -52,6 +53,7 @@ class Service extends Model
     {
         self::$service                      = Service::find($id);
         self::$service->ServiceName         = $request->ServiceName;
+        self::$service->ServicePrice        = $request->ServicePrice;
         self::$service->ServiceCategory     = $request->ServiceCategory;
         self::$service->ServiceImage        = self::imageUpload($request, self::$service);
         self::$service->description         = $request->description;

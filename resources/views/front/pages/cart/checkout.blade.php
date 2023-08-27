@@ -23,7 +23,7 @@
                             <input type="hidden" name="products[{{ $index }}][name]" value="{{ $item->name }}">
                             <label for="quantity">Product Quantity: {{ $item->quantity }}</label>
                             <input type="hidden" name="products[{{ $index }}][quantity]" value="{{ $item->quantity }}">
-                            <label for="price">Price: {{ $item->price }}</label>
+                            <label for="price">Price: ৳{{ number_format($item->price) }}</label>
                             <input type="hidden" name="products[{{ $index }}][price]" value="{{ $item->price }}">
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                 <!-- Form input section with collected item data -->
 
                         <!-- Total amount display -->
-                        <h4 class="cart-item-price" style="background-color: maroon; color: gold">Total Amount: ৳{{ Cart::getTotal() }}</h4>
+                        <h4 class="cart-item-price" style="background-color: maroon; color: gold">Total Amount: ৳{{ number_format(Cart::getTotal()) }}</h4>
                         <input type="hidden" value="{{ Cart::getTotal() }}" name="totalAmount">
 
                         <!-- Payment method selection -->
@@ -56,7 +56,7 @@
 
                     {{-- Start For Online Payment --}}
                     <div id="onlinePaymentSection" style="display: none;">
-                            <h4 class="cart-item-price" style="background-color: maroon; color: gold">After Advance Payment Remaining Amount: <label for="remaining_amount" id="remaining_label">৳{{ Cart::getTotal() }}</label></h4>
+                            <h4 class="cart-item-price" style="background-color: maroon; color: gold">After Advance Payment Remaining Amount: <label for="remaining_amount" id="remaining_label">৳{{ number_format(Cart::getTotal()) }}</label></h4>
                             <input type="hidden" name="remainAmount" id="remainAmount" value="">
                             <h4>For Advance Payment Make Payment This number</h4>
                             <h5 style="color: maroon">01800000000</h5>

@@ -15,6 +15,7 @@ use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\SeeAllController;
 use App\Http\Controllers\Back\Service\ServiceController;
 use App\Http\Controllers\Front\MenuController;
+use App\Http\Controllers\Front\CategoryBarController;
 
 
 //Back Controllers
@@ -32,9 +33,9 @@ use App\Http\Controllers\Front\MenuController;
 
 Route::get('/' , [HomeController::class , 'home' ])->name('home.w.l');
 
-Route::get('productDetails', [HomeController::class, 'productDetails'])->name('productDetail');
+Route::get('Rango/Product/Find/product/Details{id}', [HomeController::class, 'productDetails'])->name('productDetail');
 
-Route::get('Rango/All/Brand/Products/Electronics{ids}' , [HomeController::class , 'brandAll'])->name('brand.all.products');
+//Route::get('Rango/All/Brand/Products/Electronics{ids}' , [HomeController::class , 'brandAll'])->name('brand.all.products');
 
 Route::get('Rango/cart/List', [CartController::class, 'cartList'])->name('cart.list');
 Route::post('Rango/cart/Store', [CartController::class, 'addToCart'])->name('cart.store');
@@ -42,14 +43,20 @@ Route::post('Rango/update/cart', [CartController::class, 'updateCart'])->name('c
 Route::post('Rango/remove/Cart', [CartController::class, 'removeCart'])->name('cart.remove');
 Route::post('Rango/clear/List', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
-Route::get('Rango/special/seeAll/Electronics', [SeeAllController::class, 'SpecialOffer_seeAll'])->name('Special-seeAll');
-Route::get('Rango/All/Product/seeAll/Electronics', [SeeAllController::class, 'allProduct_seeAll'])->name('AllProduct-seeAll');
-Route::get('Rango/Categories/see/All/{id}', [SeeAllController::class, 'Category_seeAll'])->name('Category-seeAll');
+Route::get('Rango/special/see/All/Products/Electronics', [SeeAllController::class, 'SpecialOffer_seeAll'])->name('Special-seeAll');
+Route::get('Rango/Product/see/All/Products/Electronics', [SeeAllController::class, 'allProduct_seeAll'])->name('AllProduct-seeAll');
+Route::get('Rango/Categories/see/All/Products/{id}', [SeeAllController::class, 'Category_seeAll'])->name('Category-seeAll');
+Route::get('Rango/Brand/see/All/Products/{ids}', [SeeAllController::class, 'brandAllProducts'])->name('brand.all.products');
+
+
+Route::get('Rango/Categories/Products/All/{id}', [CategoryBarController::class, 'CategoryAll'])->name('Category-All');
+Route::get('Rango/Brand/Products/All/{id}', [CategoryBarController::class, 'CBrandProducts'])->name('category.wise.brand');
+Route::get('Rango/Type/of/Products/All/{id}', [CategoryBarController::class, 'typeOfProducts'])->name('type.of.product');
 
 
 Route::get('Rango/Brand/All/seeAll/Electronics', [MenuController::class, 'brand_seeAll'])->name('All-Brands');
-Route::get('installationAndService', [MenuController::class, 'installation'])->name('menu.installation');
-Route::get('installationAndServiceDetails', [MenuController::class, 'installationDetails'])->name('menu.installationDetails');
+Route::get('Rango/installation/And/Service/Electronics', [MenuController::class, 'installation'])->name('menu.installation');
+Route::get('Rango/installation/And/Service/Details/Electronics/{id}', [MenuController::class, 'installationDetails'])->name('installation.Details');
 Route::get('menuContact', [MenuController::class, 'contact'])->name('menu.contact');
 
 
@@ -66,7 +73,6 @@ Route::middleware('auth' , 'verified')->group(function () {
 
     Route::get('/Check/Out/Rango/Electronics' , [CheckoutController::class , 'checkOut' ])->name('check.out');
     Route::post('/Check/Out/Submit/Rango/Electronics/Order/Placed' , [CheckoutController::class , 'checkOutSubmit' ])->name('check.out.submit');
-
 
 
 });

@@ -18,7 +18,12 @@
 
                             <div class="input-group mb-2 mr-sm-2">
                             <label class="sr-only" for="ServiceName">Service Name</label>
-                            <input type="text" name="ServiceName" class="form-control mb-2 mr-sm-2" id="serviceName" placeholder="Brand Name" required/>
+                            <input type="text" name="ServiceName" class="form-control mb-2 mr-sm-2" id="serviceName" placeholder="Service Name" required/>
+                            </div>
+
+                            <div class="input-group mb-2 mr-sm-2">
+                                <label class="sr-only" for="ServiceName">Service Price</label>
+                                <input type="text" name="ServicePrice" class="form-control mb-2 mr-sm-2" id="servicePrice" placeholder="Service Price" required/>
                             </div>
 
                             <div class="input-group mb-2 mr-sm-2">

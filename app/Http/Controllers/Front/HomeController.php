@@ -18,17 +18,15 @@ class HomeController extends Controller
         ]);
     }
 
-    public function brandAll($ids)
-    {
-        $brandIds = explode(',', $ids); // Split comma-separated IDs into an array
-        $products = Products::whereIn('brand_id', $brandIds)->orderBy('id', 'DESC')->get();
+        public function productDetails($id){
+            return view('front.pages.details_pages.product_details' , [
+                'product' => Products::find($id),
+                'cartItems' => \Cart::getContent(),
+                'products' => Products::inRandomOrder()->first()->get(),
+                'categories' => Category::orderBy('id', 'DESC')->get(),
+                'brands' => Brands::orderBy('id', 'DESC')->get(),
 
-        return view('front.pages.all.brandAll.brandAll', [
-            'products' => $products,
-        ]);
-    }
-        public function productDetails(){
-            return view('front.pages.details_pages.product_details');
+            ]);
 
     }
 

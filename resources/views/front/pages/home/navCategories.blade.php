@@ -211,81 +211,28 @@
                         <nav class="navCategory" >
                             <ul class="">
                                 {{--              Category                  --}}
-                                <li class="dropdown"><a href="#">Television<span>&rsaquo;</span></a>
+                                @foreach($categories as $category)
+                                <li class="dropdown"><a href="{{ route('Category-All', ['id' => $category->id]) }}">{{$category->CategoryName}}<span>&rsaquo;</span></a>
                                     <ul>
                                     {{--                  Brands                      --}}
-                                        <li class="dropdown_two"><a href="#">Samsung TV<span>&rsaquo;</span></a>
+                                        @foreach($brands as $brand)
+                                            @if($category->id == $brand->category_id)
+                                        <li class="dropdown_two"><a href="{{ route('category.wise.brand' , ['id' => $brand->id ]) }}">{{$brand->BrandName}}<span>&rsaquo;</span></a>
                                             <ul>
                                         {{--                    Type Of Products                     --}}
-                                                <li><a href="#">Samsung LED TV</a></li>
-                                                <li><a href="#">Samsung Smart TV</a></li>
+                                                @foreach($products as $product)
+                                                    @if($product->category_id == $category->id && $product->brand_id == $brand->id)
+                                                <li><a href="{{ route('type.of.product' ,[ 'id' => $product->id] ) }}">{{$product->product_type}}</a></li>
+                                                    @endif
+                                                @endforeach
                                             </ul>
+                                            @endif
+                                            @endforeach
                                         </li>
-                                        <li><a href="#">Sony TV</a></li>
-                                        <li><a href="#">LG TV</a></li>
-                                        <li><a href="#">Xiaomi Smart TV</a></li>
                                     </ul>
                                 </li>
+                                @endforeach
                                 {{--                End Category Bar                --}}
-                                <li class="dropdown"><a href="#">Air conditionar<span>&rsaquo;</span></a>
-                                    <ul>
-                                        <li class="dropdown_two"><a href="#">Gree<span>&rsaquo;</span></a>
-                                            <ul>
-                                                <li><a href="#">Gree split type</a></li>
-                                                <li><a href="#">Gree window type</a></li>
-                                                <li><a href="#">Gree Ceilling type</a></li>
-                                                <li><a href="#">Gree Cassette type</a></li>
-                                                <li><a href="#">Gree Portable type</a></li>
-                                                <li><a href="#">Gree Floor type</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">General</a></li>
-                                        <li><a href="#">Sharp</a></li>
-                                        <li><a href="#">Maidea</a></li>
-                                        <li><a href="#">Daikin</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Water purifier<span>&rsaquo;</span></a>
-                                    <ul>
-                                        <li><a href="#">Pureit water purifier</a></li>
-                                        <li><a href="#">Havells water purifier</a></li>
-                                        <li><a href="#">kent water purifier</a></li>
-                                        <li><a href="#">China water purifier</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Washing Machine<span>&rsaquo;</span></a>
-                                    <ul>
-                                        <li><a href="#">Sharp Washing Machine</a></li>
-                                        <li><a href="#">LG Washing Machine</a></li>
-                                        <li><a href="#">Xiaomi Washing Machine</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Electric Items<span>&rsaquo;</span></a>
-                                    <ul>
-                                        <li><a href="#">Click</a></li>
-                                        <li><a href="#">Ceilling Fan</a></li>
-                                        <li><a href="#">XPART TOOLS</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Refrigerators<span>&rsaquo;</span></a>
-                                    <ul>
-                                        <li><a href="#">Sharp Refrigerator</a></li>
-                                        <li><a href="#">Danaz Refrigerator</a></li>
-                                        <li><a href="#">Hitachi Refrigerator</a></li>
-                                        <li><a href="#">Panasonic Refrigerator</a></li>
-                                        <li><a href="#">Konka Refrigerator</a></li>
-                                        <li><a href="#">Samsung Refrigerator</a></li>
-
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Water heater</a>
-                                    <ul>
-                                        <li><a href="#">Tropica Geyser</a></li>
-                                        <li><a href="#">Havells Geyser</a></li>
-                                        <li><a href="#">Tropica Geyser</a></li>
-                                        <li><a href="#">DewanCo Geyser</a></li>
-                                    </ul>
-                                </li>
                             </ul>
                         </nav>
                     </div>
