@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Controller;
 use App\Models\Back\Category\Category;
 use App\Models\Back\Order\OrderSubmit;
+use App\Models\Front\Contact\Contacts;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -66,5 +67,23 @@ class DashboardController extends Controller
             // Handle the case when the file does not exist
             return response()->json(['error' => 'File not found'], 404);
         }
+    }
+
+    public function contactInfo ()
+    {
+        return view('back.pages.contacts.contacts' , [
+            'messages' => Contacts::orderBy('id' , 'DESC')->get()->all(),
+        ]);
+    }
+
+    public function contactInfoDelete ($id)
+    {
+        $this->events = Contacts::find($id);
+        if (file_exists($this->events->image))
+        {
+            unlink($this->events->image);
+        }
+        $this->events->delete();
+        return redirect()->back()->with('message-for-delete', 'Message Deleted successfully');
     }
 }

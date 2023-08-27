@@ -58,6 +58,7 @@ Route::get('Rango/Brand/All/seeAll/Electronics', [MenuController::class, 'brand_
 Route::get('Rango/installation/And/Service/Electronics', [MenuController::class, 'installation'])->name('menu.installation');
 Route::get('Rango/installation/And/Service/Details/Electronics/{id}', [MenuController::class, 'installationDetails'])->name('installation.Details');
 Route::get('Rango/menu/Contact/Electronics', [MenuController::class, 'contact'])->name('menu.contact');
+Route::post('Rango/menu/Contact/Send/Massage/Electronics', [MenuController::class, 'sendMessage'])->name('send.message');
 
 
 
@@ -120,6 +121,10 @@ Route::prefix('/Rango/Admin')->middleware('rangoAdmin', 'auth')->group(function 
     Route::get('/dashboard/Old/Service/Edit/Electronics/{id}' , [ServiceController::class , 'editService'])->name('edit-Service');
     Route::post('/dashboard/Old/Service/Update/Electronics/{id}' , [ServiceController::class , 'updateService'])->name('update-service');
     Route::get('/dashboard/Old/Service/Delete/Electronics/{id}' , [ServiceController::class , 'deleteService'])->name('delete-Service');
+
+
+    Route::get('/dashboard/New/Contact/Info/Electronics' , [DashboardController::class , 'contactInfo'])->name('contact.info');
+    Route::get('/dashboard/Old/Contact/Info/Message/Electronics/{id}' , [DashboardController::class , 'contactInfoDelete'])->name('delete-message');
 
 });
 require __DIR__.'/auth.php';

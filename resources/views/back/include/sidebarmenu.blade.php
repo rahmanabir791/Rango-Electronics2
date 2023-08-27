@@ -80,7 +80,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="{{route('contact.info')}}">
                 <span class="menu-title">Contact INFO</span>
                 <i class="mdi mdi-message-alert menu-icon" style="color: #d7c9f8;"></i>
             </a>

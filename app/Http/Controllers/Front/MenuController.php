@@ -7,6 +7,7 @@ use App\Models\Back\Brands\Brands;
 use App\Models\Back\Category\Category;
 use App\Models\Back\Products\Products;
 use App\Models\Back\Service\Service;
+use App\Models\Front\Contact\Contacts;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -49,5 +50,11 @@ class MenuController extends Controller
             'categories' => Category::orderBy('id', 'DESC')->get(),
             'brands' => Brands::orderBy('id', 'DESC')->get(),
         ]);
+    }
+
+    public function sendMessage (Request $request)
+    {
+        Contacts::newMessage($request);
+        return redirect()->back()->with('message', 'Service Created successfully.');
     }
 }
