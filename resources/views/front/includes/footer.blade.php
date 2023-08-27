@@ -55,16 +55,33 @@
             </div>
         </div>
     </div>
-    <div class="row border-top border-light py-4">
-        <div class="col-md-6 px-xl-0">
-            <p class="mb-md-0 text-center text-md-left text-white">
-               <a class="text-white font-weight-semi-bold" style="margin-left: 60px;" href="#">  &copy;rangoelectronics</a> 2023 Designed
+    <div class="row border-top border-light" style="padding: 20px;">
+        <div class="col-md-4 ">
+            <p class=" text-center text-white">
+               <a class="text-white font-weight-semi-bold" style="" href="#">  &copy;Copyright</a> 2023 Designed
                 by
                 <a class="text-white font-weight-semi-bold" href="#">AN Universe</a>
             </p>
         </div>
-        <div class="col-md-6 px-xl-0 text-center text-md-right">
-            <img class="img-fluid"src="{{asset('/')}}assets/front-asset/img/productimgpayments.png" alt="">
+        <div class=" col-md-4 ">
+            <a class=" text-center px-1 text-white" href="">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="text-white px-1" href="">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a class="text-white px-1" href="">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a class="text-white px-1" href="">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a class="text-white px-1" href="">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        <div class="col-md-4  text-center ">
+            <a href="#"> <img  class="img-fluid"src="{{asset('/')}}assets/front-asset/img/payments.png" style="" alt=""></a>
         </div>
     </div>
 </div>

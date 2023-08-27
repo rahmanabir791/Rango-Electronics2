@@ -4,6 +4,7 @@
 @endsection
 
 @section('body')
+    @include('front.includes.navCategoryForOthers')
 
     <!-- Contact Start -->
     <div class="container-fluid pt-5">

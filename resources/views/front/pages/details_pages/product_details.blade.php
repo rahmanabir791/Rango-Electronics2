@@ -3,6 +3,7 @@
     Installation Details
 @endsection
 @section('body')
+    @include('front.includes.navCategoryForOthers')
     <!-- Page Header Start -->
     <hr>
     <div class="container-fluid  mb-5" style="background: maroon; color: white;">
