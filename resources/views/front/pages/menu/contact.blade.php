@@ -15,7 +15,7 @@
             <div class="col-lg-7 mb-5">
                 <div class="contact-form">
                     <div id="success"></div>
-                    <form  action="{{'send.message'}}" method="post"  enctype="multipart/form-data">
+                    <form  action="{{route('send.message')}}" method="post"  enctype="multipart/form-data">
                         @csrf
                         <div class="control-group">
                             <input type="text" style="border-color: maroon;" name="name" class="form-control" id="name" placeholder="Your Name" required/>

@@ -3,6 +3,21 @@
     Check Out
 @endsection
 @section('body')
+    <style>
+        .notification-banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+    @if(session('success'))
+        <div class="notification-banner">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <link href="{{asset('/')}}assets/front-asset/css/checkout.css" rel="stylesheet">
     <div class="container-fluid mt-5 text-center">
         <div class="row justify-content-center">

@@ -23,6 +23,7 @@
                 <br>
                 <h5 class="font-weight-semi-bold mb-4" style="color: maroon;">Offer Price: ৳{{number_format($product->O_price)}} </h5>
                 <h5 class="font-weight-semi-bold mb-4" style="color: gold;">MRP Price: ৳<del>{{number_format($product->MRP_price) }}</del></h5>
+                <p>Stock Availability: {{ $product->stockAvailability == 1 ? 'In Stock' : 'Out Of Stock' }}</p>
 
                 <p class="mb-4">{!! $product->warranty !!}</p>
                 <p class="mb-4">{!! $product->features !!}</p>

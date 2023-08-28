@@ -34,7 +34,6 @@ class OrderSubmit extends Model
         self::$order->zip              =       $request->zip;
         self::$order->address          =       $request->address;
         self::$order->invoiceNumber    =       $invoiceNumber;
-        self::$order->delivered        =       $request->delivered;
             // Save the model
         self::$order->save();
         }

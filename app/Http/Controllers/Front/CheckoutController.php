@@ -53,12 +53,8 @@ class CheckoutController extends Controller
             $orderItem->save();
         }
 
-
-
-
         $data = [
             'productData' => $productData,
-
 
             'name' => $request->name,
             'email' => $request->email,
@@ -86,20 +82,16 @@ class CheckoutController extends Controller
 //        Storage::makeDirectory(dirname($pdfFilePath));
 //        $pdf->save($pdfFilePath);
 
-
-
-
         Mail::send('back.forClient.rangoEmail', $data, function($message) use ($data  ) {
             $message->to($data['email'])
                 ->subject('Thanks for placing your Order');
 //                ->attach($pdfFilePath, ['as' => $pdfFileName, 'mime' => 'application/pdf']);
         });
 
-
-
         OrderSubmit::newOrder($request , $invoiceNumber);
-//
-        return redirect()->back()->with('message', 'Your Order has been placed successfully. An invoice has been sent to your email. Thank you!');
+        \Cart::clear();
+        return redirect()->back()->with('success', 'Your order has been successfully placed. A confirmation email has been sent to your email address. Please check your email inbox, including the Spam folder. We will be in touch with you as soon as possible. Thank you for your order!');
+
     }
 
 

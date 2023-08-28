@@ -35,7 +35,7 @@
                                 </div>
                             </div>
                             <div class="card-footer d-flex justify-content-between bg-light border">
-                                <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i></a>
+                                <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>View Detail</a>
                                 <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" value="{{ $product->id }}" name="id">

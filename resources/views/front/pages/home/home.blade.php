@@ -10,22 +10,22 @@
     <div class="container-fluid pt-5" style=" padding: 0; ">
         <div class="row ">
             <div class="col-lg-4">
-                <a href="#"><img class="mb-0 ml-2" src="{{asset('/')}}assets/front-asset/img/banner-1.jpg"
+                <a href="#"><img class="mb-0 ml-2" src="{{asset('/')}}assets/front-asset/img/banner/banner-1.jpg"
                                  style=" margin-left: 2px; height: 303px;" width="405;" alt="image; "></a>
             </div>
             <div class="col-lg-4 ">
                 <div class="row">
-                    <a href="#"><img class="mb-2 ml-2" src="{{asset('/')}}assets/front-asset/img/banner-2.jpg"
+                    <a href="#"><img class="mb-2 ml-2" src="{{asset('/')}}assets/front-asset/img/banner/banner-2.jpg"
                                      style="height: 148px;" width="408px;" alt="image"></a>
-                    <a href="#"><img class="mb-2 ml-2" src="{{asset('/')}}assets/front-asset/img/banner-3.jpg"
+                    <a href="#"><img class="mb-2 ml-2" src="{{asset('/')}}assets/front-asset/img/banner/banner-3.jpg"
                                      style="height: 148px;" width="408px;" alt="image"></a>
                 </div>
             </div>
             <div class="col-lg-4 ">
                 <div class="row">
-                    <a href="#"><img class="mb-2 ml-0 " src="{{asset('/')}}assets/front-asset/img/banner-5.jpg"
+                    <a href="#"><img class="mb-2 ml-0 " src="{{asset('/')}}assets/front-asset/img/banner/banner-5.jpg"
                                      style="height: 148px;" width="408px;" alt="image"></a>
-                    <a href="#"><img class="mb-2 ml-0" src="{{asset('/')}}assets/front-asset/img/banner-3.jpg"
+                    <a href="#"><img class="mb-2 ml-0" src="{{asset('/')}}assets/front-asset/img/banner/banner-3.jpg"
                                      style="height: 148px;" width="405px;" alt="image"></a>
 
                 </div>
@@ -47,7 +47,7 @@
             @if($product->special_offer == 1)
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <a href="#"><img src="{{asset($product->image)}}" style="height: 300px;" width="150px;"
+                        <a href="#"><img src="{{asset($product->image)}}" style="height: 300px;"
                                          alt="image"></a>
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 ">
@@ -90,7 +90,7 @@
         @foreach($products as $product)
             <div class="card product-item border-0 mb-4">
                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <a href="#"><img src="{{asset($product->image)}}" style="height: 300px;" width="150px;" alt="image"></a>
+                    <a href="#"><img src="{{asset($product->image)}}" style="height: 300px; " alt="image"></a>
                 </div>
                 <div class="card-body border-left border-right text-center p-0 pt-4 ">
                     <h6 class="text-truncate mb-3">{{$product->productName}}</h6>
@@ -134,7 +134,7 @@
                     <div class="card product-item border-0 mb-4">
                         <div
                             class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <a href="#"><img src="{{asset($product->image)}} " style="height: 300px; width: 150px;" alt="image"></a>
+                            <a href="#"><img src="{{asset($product->image)}} " style="height: 300px;" alt="image"></a>
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 ">
                             <h6 class="text-truncate mb-3">{{$product->productName}}</h6>
@@ -145,8 +145,7 @@
                                 </h6>
                             </div>
                             <div class="card-footer d-flex justify-content-between bg-light border">
-                                <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>
-                                    View Detail</a>
+                                <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>View Detail</a>
                                 <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" value="{{ $product->id }}" name="id">

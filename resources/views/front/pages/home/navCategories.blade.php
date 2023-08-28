@@ -1,169 +1,4 @@
-<style>
-    /* Custom styles for the dropdown */
-    .category-bar {
-        background-color: #fdfdfd;
-        color: #050000;
-        width: 200px;
-        font-size: 12px;
-        display: block;
-        position: absolute;
-        box-shadow: 5px 10px 15px 1px gold;
-        z-index: 100; /* Ensure the category bar is above other elements */
-        max-height: 0;
-        transition: max-height 0.3s ease-in-out; /* Add transition property */
-    }
-
-    .category-bar.show {
-        max-height: 1000px; /* Adjust the max-height as needed */
-        /* ... (Other styles) ... */
-    }
-
-    .navbar-collapse .show{
-        max-height: 1000px;
-    }
-
-
-    .category-list {
-        padding: 10px;
-        box-shadow: 2px 1px 3px 1px gold;
-    }
-
-    /*Additional styles for the navigation */
-    .navCategory {
-        top: 0;
-        bottom: 0;
-        background: rgb(247, 248, 250);
-
-    }
-
-
-
-
-    nav ul {
-        position: relative;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    nav ul li {
-        position: relative;
-        display: block;
-
-    }
-
-    nav ul li a {
-        display: flex;
-        align-items: center;
-        font-size: 1.15em;
-        text-decoration: none;
-        text-transform: capitalize;
-        color: black;
-        padding: 10px 15px;
-        height: 50px;
-        transition: background 0.5s ease;
-    }
-
-    nav ul li a:hover {
-        background: rgb(225, 226, 230);
-        color: black;
-    }
-
-    nav ul ul {
-        position: absolute;
-        left: 100%;
-        top: 0;
-        display: none;
-        width: 250px;
-        background: rgb(247, 248, 250);
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul .dropdown:hover > ul,
-    nav ul .dropdown_two:hover > ul {
-        display: block;
-    }
-
-    nav ul .dropdown,
-    nav ul .dropdown_two {
-        position: relative;
-    }
-    .navbar{
-        z-index: 100;
-
-    }
-    /*.navbar-nav{*/
-    /*    background: maroon;*/
-    /*    color: white;*/
-    /*}*/
-
-    /*.navbar .show {*/
-    /*    max-height: 1000px;*/
-    /*}*/
-
-    nav ul span {
-        position: absolute;
-        right: 20px;
-        font-size: 1.5rem;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    @media (max-width: 767px) {
-        /* Hide the category bar by default */
-        .category-bar {
-            display: none;
-        }
-
-
-        /* Show the category bar when the button is clicked */
-        .category-bar-visible {
-            display: block;
-        }
-
-        /* Hide the navigation toggle button */
-        .navbar-nav{
-            display: block;
-        }
-        .navbar-nav-visible{
-            display: block;
-            background: maroon;
-        }
-
-        .navbar-nav-disabled{
-            display: none;
-        }
-
-        /*.navbar-nav .navbar-toggler disable{*/
-        /*    display: none;*/
-        /*}*/
-        /*.navbar-toggler disable {*/
-        /*    display: none;*/
-        /*}*/
-
-        /* Show the navigation menu in mobile view */
-        .navbar-nav-visible{
-            display: block;
-
-        }
-        .navbar-nav  .navbar-collapse {
-            display: block !important;
-        }
-
-        /* Hide the menu dropdown in mobile view */
-        /*nav ul .dropdown > ul,*/
-        /*nav ul .dropdown_two > ul {*/
-        /*    display: none !important;*/
-        /*}*/
-
-        /* Adjust the margin-top of the slider for mobile view */
-        #header-carousel {
-            margin-top: 50px; /* You can adjust this value as needed */
-        }
-    }
-</style>
-
-
+<link href="{{asset('/')}}assets/front-asset/css/navCategories.css" rel="stylesheet">
 <div class="container-fluid  mb-1 mt-1" style="background-color: #800000; height: 68px">
     <div class="row border-top px-xl-6">
         <div class="col-lg-2">
@@ -243,25 +78,22 @@
 
     <div class="col-lg-6">
         <!-- Carousel and Content Here -->
-
         <!-- ... (Carousel content here) ... -->
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" style="border-radius: 20px;">
-                @foreach($sliders as $slider)
-                <div class="carousel-item active" style="height: 410px;">
-                    <img class="img-fluid" src="{{asset($slider->slidImage)}}" style="border-radius: 20px;"  alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 700px; border-radius: 50px;">
-                            <h4 class="text-light text-uppercase font-weight-medium mb-3" >{{$slider->sliderStext}}</h4>
-                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">{{$slider->sliderBtext}}</h3>
-                            {{--                                <a href="" class="btn btn-light py-2 px-3">Shop Now</a>--}}
+                @foreach($sliders as $index =>$slider)
+                <div class="carousel-item {{ $index === 0 ? 'active' : '' }} " style="height: 410px;">
+                        <img class="img-fluid" src="{{asset($slider->slidImage)}}" style="border-radius: 20px;"  alt="Image">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 700px; border-radius: 50px;">
+                                <h4 class="text-light text-uppercase font-weight-medium mb-3" >{{$slider->sliderStext}}</h4>
+                                <h3 class="display-4 text-white font-weight-semi-bold mb-4">{{$slider->sliderBtext}}</h3>
+                                {{--                                <a href="" class="btn btn-light py-2 px-3">Shop Now</a>--}}
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
-
-
             <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
                 <div class="btn btn-dark" style="width: 45px; height: 45px;">
                     <span class="carousel-control-prev-icon mb-n2"></span>
@@ -275,11 +107,9 @@
         </div>
     </div>
 
-
-
     <div class="col-lg-4">
-        <img src="{{asset('/')}}assets/front-asset/img/ad1.jpg" alt="" style="height: 200px; width: 440px; border-radius: 20px; margin-bottom: 10px;">
-        <img src="{{asset('/')}}assets/front-asset/img/ad2.jpg" alt="" style="height: 200px; width: 440px; border-radius: 20px;">
+        <img src="{{asset('/')}}assets/front-asset/img/ad1.jpg" alt="" style="height: 200px; width: 420px; border-radius: 20px; margin-bottom: 10px;">
+        <img src="{{asset('/')}}assets/front-asset/img/ad2.jpg" alt="" style="height: 200px; width: 420px; border-radius: 20px;">
     </div>
 </div>
 <!-- ... (Your HTML and CSS) ... -->

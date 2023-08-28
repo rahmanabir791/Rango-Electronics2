@@ -29,7 +29,7 @@
                    <div class="card product-item border-0 mb-4">
                       <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                           <a href="{{ route('brand.all.products', ['ids' => implode(',', $ids)]) }}">
-                             <img src="{{ asset($brandImages[$brandName]) }}" style="height: 150px;" width="150px;" alt="Brand image">
+                             <img src="{{ asset($brandImages[$brandName]) }}" style="height: 350px; width:250px;" alt="Brand image">
                           </a>
                      </div>
                  </div>

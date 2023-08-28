@@ -73,7 +73,7 @@
 
                                                 <td> {{$client->created_at}} </td>
                                                 <td> {{ $client->email }} </td>
-                                                <td><a href="{{route('downloadInvoice' , ['invoiceNumber' => $client->invoiceNumber ])}}">{{ $client->invoiceNumber }}</a></td>
+                                                <td>{{ $client->invoiceNumber }}</td>
                                                 <td>
                                                     <a href="{{ route('delete-clint', ['invoiceNumber' => $client->invoiceNumber]) }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure Delete this Client Details ?')">Delete</a>
                                                     <form method="POST" action="{{ route('update-Delivery', ['id' => $client->id]) }}" style="display: inline;">
@@ -148,7 +148,7 @@
                                         <td> {{ $client->remainAmount }} </td>
                                         <td> {{ $client->f_service }} </td>
                                         <td> {{ $client->email }} </td>
-                                        <td><a href="{{route('downloadInvoice' , ['invoiceNumber' => $client->invoiceNumber ])}}">{{ $client->invoiceNumber }}</a></td>
+                                        <td>{{ $client->invoiceNumber }}</td>
                                         <td>
                                             <a href="{{ route('delete-clint', ['invoiceNumber' => $client->invoiceNumber]) }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure Delete this Client Details ?')">Delete</a>
                                             <form method="POST" action="{{ route('update-Delivery', ['id' => $client->id]) }}" style="display: inline;">

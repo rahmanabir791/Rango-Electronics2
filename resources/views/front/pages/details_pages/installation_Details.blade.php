@@ -23,7 +23,7 @@
                 <br>
                 <h5 class="font-weight-semi-bold mb-4" style="color: maroon;">Offer Price: ৳{{number_format($service->ServicePrice)}} </h5>
 
-                <p class="mb-4">{!! $service->description !!}</p>
+                <p class="mb-4 text-center">{!! $service->description !!}</p>
 
 
                 <div class="d-flex align-items-center mb-4 pt-2">
@@ -106,7 +106,7 @@
             <div class="tab-content text-center" >
                 <div class="tab-pane fade show active " style="color: black;" id="tab-pane-1">
                     <h4 class="mb-3">Product Specifications</h4>
-                    <p>{!! $service->specification !!}</p>
+                    <p class="text-center">{!! $service->specification !!}</p>
                 </div>
 
             </div>

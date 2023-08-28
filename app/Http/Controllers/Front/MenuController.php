@@ -15,7 +15,7 @@ class MenuController extends Controller
     public function brand_seeAll(){
         return view('front.pages.menu.brands', [
             'brands' => Brands::orderBy('id', 'DESC')->get(),
-            'products' => Products::inRandomOrder()->first()->get(),
+            'products' => Products::inRandomOrder()->get(),
             'categories' => Category::orderBy('id', 'DESC')->get(),
 
 
@@ -24,9 +24,9 @@ class MenuController extends Controller
 
     public function installation ()
     {
-        return view('front.pages.menu.installationSevice' , [
-            'services' => Service::inRandomOrder()->first()->get(),
-            'products' => Products::inRandomOrder()->first()->get(),
+        return view('front.pages.menu.installationService' , [
+            'services' => Service::inRandomOrder()->get(),
+            'products' => Products::inRandomOrder()->get(),
             'categories' => Category::orderBy('id', 'DESC')->get(),
             'brands' => Brands::orderBy('id', 'DESC')->get(),
         ]);
@@ -37,7 +37,7 @@ class MenuController extends Controller
         return view('front.pages.details_pages.installation_Details' , [
             'service' => Service::find($id),
             'cartItems' => \Cart::getContent(),
-            'products' => Products::inRandomOrder()->first()->get(),
+            'products' => Products::inRandomOrder()->get(),
             'categories' => Category::orderBy('id', 'DESC')->get(),
             'brands' => Brands::orderBy('id', 'DESC')->get(),
         ]);
@@ -46,7 +46,7 @@ class MenuController extends Controller
     public function contact ()
     {
         return view('front.pages.menu.contact',[
-            'products' => Products::inRandomOrder()->first()->get(),
+            'products' => Products::inRandomOrder()->get(),
             'categories' => Category::orderBy('id', 'DESC')->get(),
             'brands' => Brands::orderBy('id', 'DESC')->get(),
         ]);
@@ -55,6 +55,6 @@ class MenuController extends Controller
     public function sendMessage (Request $request)
     {
         Contacts::newMessage($request);
-        return redirect()->back()->with('message', 'Service Created successfully.');
+        return redirect()->back()->with('message', 'Message Send successfully. as  soon as possible we will connect you');
     }
 }

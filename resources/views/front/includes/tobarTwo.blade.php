@@ -1,28 +1,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Add this style block to your HTML or external CSS file */
-        .sticky-nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-         /*Additional styles for mobile responsiveness */
-        @media (max-width: 767px) {
-            .sticky-nav .col-md-6 {
-                text-align: left;
-            }
-
-            .sticky-nav .col-md-6:last-child {
-                text-align: right;
-            }
-        }
-
-
-
-    </style>
-
+    <link href="{{asset('/')}}assets/front-asset/css/tobarTwo.css" rel="stylesheet">
 
 {{-- Second Bar --}}
 <nav class="sticky-nav">
@@ -81,14 +59,10 @@
                             <i class="fa-solid fa-user"style="color: gold;"></i>
                         </a>
                     @endif
+                        {{--                    Cart --}}
                         <a href="{{ route('cart.list') }}" class="text-decoration-none pr-3">
                             <i class="fa-solid fa-cart-flatbed-suitcase" style="color: gold;"></i> {{ Cart::getTotalQuantity()}}
                         </a>
-{{--                    Cart --}}
-
-
-
-
 
                         {{--                    Cart End--}}
                 </div>

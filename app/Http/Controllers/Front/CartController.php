@@ -13,7 +13,7 @@ class CartController extends Controller
     public function cartList()
     {
         $cartItems = \Cart::getContent();
-        $products = Products::inRandomOrder()->first()->get();
+        $products = Products::inRandomOrder()->get();
             $categories = Category::orderBy('id', 'DESC')->get();
             $brands = Brands::orderBy('id', 'DESC')->get();
         // dd($cartItems);

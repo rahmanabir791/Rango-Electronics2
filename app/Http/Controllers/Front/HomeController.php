@@ -15,7 +15,7 @@ class HomeController extends Controller
         return view('front.pages.home.home', [
             'categories' => Category::orderBy('id', 'DESC')->get(),
             'brands' => Brands::orderBy('id', 'DESC')->get(),
-            'products' => Products::inRandomOrder()->first()->get(),
+            'products' => Products::inRandomOrder()->get(),
             'sliders'=> Slider::orderBy('id' , 'DESC')->get(),
         ]);
     }
@@ -24,7 +24,7 @@ class HomeController extends Controller
             return view('front.pages.details_pages.product_details' , [
                 'product' => Products::find($id),
                 'cartItems' => \Cart::getContent(),
-                'products' => Products::inRandomOrder()->first()->get(),
+                'products' => Products::inRandomOrder()->get(),
                 'categories' => Category::orderBy('id', 'DESC')->get(),
                 'brands' => Brands::orderBy('id', 'DESC')->get(),
 

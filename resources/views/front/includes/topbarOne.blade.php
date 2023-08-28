@@ -12,7 +12,7 @@
             <a class="text-white px-2" href="">
                 <i class="fa-solid fa-envelope"></i>
             </a>
-            <span class="text-white px-2">rangoelectronics.com</span>
+            <span class="text-white px-2">electronics.rango@gmail.com</span>
         </div>
     </div>
     <div class="col-lg-6 text-center text-lg-right">

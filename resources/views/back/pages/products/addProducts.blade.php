@@ -39,17 +39,17 @@
                                             brandSelect.empty();
                                             brandSelect.append($('<option>').text('Select a Brand').attr('value', ''));
 
-                                            var addedBrands = []; // Keep track of added brands
-
-                                            @foreach($Brands as $brand)
-                                            if ({{ $brand->category_id }} == selectedCategory && addedBrands.indexOf('{{ $brand->BrandName }}') === -1) {
-                                                brandSelect.append($('<option>').text('{{ $brand->BrandName }}').attr('value', '{{ $brand->id }}'));
-                                                addedBrands.push('{{ $brand->BrandName }}');
+                                            if (selectedCategory !== '') {
+                                                @foreach($Brands as $brand)
+                                                if ('{{ $brand->category_id }}' == selectedCategory) {
+                                                    brandSelect.append($('<option>').text('{{ $brand->BrandName }}').attr('value', '{{ $brand->id }}'));
+                                                }
+                                                @endforeach
                                             }
-                                            @endforeach
                                         });
                                     });
                                 </script>
+
 
                                 <div class="form-group">
                                     <label for="productBrand">Brand</label>

@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="input-group mb-2 mr-sm-2">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text">Slider Image</div>
+                                        <div class="input-group-text">Slider Image {Height: 410px;}</div>
                                     </div>
                                     <input type="file" name="slidImage" class="form-control" id="brandImage" accept="image/*" required>
                                 </div>

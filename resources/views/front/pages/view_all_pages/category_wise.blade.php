@@ -4,7 +4,6 @@
 @endsection
 @section('body')
     @include('front.includes.navCategoryForOthers')
-
     <div class="container-fluid pt-5">
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">All {{$Category->CategoryName}} Product Here</span></h2>
@@ -47,6 +46,5 @@
             @endforeach
         </div>
     </div>
-
 @endsection
 

@@ -28,7 +28,7 @@
 
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">Brand Image</div>
+                                    <div class="input-group-text">Brand Image  {height: 350px;  width:250px;}</div>
                                 </div>
                                 <input type="file" name="BrandImage" class="form-control" id="brandImage" accept="image/*" required>
                             </div>
