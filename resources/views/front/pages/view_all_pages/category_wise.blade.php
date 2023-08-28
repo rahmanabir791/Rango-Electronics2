@@ -1,6 +1,6 @@
-<@extends('front.master')
+@extends('front.master')
 @section('title')
-    Category See all
+  Category All
 @endsection
 @section('body')
     @include('front.includes.navCategoryForOthers')
@@ -50,4 +50,4 @@
     </div>
 
 @endsection
->
+

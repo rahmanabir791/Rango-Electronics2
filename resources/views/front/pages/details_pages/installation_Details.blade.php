@@ -48,7 +48,7 @@
                             <input type="hidden" value="{{ $service->ServiceName }}" name="name">
                             <input type="hidden" value="{{ asset($service->ServiceImage)}}" name="image">
                             <input type="hidden" value="{{ $service->ServicePrice }}" name="price">
-                            <button type="submit" class="btn btn-maroon px-3" style="color: gold;"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button>
+                            <button type="submit" class="btn btn-maroon px-3" style="color: gold; background-color: maroon;"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button>
                         </form>
                     @endif
 
