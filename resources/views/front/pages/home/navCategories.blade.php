@@ -246,28 +246,22 @@
 
         <!-- ... (Carousel content here) ... -->
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
+            <div class="carousel-inner" style="border-radius: 20px;">
+                @foreach($sliders as $slider)
                 <div class="carousel-item active" style="height: 410px;">
-                    <img class="img-fluid" src="{{asset('/')}}assets/front-asset/img/slider.jpeg" alt="Image">
+                    <img class="img-fluid" src="{{asset($slider->slidImage)}}" style="border-radius: 20px;"  alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 700px;">
-                            <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
+                        <div class="p-3" style="max-width: 700px; border-radius: 50px;">
+                            <h4 class="text-light text-uppercase font-weight-medium mb-3" >{{$slider->sliderStext}}</h4>
+                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">{{$slider->sliderBtext}}</h3>
                             {{--                                <a href="" class="btn btn-light py-2 px-3">Shop Now</a>--}}
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item" style="height: 410px;">
-                    <img class="img-fluid" src="{{asset('/')}}assets/front-asset/img/slider.jpeg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 700px;">
-                            <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
-                            {{--                                <a href="" class="btn btn-light py-2 px-3">Shop Now</a>--}}
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
+
+
             <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
                 <div class="btn btn-dark" style="width: 45px; height: 45px;">
                     <span class="carousel-control-prev-icon mb-n2"></span>
@@ -284,8 +278,8 @@
 
 
     <div class="col-lg-4">
-        <img src="{{asset('/')}}assets/front-asset/img/ad1.jpg" alt="" style="height: 200px; width: 400px; margin-bottom: 10px;">
-        <img src="{{asset('/')}}assets/front-asset/img/ad2.jpg" alt="" style="height: 200px; width: 400px;">
+        <img src="{{asset('/')}}assets/front-asset/img/ad1.jpg" alt="" style="height: 200px; width: 440px; border-radius: 20px; margin-bottom: 10px;">
+        <img src="{{asset('/')}}assets/front-asset/img/ad2.jpg" alt="" style="height: 200px; width: 440px; border-radius: 20px;">
     </div>
 </div>
 <!-- ... (Your HTML and CSS) ... -->

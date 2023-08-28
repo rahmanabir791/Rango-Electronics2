@@ -16,15 +16,15 @@
             <div class="col-lg-4 ">
                 <div class="row">
                     <a href="#"><img class="mb-2 ml-2" src="{{asset('/')}}assets/front-asset/img/banner-2.jpg"
-                                     style="height: 148px;" width="405px;" alt="image"></a>
+                                     style="height: 148px;" width="408px;" alt="image"></a>
                     <a href="#"><img class="mb-2 ml-2" src="{{asset('/')}}assets/front-asset/img/banner-3.jpg"
-                                     style="height: 148px;" width="405px;" alt="image"></a>
+                                     style="height: 148px;" width="408px;" alt="image"></a>
                 </div>
             </div>
             <div class="col-lg-4 ">
                 <div class="row">
                     <a href="#"><img class="mb-2 ml-0 " src="{{asset('/')}}assets/front-asset/img/banner-5.jpg"
-                                     style="height: 148px;" width="405px;" alt="image"></a>
+                                     style="height: 148px;" width="408px;" alt="image"></a>
                     <a href="#"><img class="mb-2 ml-0" src="{{asset('/')}}assets/front-asset/img/banner-3.jpg"
                                      style="height: 148px;" width="405px;" alt="image"></a>
 
@@ -134,8 +134,7 @@
                     <div class="card product-item border-0 mb-4">
                         <div
                             class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <a href="#"><img src="{{asset($product->image)}}"
-                                             alt="image"></a>
+                            <a href="#"><img src="{{asset($product->image)}} " style="height: 300px; width: 150px;" alt="image"></a>
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 ">
                             <h6 class="text-truncate mb-3">{{$product->productName}}</h6>
@@ -210,15 +209,15 @@
     <div class="subscription-section bg-light py-4">
         <div class="container">
             <div class="row justify-content-center align-items-center">
-                <div class="col-md-8">
-                    <h4 class="subscription-title mb-0">Join Us To Get A Special Gift</h4>
+                <div class="col-md-6">
+                    <h4 class="subscription-title mb-0" style="padding: 5px;">Join Us To Get A Special Gift</h4>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <form class="subscription-form">
                         <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="Email" aria-describedby="subscribe-button">
+                            <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="Email" aria-describedby="subscribe-button" style="border-radius: 20px; margin-right: 10px; font-size: 20px; border-color: maroon;">
                             <div class="input-group-append">
-                                <button class="btn btn-subscribe" style="background-color: maroon; color: gold" type="submit">Subscribe</button>
+                                <button class="btn btn-subscribe" style="background-color: maroon; color: gold; border-radius: 20px; " type="submit">Subscribe</button>
                             </div>
                         </div>
                     </form>

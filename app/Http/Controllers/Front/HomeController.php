@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Back\Brands\Brands;
 use App\Models\Back\Category\Category;
 use App\Models\Back\Products\Products;
+use App\Models\Back\Slider\Slider;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,6 +16,7 @@ class HomeController extends Controller
             'categories' => Category::orderBy('id', 'DESC')->get(),
             'brands' => Brands::orderBy('id', 'DESC')->get(),
             'products' => Products::inRandomOrder()->first()->get(),
+            'sliders'=> Slider::orderBy('id' , 'DESC')->get(),
         ]);
     }
 
@@ -29,6 +31,7 @@ class HomeController extends Controller
             ]);
 
     }
+
 
 
 
