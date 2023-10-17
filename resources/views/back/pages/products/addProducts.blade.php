@@ -17,7 +17,18 @@
                                     <label for="productName">Product Name</label>
                                     <input type="text" name="productName" class="form-control" id="productName" placeholder="Product Name">
                                 </div>
-
+                                <div class="form-group">
+                                    <label for="productName">Focus Keyword</label>
+                                    <input type="text" name="focusKey" class="form-control" id="focusKey" placeholder="Focus Keyword">
+                                </div>
+                                <div class="form-group">
+                                    <label for="productName">Meta Keyword</label>
+                                    <input type="text" name="metaKey" class="form-control" id="metaKey" placeholder="Meta Keyword">
+                                </div>
+                                <div class="form-group">
+                                    <label for="metaTag">Meta Tag</label>
+                                    <input type="text" name="metaTag" class="form-control" id="metaTag" placeholder="Meta Tag">
+                                </div>
 
                                 <div class="form-group">
                                     <label for="productCategory">Category</label>
@@ -80,6 +91,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="ImgAlt">Image alt Tag</label>
+                                    <input type="text" name="ImgAlt" class="form-control" id="ImgAlt" placeholder="Image Alt Tag">
+                                </div>
+                                <div class="form-group">
                                     <label for="productWarranty">Warranty Details</label>
                                     <textarea  class="form-control" name="warranty" id="productWarranty" rows="4"></textarea>
                                 </div>
@@ -88,9 +103,18 @@
                                     <textarea  class="form-control" name="features" id="keyFeatures" rows="4"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="productSpecifications">Specifications</label>
+                                    <label for="productSpecifications">Product Specifications</label>
                                     <textarea  class="form-control" name="specifications" id="productSpecifications" rows="4"></textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="description">Product Description</label>
+                                    <textarea  class="form-control" name="description" id="description" rows="4"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Metadescription">Meta Description</label>
+                                    <textarea  class="form-control" name="Metadescription" id="Metadescription" rows="4"></textarea>
+                                </div>
+
                                 <div class="form-group">
                                     <label>Special offer Product</label>
                                     <div class="form-check">

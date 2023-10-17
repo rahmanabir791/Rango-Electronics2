@@ -112,9 +112,7 @@
             </div>
         </div>
     </div>
-
     <!-- Shop Detail End -->
-
     <!-- Products Start -->
     <div class="container-fluid py-5">
         <div class="text-center mb-4">

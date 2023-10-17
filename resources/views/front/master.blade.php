@@ -1,6 +1,6 @@
 @include('front.includes.style')
 
-<body>
+<body style="overflow-x: hidden;">
 
 <!-- Topbar Start -->
 @include('front.includes.topbarOne')
@@ -22,5 +22,7 @@
 <!-- Footer Start -->
 @include('front.includes.footer')
 <!-- Footer End -->
-
 @include('front.includes.script')
+</body>
+
+</html>

@@ -30,7 +30,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">Brand Image  {height: 350px;  width:250px;}</div>
                                 </div>
-                                <input type="file" name="BrandImage" class="form-control" id="brandImage" accept="image/*" required>
+                                <input type="file" name="BrandImage" class="form-control" id="brandImage" accept="image/*" >
                             </div>
 
                             <button type="submit" class="btn btn-gradient-primary mb-2">Add brands to categories</button>
@@ -55,22 +55,32 @@
                         </thead>
                         <tbody>
                         @php
+                            $brandCategories = [];
                             $currentCategory = null;
+
+                            foreach ($newBrands as $newBrand) {
+                                $brandCategories[$newBrand->category_id][] = $newBrand;
+                            }
                         @endphp
 
-                        @foreach($newBrands as $newBrand)
-                            @foreach ($allCategorys as $category)
-                                @if ($newBrand->category_id == $category->id)
-                                    @if ($currentCategory != $category->CategoryName)
-                                        @php
-                                            $currentCategory = $category->CategoryName;
-                                        @endphp
-                                        <tr>
-                                            <td colspan="4">
-                                                <h3>{{ $currentCategory }}</h3>
-                                            </td>
-                                        </tr>
-                                    @endif
+                        @foreach ($allCategorys as $category)
+                            @php
+                                $brandsInCategory = isset($brandCategories[$category->id]) ? $brandCategories[$category->id] : [];
+                            @endphp
+
+                            @if (!empty($brandsInCategory))
+                                @if ($currentCategory != $category->CategoryName)
+                                    @php
+                                        $currentCategory = $category->CategoryName;
+                                    @endphp
+                                    <tr>
+                                        <td colspan="4">
+                                            <h3>{{ $currentCategory }}</h3>
+                                        </td>
+                                    </tr>
+                                @endif
+
+                                @foreach ($brandsInCategory as $newBrand)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $newBrand->BrandName }}</td>
@@ -83,8 +93,8 @@
                                             <a href="{{ route('delete-brands', ['id' => $newBrand->id]) }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete this Brand?')">Delete</a>
                                         </td>
                                     </tr>
-                                @endif
-                            @endforeach
+                                @endforeach
+                            @endif
                         @endforeach
                         </tbody>
                     </table>

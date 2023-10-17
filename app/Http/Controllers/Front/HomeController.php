@@ -13,10 +13,10 @@ class HomeController extends Controller
 {
     public function home(){
         return view('front.pages.home.home', [
-            'categories' => Category::orderBy('id', 'DESC')->get(),
-            'brands' => Brands::orderBy('id', 'DESC')->get(),
+            'categories' => Category::orderBy('id', 'ASC')->get(),
+            'brands' => Brands::orderBy('id', 'ASC')->get(),
             'products' => Products::inRandomOrder()->get(),
-            'sliders'=> Slider::orderBy('id' , 'DESC')->get(),
+            'sliders'=> Slider::orderBy('id' , 'ASC')->get(),
         ]);
     }
 
@@ -25,8 +25,8 @@ class HomeController extends Controller
                 'product' => Products::find($id),
                 'cartItems' => \Cart::getContent(),
                 'products' => Products::inRandomOrder()->get(),
-                'categories' => Category::orderBy('id', 'DESC')->get(),
-                'brands' => Brands::orderBy('id', 'DESC')->get(),
+                'categories' => Category::orderBy('id', 'ASC')->get(),
+                'brands' => Brands::orderBy('id', 'ASC')->get(),
 
             ]);
 

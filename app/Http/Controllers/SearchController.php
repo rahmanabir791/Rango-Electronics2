@@ -30,9 +30,9 @@ class SearchController extends Controller
             ->get();
 
         $services = Service::where('serviceName', 'LIKE', "%$query%")->get();
-        $products = Products::inRandomOrder()->first()->get();
-        $categories = Category::orderBy('id', 'DESC')->get();
-        $brands = Brands::orderBy('id', 'DESC')->get();
+        $products = Products::inRandomOrder()->get();
+        $categories = Category::orderBy('id', 'ASC')->get();
+        $brands = Brands::orderBy('id', 'ASC')->get();
 
         return view('front.pages.searchView.searchResult', compact('categoryResults', 'brandResults', 'productss', 'services', 'products', 'categories', 'brands'));
     }
@@ -57,9 +57,9 @@ class SearchController extends Controller
             ->get();
 
         $services = Service::where('serviceName', 'LIKE', "%$query%")->get();
-        $products = Products::inRandomOrder()->first()->get();
-        $categories = Category::orderBy('id', 'DESC')->get();
-        $brands = Brands::orderBy('id', 'DESC')->get();
+        $products = Products::inRandomOrder()->get();
+        $categories = Category::orderBy('id', 'ASC')->get();
+        $brands = Brands::orderBy('id', 'ASC')->get();
 
         return view('search_results', compact('categoryResults', 'brandResults', 'productss', 'services', 'products', 'categories', 'brands'));
     }

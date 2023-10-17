@@ -1,5 +1,5 @@
 /******* Bootstrap Theming ********/
-/*/
+/*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
@@ -44,7 +44,7 @@
 
 html {
   font-family: sans-serif;
-  line-height: 1.9;
+  line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -54,13 +54,12 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 body {
-  margin: 0 auto;
-    padding: 0;
+  margin: 0;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 2;
-  color: white;
+  line-height: 1.5;
+  color: #6F6F6F;
   text-align: left;
   background-color: #fff;
 }
@@ -2839,42 +2838,13 @@ fieldset:disabled a.btn {
   color: #dc3545;
   background-color: transparent;
 }
+
 .btn-outline-danger:not(:disabled):not(.disabled):active, .btn-outline-danger:not(:disabled):not(.disabled).active,
 .show > .btn-outline-danger.dropdown-toggle {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
 }
-
-/*Maroon*/
-
-.btn-outline-maroon {
-    color: #800000;
-    border-color: #800000;
-}
-
-.btn-outline-maroon:hover {
-    color: #fff;
-    background-color: #800000;
-    border-color: #800000;
-}
-
-.btn-outline-danger:focus, .btn-outline-danger.focus {
-    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
-}
-
-.btn-outline-maroon.disabled, .btn-outline-danger:disabled {
-    color: #800000;
-    background-color: transparent;
-}
-
-.btn-outline-maroon:not(:disabled):not(.disabled):active, .btn-outline-danger:not(:disabled):not(.disabled).active,
-.show > .btn-outline-danger.dropdown-toggle {
-    color: #fff;
-    background-color: #800000;
-    border-color: #800000;
-}
-
 
 .btn-outline-danger:not(:disabled):not(.disabled):active:focus, .btn-outline-danger:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-danger.dropdown-toggle:focus {
@@ -3219,7 +3189,7 @@ input[type="button"].btn-block {
   height: 0;
   margin: 0.5rem 0;
   overflow: hidden;
-  border-top: 1px solid #800000;
+  border-top: 1px solid #e9ecef;
 }
 
 .dropdown-item {
@@ -3238,11 +3208,11 @@ input[type="button"].btn-block {
 .dropdown-item:hover, .dropdown-item:focus {
   color: #16181b;
   text-decoration: none;
-  background-color: #800000;
+  background-color: #f8f9fa;
 }
 
 .dropdown-item.active, .dropdown-item:active {
-  color: #800000;
+  color: #fff;
   text-decoration: none;
   background-color: #D19C97;
 }

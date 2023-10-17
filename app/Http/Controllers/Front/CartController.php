@@ -14,8 +14,8 @@ class CartController extends Controller
     {
         $cartItems = \Cart::getContent();
         $products = Products::inRandomOrder()->get();
-            $categories = Category::orderBy('id', 'DESC')->get();
-            $brands = Brands::orderBy('id', 'DESC')->get();
+            $categories = Category::orderBy('id', 'ASC')->get();
+            $brands = Brands::orderBy('id', 'ASC')->get();
         // dd($cartItems);
         return view('front.pages.cart.cart', compact('cartItems' , 'products' , 'categories' , 'brands') , );
     }

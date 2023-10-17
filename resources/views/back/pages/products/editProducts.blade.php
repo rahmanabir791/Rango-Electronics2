@@ -18,12 +18,21 @@
                                     <input type="text" name="productName" value="{{$product->productName}}" class="form-control" id="productName" placeholder="Product Name">
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="productName">Focus Keyword</label>
+                                    <input type="text" name="focusKey" value="{{$product->focusKey}}" class="form-control" id="focusKey" placeholder="Focus Keyword">
+                                </div>
+                                <div class="form-group">
+                                    <label for="productName">Meta Keyword</label>
+                                    <input type="text" name="metaKey" value="{{$product->metaKey}}" class="form-control" id="metaKey" placeholder="Meta Keyword">
+                                </div>
+
 
                                 <div class="form-group">
                                     <label for="productCategory">Category</label>
                                     <select class="form-control" id="productCategory" name="category_id" required>
                                         @foreach($Categories as $category)
-                                            <option value="{{ $category->id }}" {{$product->category_id == $category->id ? 'selected' : ''}} >{{ $category->CategoryName }}</option>
+                                            <option value="{{ $category->id }}">{{ $category->CategoryName }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -32,10 +41,6 @@
                                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                                 <script>
                                     $(document).ready(function() {
-                                        var selectedBrandId = '{{ $product->brand_id }}';
-                                        if (selectedBrandId) {
-                                            $('#productBrand').val(selectedBrandId);
-                                        }
                                         $('#productCategory').on('change', function() {
                                             var selectedCategory = $(this).val();
                                             var brandSelect = $('#productBrand');
@@ -43,17 +48,18 @@
                                             brandSelect.empty();
                                             brandSelect.append($('<option>').text('Select a Brand').attr('value', ''));
 
-                                            var addedBrands = []; // Keep track of added brands
-
-                                            @foreach($Brands as $brand)
-                                            if ({{ $brand->category_id }} == selectedCategory && addedBrands.indexOf('{{ $brand->BrandName }}') === -1) {
-                                                brandSelect.append($('<option>').text('{{ $brand->BrandName }}').attr('value', '{{ $brand->id }}'));
-                                                addedBrands.push('{{ $brand->BrandName }}');
+                                            if (selectedCategory !== '') {
+                                                @foreach($Brands as $brand)
+                                                if ('{{ $brand->category_id }}' == selectedCategory) {
+                                                    brandSelect.append($('<option>').text('{{ $brand->BrandName }}').attr('value', '{{ $brand->id }}'));
+                                                }
+                                                @endforeach
                                             }
-                                            @endforeach
                                         });
                                     });
                                 </script>
+
+
 
                                 <div class="form-group">
                                     <label for="productBrand">Brand</label>
@@ -89,6 +95,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="ImgAlt">Image alt Tag</label>
+                                    <input type="text" name="ImgAlt" value="{{$product->ImgAlt}}" class="form-control" id="ImgAlt" placeholder="Image Alt Tag">
+                                </div>
+                                <div class="form-group">
                                     <label for="productWarranty">Warranty Details</label>
                                     <textarea  class="form-control" name="warranty"  id="productWarranty" rows="4">{{$product->warranty}}</textarea>
                                 </div>
@@ -97,10 +107,21 @@
                                     <textarea  class="form-control" name="features" id="keyFeatures" rows="4">{{$product->features}}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="productSpecifications">Specifications</label>
+                                    <label for="productSpecifications">Product Specifications</label>
                                     <textarea  class="form-control" name="specifications" id="productSpecifications" rows="4">{{$product->specifications}}</textarea>
                                 </div>
-
+                                <div class="form-group">
+                                    <label for="description">Product Description</label>
+                                    <textarea  class="form-control" name="description" id="description" rows="4">{{$product->description}}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Metadescription">Meta Description</label>
+                                    <textarea  class="form-control" name="Metadescription" id="Metadescription" rows="4">{{$product->Metadescription}}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="metaTag">Meta Tag</label>
+                                    <input type="text" name="metaTag" value="{{$product->metaTag}}" class="form-control" id="metaTag" placeholder="Meta Tag">
+                                </div>
                                 <button type="submit" class="btn btn-gradient-primary me-2">Edit Product Submit</button>
                             </form>
                         </div>

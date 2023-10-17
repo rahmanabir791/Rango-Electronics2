@@ -1,21 +1,24 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+//Front
+use App\Http\Controllers\Front\CartController;
+use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\CheckoutController;
+use App\Http\Controllers\Front\SeeAllController;
+use App\Http\Controllers\Front\MenuController;
+use App\Http\Controllers\Front\CategoryBarController;
+//Back
+use App\Http\Controllers\Back\Service\ServiceController;
 use App\Http\Controllers\back\brands\BrandsController;
 use App\Http\Controllers\Back\Category\CategoryController;
 use App\Http\Controllers\Back\DashboardController;
 use App\Http\Controllers\Back\Products\ProductController;
 use App\Http\Controllers\Back\Slider\SliderController;
-use App\Http\Controllers\Front\CartController;
-use App\Http\Controllers\Front\HomeController;
+//All
 use App\Http\Controllers\SearchController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Front\CheckoutController;
-use App\Http\Controllers\Front\SeeAllController;
-use App\Http\Controllers\Back\Service\ServiceController;
-use App\Http\Controllers\Front\MenuController;
-use App\Http\Controllers\Front\CategoryBarController;
 
 
 //Back Controllers
@@ -35,8 +38,6 @@ Route::get('/' , [HomeController::class , 'home' ])->name('home.w.l');
 
 Route::get('Rango/Product/Find/product/Details{id}', [HomeController::class, 'productDetails'])->name('productDetail');
 
-//Route::get('Rango/All/Brand/Products/Electronics{ids}' , [HomeController::class , 'brandAll'])->name('brand.all.products');
-
 Route::get('Rango/cart/List', [CartController::class, 'cartList'])->name('cart.list');
 Route::post('Rango/cart/Store', [CartController::class, 'addToCart'])->name('cart.store');
 Route::post('Rango/update/cart', [CartController::class, 'updateCart'])->name('cart.update');
@@ -48,11 +49,9 @@ Route::get('Rango/Product/see/All/Products/Electronics', [SeeAllController::clas
 Route::get('Rango/Categories/see/All/Products/{id}', [SeeAllController::class, 'Category_seeAll'])->name('Category-seeAll');
 Route::get('Rango/Brand/see/All/Products/{ids}', [SeeAllController::class, 'brandAllProducts'])->name('brand.all.products');
 
-
 Route::get('Rango/Categories/Products/All/{id}', [CategoryBarController::class, 'CategoryAll'])->name('Category-All');
 Route::get('Rango/Brand/Products/All/{id}', [CategoryBarController::class, 'CBrandProducts'])->name('category.wise.brand');
-Route::get('Rango/Type/of/Products/All/{id}', [CategoryBarController::class, 'typeOfProducts'])->name('type.of.product');
-
+Route::get('Rango/Type/of/Products/All/{ids}', [CategoryBarController::class, 'typeOfProducts'])->name('type.of.product');
 
 Route::get('Rango/Brand/All/seeAll/Electronics', [MenuController::class, 'brand_seeAll'])->name('All-Brands');
 Route::get('Rango/installation/And/Service/Electronics', [MenuController::class, 'installation'])->name('menu.installation');
@@ -60,13 +59,13 @@ Route::get('Rango/installation/And/Service/Details/Electronics/{id}', [MenuContr
 Route::get('Rango/menu/Contact/Electronics', [MenuController::class, 'contact'])->name('menu.contact');
 Route::post('Rango/menu/Contact/Send/Massage/Electronics', [MenuController::class, 'sendMessage'])->name('send.message');
 
-
-
-
 Route::get('Rango/search/Result/Electronics', [SearchController::class, 'frontSearch'])->name('search.result');
 
 Route::get('Login' , [AuthenticatedSessionController::class , 'create'])->name('login');
 Route::get('Register' , [RegisteredUserController::class , 'create'])->name('register');
+
+
+
 
 
 Route::middleware('auth' , 'verified')->group(function () {
@@ -74,9 +73,12 @@ Route::middleware('auth' , 'verified')->group(function () {
 
     Route::get('/Check/Out/Rango/Electronics' , [CheckoutController::class , 'checkOut' ])->name('check.out');
     Route::post('/Check/Out/Submit/Rango/Electronics/Order/Placed' , [CheckoutController::class , 'checkOutSubmit' ])->name('check.out.submit');
-
-
 });
+
+
+
+
+
 
 
 //Admin Panel
@@ -98,11 +100,11 @@ Route::prefix('/Rango/Admin')->middleware('rangoAdmin', 'auth')->group(function 
     Route::get('/dashboard/Old_Category_Delete/Electronics/{id}' , [CategoryController::class , 'deleteCategory'])->name('delete-categorys');
 
 //  Brands
-    Route::get('/dashboard/ADD_Brands/Manage_Brands/Electronics' , [BrandsController::class , 'addManageBrands'])->name('add_manage-Brands');
-    Route::post('/dashboard/New_Brands_upload/Electronics' , [BrandsController::class , 'newBrands'])->name('new-Brands');
-    Route::get('/dashboard/Old_Brands_Edit/Electronics/{id}' , [BrandsController::class , 'editBrand'])->name('edit-Brands');
-    Route::post('/dashboard/Old_Brands_Update/Electronics/{id}' , [BrandsController::class , 'updateBrand'])->name('update-Brand');
-    Route::get('/dashboard/Old_Brands_Delete/Electronics/{id}' , [BrandsController::class , 'deleteBrand'])->name('delete-brands');
+    Route::get('/dashboard/ADD/Brands/Manage_Brands/' , [CategoryController::class , 'addManageBrands'])->name('add_manage-Brands');
+    Route::post('/dashboard/New/Brands_upload/' , [CategoryController::class , 'newBrands'])->name('new-Brands');
+    Route::get('/dashboard/Old/Brands_Edit/{id}' , [CategoryController::class , 'editBrand'])->name('edit-Brands');
+    Route::post('/dashboard/Old/Brands_Update/{id}' , [CategoryController::class , 'updateBrand'])->name('update-Brand');
+    Route::get('/dashboard/Old/Brands_Delete/{id}' , [CategoryController::class , 'deleteBrand'])->name('delete-brands');
 
 //  Products
     Route::get('/Electronics/Dashboard/Add-product/', [ProductController::class, 'addProduct'])->name('add-product');

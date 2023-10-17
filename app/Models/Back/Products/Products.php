@@ -43,17 +43,28 @@ class Products extends Model
     {
         self::$product                      = new Products();
         self::$product->productName           = $request->productName;
+
+        self::$product->focusKey              = $request->focusKey;
+        self::$product->metaKey               = $request->metaKey;
+        self::$product->metaTag               = $request->metaTag;
+
         self::$product->category_id           = $request->category_id;
         self::$product->brand_id              = $request->brand_id;
         self::$product->product_type          = $request->product_type;
         self::$product->MRP_price             = $request->MRP_price;
         self::$product->O_price               = $request->O_price;
         self::$product->image                 = self::imageUpload($request);
+
+        self::$product->ImgAlt                = $request->ImgAlt;
+
         self::$product->warranty              = $request->warranty;
         self::$product->features              = $request->features;
         self::$product->specifications        = $request->specifications;
         self::$product->special_offer         = $request->special_offer;
         self::$product->stockAvailability     = $request->stockAvailability;
+        self::$product->description           = $request->description;
+
+        self::$product->Metadescription           = $request->Metadescription;
         self::$product->save();
     }
 
@@ -70,6 +81,7 @@ class Products extends Model
         self::$product->warranty              = $request->warranty;
         self::$product->features              = $request->features;
         self::$product->specifications        = $request->specifications;
+        self::$product->description           = $request->description;
         self::$product->save();
     }
 

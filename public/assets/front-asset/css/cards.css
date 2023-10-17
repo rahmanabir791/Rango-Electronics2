@@ -1,4 +1,4 @@
- .owl-carousel .owl-nav .disabled{
+.owl-carousel .owl-nav .disabled{
     display: block;
 }
 .image-slider .owl-nav button{
@@ -17,7 +17,6 @@
     border-radius: 3px;
     top: 100px;
 }
-
 .image-slider .owl-nav .owl-next {
     right: 0px;
     border-radius: 3px;

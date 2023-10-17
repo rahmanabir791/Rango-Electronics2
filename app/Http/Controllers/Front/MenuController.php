@@ -14,9 +14,9 @@ class MenuController extends Controller
 {
     public function brand_seeAll(){
         return view('front.pages.menu.brands', [
-            'brands' => Brands::orderBy('id', 'DESC')->get(),
+            'brands' => Brands::orderBy('id', 'ASC')->get(),
             'products' => Products::inRandomOrder()->get(),
-            'categories' => Category::orderBy('id', 'DESC')->get(),
+            'categories' => Category::orderBy('id', 'ASC')->get(),
 
 
         ]);
@@ -27,8 +27,8 @@ class MenuController extends Controller
         return view('front.pages.menu.installationService' , [
             'services' => Service::inRandomOrder()->get(),
             'products' => Products::inRandomOrder()->get(),
-            'categories' => Category::orderBy('id', 'DESC')->get(),
-            'brands' => Brands::orderBy('id', 'DESC')->get(),
+            'categories' => Category::orderBy('id', 'ASC')->get(),
+            'brands' => Brands::orderBy('id', 'ASC')->get(),
         ]);
     }
 
@@ -38,8 +38,8 @@ class MenuController extends Controller
             'service' => Service::find($id),
             'cartItems' => \Cart::getContent(),
             'products' => Products::inRandomOrder()->get(),
-            'categories' => Category::orderBy('id', 'DESC')->get(),
-            'brands' => Brands::orderBy('id', 'DESC')->get(),
+            'categories' => Category::orderBy('id', 'ASC')->get(),
+            'brands' => Brands::orderBy('id', 'ASC')->get(),
         ]);
     }
 
@@ -47,8 +47,8 @@ class MenuController extends Controller
     {
         return view('front.pages.menu.contact',[
             'products' => Products::inRandomOrder()->get(),
-            'categories' => Category::orderBy('id', 'DESC')->get(),
-            'brands' => Brands::orderBy('id', 'DESC')->get(),
+            'categories' => Category::orderBy('id', 'ASC')->get(),
+            'brands' => Brands::orderBy('id', 'ASC')->get(),
         ]);
     }
 

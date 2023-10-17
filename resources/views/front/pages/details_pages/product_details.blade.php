@@ -25,8 +25,8 @@
                 <h5 class="font-weight-semi-bold mb-4" style="color: gold;">MRP Price: ৳<del>{{number_format($product->MRP_price) }}</del></h5>
                 <p>Stock Availability: {{ $product->stockAvailability == 1 ? 'In Stock' : 'Out Of Stock' }}</p>
 
-                <p class="mb-4">{!! $product->warranty !!}</p>
                 <p class="mb-4">{!! $product->features !!}</p>
+                <p class="mb-4">{!! $product->warranty !!}</p>
 
                 <div class="d-flex align-items-center mb-4 pt-2">
                     @if (count($cartItems) === 0)
@@ -100,21 +100,25 @@
         </div>
     </div>
     <!-- Rest of your code remains the same -->
-    <div class="row px-xl-5">
-            <div class="col">
-                <div class="nav nav-tabs justify-content-center border-secondary mb-4">
-                    <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-1">Specifications</a>
-                </div>
-                <div class="tab-content text-center" >
-                    <div class="tab-pane fade show active " style="color: black;" id="tab-pane-1">
-                        <h4 class="mb-3">Product Specifications</h4>
-                        <p>{!! $product->specifications !!}</p>
-                  </div>
 
+    <div class="row px-xl-5">
+        <div class="col">
+            <div class="nav nav-tabs justify-content-center border-secondary mb-4">
+                <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-1">Specifications</a>
+                <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-2">Description</a>
+            </div>
+            <div class="tab-content text-dark text-center">
+                <div class="tab-pane fade show active" id="tab-pane-1">
+                    <h4 class="mb-3">Product Specifications</h4>
+                    <p class="" style="">{!! $product->specifications !!}</p>
+                </div>
+                <div class="tab-pane fade" id="tab-pane-2">
+                    <h4 class="mb-3">Product Description</h4>
+                    <p>{!! $product->description !!}</p>
                 </div>
             </div>
         </div>
-
+    </div>
     <!-- Shop Detail End -->
 
     <!-- Products Start -->

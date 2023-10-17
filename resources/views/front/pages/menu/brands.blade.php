@@ -4,37 +4,39 @@
 @endsection
 @section('body')
     @include('front.includes.navCategoryForOthers')
-    <div class="container-fluid pt-5">
-        <div class="text-center mb-4">
+    <div class="container-fluid pt-2">
+        <div class="text-center mb-1">
             <h2 class="section-title px-5"><span class="px-2">All Brands are Here</span></h2>
         </div>
         <div class="row px-xl-5 pb-3">
-          @php
-             $sameBrandIds = [];
-             $brandImages = [];
+            @php
+                $sameBrandIds = [];
+                $brandImages = [];
 
-             foreach ($brands as $brand) {
-                if (!in_array($brand->BrandName, array_keys($sameBrandIds))) {
-                    $sameBrandIds[$brand->BrandName] = [$brand->id];
-                    $brandImages[$brand->BrandName] = $brand->BrandImage;
-                } else {
-                    $sameBrandIds[$brand->BrandName][] = $brand->id;
+                foreach ($brands as $brand) {
+                   if (!in_array($brand->BrandName, array_keys($sameBrandIds))) {
+                       $sameBrandIds[$brand->BrandName] = [$brand->id];
+                       $brandImages[$brand->BrandName] = $brand->BrandImage;
+                   } else {
+                       $sameBrandIds[$brand->BrandName][] = $brand->id;
+                   }
                 }
-             }
-          @endphp
+            @endphp
 
 
-                @foreach ($sameBrandIds as $brandName => $ids)
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                   <div class="card product-item border-0 mb-4">
-                      <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                          <a href="{{ route('brand.all.products', ['ids' => implode(',', $ids)]) }}">
-                             <img src="{{ asset($brandImages[$brandName]) }}" style="height: 350px; width:250px;" alt="Brand image">
-                          </a>
-                     </div>
-                 </div>
+            @foreach ($sameBrandIds as $brandName => $ids)
+                @if($brandImages[$brandName])
+                <div class="col-lg-2 col-md-2 col-sm-3">
+                    <div class=" product-item border-0 mb-4">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <a href="{{ route('brand.all.products', ['ids' => implode(',', $ids)]) }}" >
+                                <img src="{{ asset($brandImages[$brandName]) }}" class="img-fluid" alt="Brand image">
+                            </a>
+                        </div>
+                    </div>
                 </div>
-          @endforeach
+                @endif
+            @endforeach
         </div>
 @endsection
 

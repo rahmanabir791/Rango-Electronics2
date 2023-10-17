@@ -14,8 +14,8 @@ class ProductController extends Controller
     public function addProduct()
     {
         return view('back.pages.products.addProducts',[
-            'Categories' => Category::orderBy('id' , 'DESC')->get(),
-            'Brands' => Brands::orderBy('id' , 'DESC')->get(),
+            'Categories' => Category::orderBy('id' , 'ASC')->get(),
+            'Brands' => Brands::orderBy('id' , 'ASC')->get(),
         ]);
     }
 
@@ -27,7 +27,7 @@ class ProductController extends Controller
 
     public function manageProduct($category_id)
     {
-        $brands = Brands::orderBy('id', 'DESC')->get(); // Retrieve brands
+        $brands = Brands::orderBy('id', 'ASC')->get(); // Retrieve brands
 
         $products = Products::where('category_id', $category_id)
             ->orderBy('id', 'DESC')
@@ -41,8 +41,8 @@ class ProductController extends Controller
     {
         return view('back.pages.products.editProducts', [
             'product'   => Products::find($id),
-            'Categories' => Category::orderBy('id' , 'DESC')->get(),
-            'Brands' => Brands::orderBy('id' , 'DESC')->get(),
+            'Categories' => Category::orderBy('id' , 'ASC')->get(),
+            'Brands' => Brands::orderBy('id' , 'ASC')->get(),
         ]);
     }
 

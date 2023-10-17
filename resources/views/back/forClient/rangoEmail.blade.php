@@ -87,7 +87,7 @@
     </div>
     <div class="signature">
         <p>Contact us:</p>
-        <p>Phone: +88 017 985 65001</p>
+        <p>Phone: +8801798-565001</p>
         <p>Address: House: 5, Road: 12, DIT project, Merul Badda, Dhaka</p>
         <p>Email: electronics.rango@gmail.com</p>
     </div>

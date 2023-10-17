@@ -1,0 +1,22 @@
+
+    /* Add this style block to your HTML or external CSS file */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/*Additional styles for mobile responsiveness */
+@media (max-width: 767px) {
+    .sticky-nav .col-md-6 {
+        text-align: left;
+    }
+
+    .sticky-nav .col-md-6:last-child {
+        text-align: right;
+    }
+}
+
+
+
+

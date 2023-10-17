@@ -4,81 +4,99 @@
 @endsection
 
 @section('body')
-    @include('front.pages.home.navCategories')
+    @include('front.pages.home.navtest')
 
-    <!-- Featured Start -->
-    <div class="container-fluid pt-5" style=" padding: 0; ">
-        <div class="row ">
-            <div class="col-lg-4">
-                <a href="#"><img class="mb-0 ml-2" src="{{asset('/')}}assets/front-asset/img/banner/banner-1.jpg"
-                                 style=" margin-left: 2px; height: 303px;" width="405;" alt="image; "></a>
-            </div>
-            <div class="col-lg-4 ">
-                <div class="row">
-                    <a href="#"><img class="mb-2 ml-2" src="{{asset('/')}}assets/front-asset/img/banner/banner-2.jpg"
-                                     style="height: 148px;" width="408px;" alt="image"></a>
-                    <a href="#"><img class="mb-2 ml-2" src="{{asset('/')}}assets/front-asset/img/banner/banner-3.jpg"
-                                     style="height: 148px;" width="408px;" alt="image"></a>
+    <p class="slider-name text-dark font-weight-bold ">Category</p>
+    <span class="divider"></span>
+    <style>
+        .owl-carousel .owl-item img {
+            max-width: 100%;
+            width: auto;
+        }
+
+    </style>
+    <!--slider row-1 for Special Offer Products -->
+    <div class="owl-carousel  image-slider" id="one">
+        @foreach($categories as $category)
+            @if($category->CategoryImage)
+            <div class="card product-item border-0 mb-4">
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <a href="{{ route('Category-All' , [ 'id' => $category->id ]) }}"><img src="{{asset($category->CategoryImage)}}" style="height: 150px; " alt="image"></a>
+                </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 ">
+                    <a href="{{ route('Category-All' , [ 'id' => $category->id ]) }}"> <h6 class="text-truncate mb-3">{{$category->CategoryName}}</h6></a>
+
+                    <div class="border">
+
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4 ">
-                <div class="row">
-                    <a href="#"><img class="mb-2 ml-0 " src="{{asset('/')}}assets/front-asset/img/banner/banner-5.jpg"
-                                     style="height: 148px;" width="408px;" alt="image"></a>
-                    <a href="#"><img class="mb-2 ml-0" src="{{asset('/')}}assets/front-asset/img/banner/banner-3.jpg"
-                                     style="height: 148px;" width="405px;" alt="image"></a>
-
-                </div>
-            </div>
-        </div>
+            @endif
+        @endforeach
     </div>
-    </div>
-    <!-- Featured End -->
-
-    {{--Slider Cards --}}
 
     <p class="slider-name text-dark font-weight-bold ">Special Offer Products</p>
     <span class="divider"></span>
     <p class="view-all"><a href="{{ route('Special-seeAll') }}">View All ></a></p>
     <!--slider row-1 for Special Offer Products -->
-    <div class="owl-carousel  image-slider">
 
-        @foreach($products as $product)
+
+
+    <div class="owl-carousel image-slider" id="product-carousel"></div>
+
+    <script>
+        $(document).ready(function() {
+            // Get the container element
+            var productContainer = $("#product-carousel");
+
+            // Loop through the products
+            @foreach($products as $product)
             @if($product->special_offer == 1)
+            var productCard = `
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <a href="#"><img src="{{asset($product->image)}}" style="height: 300px;"
-                                         alt="image"></a>
+                        <a href="{{ route('productDetail', ['id' => $product->id ]) }}">
+                            <img src="{{ asset($product->image) }}" style="height: 300px;" alt="image">
+                        </a>
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 ">
-                        <h6 class="text-truncate mb-3">{{$product->productName}}</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-4">
+                        <a href="{{ route('productDetail', ['id' => $product->id ]) }}">
+                            <h6 class="text-truncate mb-3">{{ $product->productName }}</h6>
+                        </a>
                         <div class="d-flex justify-content-center">
-                            <h6>৳{{number_format($product->O_price)}}</h6>
+                            <h6>৳{{ number_format($product->O_price) }}</h6>
                             <h6 class="text-muted ml-2">
-                                <del>৳{{number_format($product->MRP_price) }}</del>
+                                <del>৳{{ number_format($product->MRP_price) }}</del>
                             </h6>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>
-                                View Detail</a>
+                            <a href="{{ route('productDetail', ['id' => $product->id ]) }}"
+                               class="btn btn-sm text-dark p-0">
+                                <i class="fas fa-eye text-primary"></i> View Detail
+                            </a>
                             <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" value="{{ $product->id }}" name="id">
-                                <input type="hidden" value="{{ $product->productName }}" name="name">
-                                <input type="hidden" value="{{ asset($product->image)}}" name="image">
-                                <input type="hidden" value="{{ $product->O_price }}" name="price">
-                                <input type="hidden" value="1" name="quantity">
-                                <button type="submit" class="btn btn-sm text-dark p-0"><i
-                                        class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart
+            <input type="hidden" name="id" value="{{ $product->id }}">
+                                <input type="hidden" name="name" value="{{ $product->productName }}">
+                                <input type="hidden" name="image" value="{{ asset($product->image) }}">
+                                <input type="hidden" name="price" value="{{ $product->O_price }}">
+                                <input type="hidden" name="quantity" value="1">
+                                <button type="submit" class="btn btn-sm text-dark p-0">
+                                    <i class="fas fa-shopping-cart text-primary mr-1"></i> Add To Cart
                                 </button>
                             </form>
                         </div>
                     </div>
                 </div>
-            @endif
-        @endforeach
+            `;
 
-    </div>
+            // Append the product card to the container
+            productContainer.append(productCard);
+            @endif
+            @endforeach
+        });
+    </script>
+
 
 
 
@@ -86,14 +104,14 @@
     <span class="divider"></span>
     <p class="view-all"><a href="{{ route('AllProduct-seeAll') }}">View All ></a></p>
     <!--slider row-1 for Special Offer Products -->
-    <div class="owl-carousel  image-slider">
+    <div class="owl-carousel  image-slider" id="three">
         @foreach($products as $product)
             <div class="card product-item border-0 mb-4">
                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <a href="#"><img src="{{asset($product->image)}}" style="height: 300px; " alt="image"></a>
+                    <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"><img src="{{asset($product->image)}}" style="height: 300px; " alt="image"></a>
                 </div>
                 <div class="card-body border-left border-right text-center p-0 pt-4 ">
-                    <h6 class="text-truncate mb-3">{{$product->productName}}</h6>
+                    <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"> <h6 class="text-truncate mb-3">{{$product->productName}}</h6></a>
                     <div class="d-flex justify-content-center">
                         <h6>৳{{number_format($product->O_price)}}</h6>
                         <h6 class="text-muted ml-2">
@@ -127,17 +145,17 @@
         <p class="slider-name text-dark font-weight-bold">{{$category->CategoryName}}</p>
         <span class="divider"></span>
         <p class="view-all"><a href="{{ route('Category-seeAll', ['id' => $category->id]) }}">View All></a></p>
-        <div class="owl-carousel  image-slider">
+        <div class="owl-carousel  image-slider" id="four_{{$category->id}}">
 
             @foreach($products as $product)
                 @if($category->id == $product->category_id)
                     <div class="card product-item border-0 mb-4">
                         <div
                             class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <a href="#"><img src="{{asset($product->image)}} " style="height: 300px;" alt="image"></a>
+                            <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"><img src="{{asset($product->image)}} " style="height: 300px;" alt="image"></a>
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 ">
-                            <h6 class="text-truncate mb-3">{{$product->productName}}</h6>
+                            <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"> <h6 class="text-truncate mb-3">{{$product->productName}}</h6></a>
                             <div class="d-flex justify-content-center">
                                 <h6>৳{{number_format($product->O_price)}}</h6>
                                 <h6 class="text-muted ml-2">
@@ -170,7 +188,7 @@
 
     <h1 class="text-center bg-danger">Brands</h1>
     <!--last row-->
-    <div class="owl-carousel image-slider ">
+    <div class="owl-carousel image-slider " id="five">
 
         @php
             $sameBrandIds = [];
@@ -187,6 +205,7 @@
         @endphp
 
         @foreach ($sameBrandIds as $brandName => $ids)
+            @if($brandImages[$brandName])
             <div class="card product-item border-0 mb-4">
                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                     <p>{{ $brandName }}</p>
@@ -196,6 +215,7 @@
                     </a>
                 </div>
             </div>
+            @endif
         @endforeach
 
     </div>
@@ -205,25 +225,71 @@
 
     </iframe>
 
-    <div class="subscription-section bg-light py-4">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-md-6">
-                    <h4 class="subscription-title mb-0" style="padding: 5px;">Join Us To Get A Special Gift</h4>
-                </div>
-                <div class="col-md-6">
-                    <form class="subscription-form">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="Email" aria-describedby="subscribe-button" style="border-radius: 20px; margin-right: 10px; font-size: 20px; border-color: maroon;">
-                            <div class="input-group-append">
-                                <button class="btn btn-subscribe" style="background-color: maroon; color: gold; border-radius: 20px; " type="submit">Subscribe</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="subscription-section bg-light py-4">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row justify-content-center align-items-center">--}}
+{{--                <div class="col-md-6">--}}
+{{--                    <h4 class="subscription-title mb-0" style="padding: 5px;">Join Us To Get A Special Gift</h4>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-6">--}}
+{{--                    <form class="subscription-form">--}}
+{{--                        <div class="input-group">--}}
+{{--                            <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="Email" aria-describedby="subscribe-button" style="border-radius: 20px; margin-right: 10px; font-size: 20px; border-color: maroon;">--}}
+{{--                            <div class="input-group-append">--}}
+{{--                                <button class="btn btn-subscribe" style="background-color: maroon; color: gold; border-radius: 20px; " type="submit">Subscribe</button>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </form>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let products = <?php echo json_encode($products); ?>;
+            let currentProductIndex = 0;
+
+            // Preload all images
+            function preloadImages() {
+                for (let i = 0; i < products.length; i++) {
+                    let img = new Image();
+                    img.src = products[i].image;
+                }
+            }
+
+            preloadImages();
+
+            function showCurrentProduct() {
+                $('.product-card').addClass('hidden');
+                let productCard = $('.product-card:eq(' + currentProductIndex + ')');
+                productCard.find('img').attr('src', products[currentProductIndex].image);
+                productCard.removeClass('hidden');
+            }
+
+            showCurrentProduct();
+
+            function nextProduct() {
+                currentProductIndex++;
+                if (currentProductIndex >= $('.product-card').length) {
+                    currentProductIndex = 0;
+                }
+                showCurrentProduct();
+            }
+
+            function prevProduct() {
+                currentProductIndex--;
+                if (currentProductIndex < 0) {
+                    currentProductIndex = $('.product-card').length - 1;
+                }
+                showCurrentProduct();
+            }
+
+            $('#nextProduct').click(nextProduct);
+            $('#prevProduct').click(prevProduct);
+        });
+    </script>
+
 
 
 @endsection

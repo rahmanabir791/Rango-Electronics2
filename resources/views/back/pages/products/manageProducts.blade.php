@@ -14,12 +14,8 @@
                             <thead>
                             <tr class="border-5">
                                 <th class="border-5">#</th>
-                                <th class="border-5">Product Name</th>
-                                <th class="border-5">Type</th>
-                                <th class="border-5">MRP Price</th>
-                                <th class="border-5">Offer Price</th>
-                                <th class="border-5">Warranty</th>
-                                <th class="border-5">Stock</th>
+                                <th class="border-5">Product Details</th>
+                                <th class="border-5">Offer/Stock</th>
                                 <th class="border-5">Action</th>
                             </tr>
                             </thead>
@@ -36,10 +32,19 @@
                                     @foreach($Products as $product)
                                         <tr>
                                             <td class="border-5">{{ $loop->iteration }}</td>
-                                            <td class="border-5">{{ $product->productName }}</td>
-                                            <td class="border-5">{{ $product->product_type }}</td>
-                                            <td class="border-5">{{ $product->MRP_price }}</td>
-                                            <td class="border-5">{{ $product->O_price }}</td>
+
+
+
+                                            <td class="border-5">
+                                                Name: {{ $product->productName}}
+                                                <br>
+                                                Type: {{ $product->product_type }}
+                                                <br>
+                                                MRP Price: {{ $product->MRP_price }}
+                                                <br>
+                                                Offer Price: {{ $product->O_price }}
+                                            </td>
+
                                             <td class="border-5" style="text-align: center; padding: 10px;">
                                             <span style="font-weight: bold; color: {{ $product->special_offer == 1 ? 'green' : 'red' }};">
                                                 {{ $product->special_offer == 1 ? 'In Special Offer' : 'Out Of Special Offer' }}
@@ -51,10 +56,9 @@
                                                         {{ $product->special_offer == 1 ? 'Set Out of Special Offer' : 'Set In Special Offer' }}
                                                     </button>
                                                 </form>
-                                            </td>
 
-                                            <td class="border-5" style="text-align: center; padding: 10px;">
-                                            <span style="font-weight: bold; color: {{ $product->stockAvailability == 1 ? 'green' : 'red' }};">
+                                                <br>
+                                                <span style="font-weight: bold; color: {{ $product->stockAvailability == 1 ? 'green' : 'red' }};">
                                                 {{ $product->stockAvailability == 1 ? 'In Stock' : 'Out Of Stock' }}
                                             </span>
                                                 <form method="POST" action="{{ route('update-stockAvailability', ['id' => $product->id]) }}" style="display: inline;">
@@ -65,6 +69,7 @@
                                                     </button>
                                                 </form>
                                             </td>
+
 
 
                                             <td class="border-5">

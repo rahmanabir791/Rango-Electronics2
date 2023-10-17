@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Back\Category\Category;
 use App\Models\OrderItem;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
@@ -13,14 +14,17 @@ use App\Models\Back\Order\OrderSubmit;
 use Illuminate\Support\Facades\Storage;
 
 
+
 class CheckoutController extends Controller
 {
 
     public function checkOut ()
     {
         $cartItems = \Cart::getContent();
+        $categories = Category::orderBy('id', 'ASC')->get();
+
         // dd($cartItems);
-        return view('front.pages.cart.checkout', compact('cartItems'));
+        return view('front.pages.cart.checkout', compact('cartItems', 'categories'));
 
     }
 

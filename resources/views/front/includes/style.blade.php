@@ -5,11 +5,14 @@
     <meta charset="utf-8">
     <title>Rango | @yield('title')</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
 
     <!-- Favicon -->
     <link href="{{asset('/')}}assets/front-asset/img/rongologo.png" rel="icon">
+
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,7 +24,7 @@
     <!-- Libraries Stylesheet -->
     <link href="{{asset('/')}}assets/front-asset/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="{{asset('/')}}assets/front-asset/css/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-{{--    <link href="{{asset('/')}}assets/front-asset/lib/owlcarousel_two/assets/owl.carousel.min.css" rel="stylesheet">--}}
+
     <link href="{{asset('/')}}assets/front-asset/css/cards.css" rel="stylesheet">
 
 

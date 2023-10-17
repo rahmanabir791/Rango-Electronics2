@@ -94,4 +94,24 @@
             console.error( error );
         } );
 </script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#Metadescription' ) )
+        .then( editor => {
+            console.log( editor );
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#catDescription' ) )
+        .then( editor => {
+            console.log( editor );
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 <!-- End custom js for this page -->
