@@ -4,7 +4,10 @@
 @endsection
 @section('body')
     @include('front.includes.navCategoryForOthers')
-
+    <meta name="keywords" content="{{ $Category->metaKey }}">
+    <meta name="description" content="{{ $Category->Metadescription }}">
+    <meta name="author" content="{{ $Category->focusKey }}">
+    <meta name="robots" content="{{ $Category->metaTag }}">
     <div class="container-fluid pt-5">
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">All {{$Category->CategoryName}} Here</span></h2>
@@ -12,6 +15,7 @@
         <div class="row px-xl-5 pb-3">
             @foreach($products as $product)
                 @if($Category->id == $product->category_id)
+
                     <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                         <div class="card product-item border-0 mb-4" >
                             <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
@@ -44,6 +48,9 @@
                     </div>
                 @endif
             @endforeach
+            <div class="text-center">
+              {!! $Category->catDescription  !!}
+            </div>
         </div>
     </div>
 

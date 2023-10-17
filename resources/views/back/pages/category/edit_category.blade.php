@@ -19,13 +19,13 @@
                             <input type="text" name="CategoryName" value="{{$Category->CategoryName}}" class="form-control mb-2 mr-sm-2" id="categoryName" placeholder="Category Name" required>
                             <br>
                             <label class="sr-only" for="focusKey">Focus Keyword</label>
-                            <input type="text" name="focusKey" value="{{$Category->focusKey}}" class="form-control mb-2 mr-sm-2" id="focusKey" placeholder="Focus Keyword" required>
+                            <input type="text" name="focusKey" value="{{$Category->focusKey}}" class="form-control mb-2 mr-sm-2" id="focusKey" placeholder="Focus Keyword" >
                             <br>
                             <label class="sr-only" for="metaKey">Meta Keyword</label>
-                            <input type="text" name="metaKey" value="{{$Category->metaKey}}" class="form-control mb-2 mr-sm-2" id="metaKey" placeholder="Meta Keyword" required>
+                            <input type="text" name="metaKey" value="{{$Category->metaKey}}" class="form-control mb-2 mr-sm-2" id="metaKey" placeholder="Meta Keyword" >
                             <br>
                             <label class="sr-only" for="metaTag">Meta Tag</label>
-                            <input type="text" name="metaTag" value="{{$Category->metaTag}}" class="form-control mb-2 mr-sm-2" id="metaKey" placeholder="Meta Tags" required>
+                            <input type="text" name="metaTag" value="{{$Category->metaTag}}" class="form-control mb-2 mr-sm-2" id="metaKey" placeholder="Meta Tags" >
                             <br>
                             <div class="form-group">
                                 <label for="Metadescription">Meta Description</label>

@@ -4,6 +4,10 @@
 @endsection
 @section('body')
     @include('front.includes.navCategoryForOthers')
+    <meta name="keywords" content="{{ $Category->metaKey }} ">
+    <meta name="description" content="{{ $Category->Metadescription }} ">
+    <meta name="author" content="{{ $Category->focusKey }} ">
+    <meta name="robots" content="{{ $Category->metaTag }}">
     <div class="container-fluid pt-5">
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">All {{$Category->CategoryName}} Product Here</span></h2>
@@ -45,6 +49,8 @@
                     </div>
                 @endif
             @endforeach
+                {!! $Category->catDescription  !!}
+        </div>
         </div>
     </div>
 @endsection

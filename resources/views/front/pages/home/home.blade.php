@@ -21,7 +21,7 @@
             @if($category->CategoryImage)
             <div class="card product-item border-0 mb-4">
                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <a href="{{ route('Category-All' , [ 'id' => $category->id ]) }}"><img src="{{asset($category->CategoryImage)}}" style="height: 150px; " alt="image"></a>
+                    <a href="{{ route('Category-All' , [ 'id' => $category->id ]) }}"><img src="{{asset($category->CategoryImage)}}" style="height: 150px; " alt="{{$category->ImgAlt}}"></a>
                 </div>
                 <div class="card-body border-left border-right text-center p-0 pt-4 ">
                     <a href="{{ route('Category-All' , [ 'id' => $category->id ]) }}"> <h6 class="text-truncate mb-3">{{$category->CategoryName}}</h6></a>
@@ -56,7 +56,7 @@
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                         <a href="{{ route('productDetail', ['id' => $product->id ]) }}">
-                            <img src="{{ asset($product->image) }}" style="height: 300px;" alt="image">
+                            <img src="{{ asset($product->image) }}" style="height: 300px;" alt="{{$product->ImgAlt}}">
                         </a>
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4">
@@ -106,9 +106,9 @@
     <!--slider row-1 for Special Offer Products -->
     <div class="owl-carousel  image-slider" id="three">
         @foreach($products as $product)
-            <div class="card product-item border-0 mb-4">
+            <div class="card product-item border-0 mb-1">
                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"><img src="{{asset($product->image)}}" style="height: 300px; " alt="image"></a>
+                    <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"><img src="{{asset($product->image)}}" style="height: 300px; " alt="{{$product->ImgAlt}}"></a>
                 </div>
                 <div class="card-body border-left border-right text-center p-0 pt-4 ">
                     <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"> <h6 class="text-truncate mb-3">{{$product->productName}}</h6></a>
@@ -152,7 +152,7 @@
                     <div class="card product-item border-0 mb-4">
                         <div
                             class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"><img src="{{asset($product->image)}} " style="height: 300px;" alt="image"></a>
+                            <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"><img src="{{asset($product->image)}} " style="height: 300px;" alt="{{$product->ImgAlt}}"></a>
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 ">
                             <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"> <h6 class="text-truncate mb-3">{{$product->productName}}</h6></a>

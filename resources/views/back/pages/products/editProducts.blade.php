@@ -32,10 +32,14 @@
                                     <label for="productCategory">Category</label>
                                     <select class="form-control" id="productCategory" name="category_id" required>
                                         @foreach($Categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->CategoryName }}</option>
+                                            <option value="{{ $category->id }}"
+                                                {{ $category->id == $product->category_id ? 'selected' : '' }}>
+                                                {{ $category->CategoryName }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
+
 
 
                                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

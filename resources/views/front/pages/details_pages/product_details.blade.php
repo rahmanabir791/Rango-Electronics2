@@ -5,6 +5,11 @@
 @section('body')
     <!-- Page Header Start -->
     @include('front.includes.navCategoryForOthers')
+    <meta name="keywords" content="{{ $product->metaKey }} ">
+    <meta name="description" content="{{ $product->Metadescription }} ">
+    <meta name="author" content="{{ $product->focusKey }} ">
+    <meta name="robots" content="{{ $product->metaTag }}">
+
     <hr style=" background-color: maroon">
     <div class="container-fluid py-3" style="color: black">
         <div class="row px-xl-5">
@@ -12,7 +17,7 @@
                 <div id="product-carousel" class="carousel slide" data-ride="carousel"   >
                     <div class="carousel-inner border" style="border-color: maroon;" >
                         <div class="carousel-item active">
-                            <img class="w-100 h-100" src="{{asset($product->image)}}" alt="Image">
+                            <img class="w-100 h-100" src="{{asset($product->image)}}" alt="{{$product->ImgAlt}}">
                         </div>
                     </div>
                 </div>
@@ -130,32 +135,32 @@
             <div class="col">
                 <div class="owl-carousel related-carousel image-slider">
                     @foreach($products as $product)
-                    <div class="card product-item border-0">
-                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{asset($product->image)}}"  style="height: 300px;  width: 150px;" alt="">
-                        </div>
-                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">{{$product->productName}}</h6>
-                            <div class="d-flex justify-content-center">
-                                <h6>৳{{number_format($product->O_price)}}</h6><h6 class="text-muted ml-2"><del>৳{{ number_format($product->MRP_price) }}
-                                    </del></h6>
+                        <div class="card product-item border-0">
+                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" src="{{asset($product->image)}}"  style="height: 300px;  width: 150px;" alt="{{$product->ImgAlt}}">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">{{$product->productName}}</h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6>৳{{number_format($product->O_price)}}</h6><h6 class="text-muted ml-2"><del>৳{{ number_format($product->MRP_price) }}
+                                        </del>৳{{number_format($product->MRP_price)}}</h6>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>View Detail</a>
+                                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" value="{{ $product->id }}" name="id">
+                                    <input type="hidden" value="{{ $product->productName }}" name="name">
+                                    <input type="hidden" value="{{ asset($product->image)}}" name="image">
+                                    <input type="hidden" value="{{ $product->O_price }}" name="price">
+                                    <input type="hidden" value="1" name="quantity">
+                                    <button type="submit" class="btn btn-sm text-dark p-0"><i
+                                            class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart
+                                    </button>
+                                </form>
                             </div>
                         </div>
-                        <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>View Detail</a>
-                            <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <input type="hidden" value="{{ $product->id }}" name="id">
-                                <input type="hidden" value="{{ $product->productName }}" name="name">
-                                <input type="hidden" value="{{ asset($product->image)}}" name="image">
-                                <input type="hidden" value="{{ $product->O_price }}" name="price">
-                                <input type="hidden" value="1" name="quantity">
-                                <button type="submit" class="btn btn-sm text-dark p-0"><i
-                                        class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart
-                                </button>
-                            </form>
-                        </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
@@ -183,5 +188,6 @@
             });
         });
     </script>
+
 @endsection
 
