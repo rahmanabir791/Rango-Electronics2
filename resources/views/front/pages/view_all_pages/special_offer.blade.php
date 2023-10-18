@@ -11,7 +11,7 @@
         <div class="row px-xl-5 pb-3">
             @foreach($products as $product)
                 @if($product->special_offer == 1)
-                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="col-lg-3 col-md-6 pb-1">
                         <div class="card product-item border-0 mb-4" >
                             <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}">
                             <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">

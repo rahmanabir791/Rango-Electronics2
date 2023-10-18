@@ -74,3 +74,21 @@
 }
 
 
+
+/* Media query to display 4 cards per row on desktop->for view all pages */
+@media (min-width: 992px) {
+    .col-lg-3 {
+        flex: 0 0 calc(25% - 1rem);
+        max-width: calc(25% - 1rem);
+    }
+}
+
+/* Media query to display 2 cards per row on mobile */
+@media (max-width: 991px) {
+    .col-md-6 {
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+}
+
+
