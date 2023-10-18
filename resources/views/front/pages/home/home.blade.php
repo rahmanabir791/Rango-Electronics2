@@ -152,7 +152,7 @@
                     <div class="card product-item border-0 mb-4">
                         <div
                             class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"><img src="{{asset($product->image)}} " style="height: 300px;" alt="{{$product->ImgAlt}}"></a>
+                            <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"><img src="{{asset($product->image)}} " style="height: 300px;" alt="{{$product->ImgAlt}}" ></a>
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 ">
                             <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"> <h6 class="text-truncate mb-3">{{$product->productName}}</h6></a>
@@ -250,20 +250,9 @@
             let products = <?php echo json_encode($products); ?>;
             let currentProductIndex = 0;
 
-            // Preload all images
-            function preloadImages() {
-                for (let i = 0; i < products.length; i++) {
-                    let img = new Image();
-                    img.src = products[i].image;
-                }
-            }
-
-            preloadImages();
-
             function showCurrentProduct() {
                 $('.product-card').addClass('hidden');
                 let productCard = $('.product-card:eq(' + currentProductIndex + ')');
-                productCard.find('img').attr('src', products[currentProductIndex].image);
                 productCard.removeClass('hidden');
             }
 
@@ -287,8 +276,25 @@
 
             $('#nextProduct').click(nextProduct);
             $('#prevProduct').click(prevProduct);
+
+            // Lazy load images using Intersection Observer
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.add('image-loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            $('.product-card img').each((_, img) => {
+                imageObserver.observe(img);
+            });
         });
     </script>
+
 
 
 

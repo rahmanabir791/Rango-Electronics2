@@ -97,9 +97,9 @@
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $item->id }}">
                                         <div class="quantity-input-group">
-                                            <button type="button" class="decrease-quantity">-</button>
+                                            <button type="submit" class="decrease-quantity">-</button>
                                             <input type="number" name="quantity" value="{{ $item->quantity }}" class="form-control text-center quantity-input" data-price="{{ $item->price }}">
-                                            <button type="button" class="increase-quantity">+</button>
+                                            <button type="submit" class="increase-quantity">+</button>
                                         </div>
                                     </form>
                                 </td>
@@ -117,7 +117,7 @@
                     </table>
                 </div>
                 <div class="text-end">
-                    <p class="h5">Total: <span id="total">৳{{ number_format(Cart::getTotal()) }}</span></p>
+                    <p class="h5">Total: ৳{{ number_format(Cart::getTotal()) }}</p>
                 </div>
                 <div class="text-center mt-3">
                     <a href="{{ route('home.w.l') }}" class="continue-shopping-link">Continue Shopping</a>
@@ -128,46 +128,56 @@
             </div>
         </div>
     </div>
-    </section>
-    <script>
-        // Add event listener to quantity input increase buttons
-        const increaseButtons = document.querySelectorAll('.increase-quantity');
-        increaseButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                const input = this.closest('.quantity-input-group').querySelector('.quantity-input');
-                input.value = parseInt(input.value) + 1;
-                input.dispatchEvent(new Event('input'));
-            });
-        });
 
-        // Add event listener to quantity input decrease buttons
-        const decreaseButtons = document.querySelectorAll('.decrease-quantity');
-        decreaseButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                const input = this.closest('.quantity-input-group').querySelector('.quantity-input');
-                if (parseInt(input.value) > 1) {
-                    input.value = parseInt(input.value) - 1;
-                    input.dispatchEvent(new Event('input'));
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Decrease quantity button click handler
+            $('.decrease-quantity').on('click', function() {
+                const inputField = $(this).siblings('input.quantity-input');
+                const currentValue = parseInt(inputField.val());
+                if (currentValue > 1) {
+                    inputField.val(currentValue - 1);
+                    updateCart(inputField);
                 }
             });
-        });
 
-        // Update total amount dynamically
-        function updateTotal() {
-            const totalElement = document.getElementById('total');
-            let newTotal = 0;
-            const quantityInputs = document.querySelectorAll('.quantity-input');
-
-            quantityInputs.forEach(input => {
-                newTotal += parseFloat(input.value) * parseFloat(input.dataset.price);
+            // Increase quantity button click handler
+            $('.increase-quantity').on('click', function() {
+                const inputField = $(this).siblings('input.quantity-input');
+                const currentValue = parseInt(inputField.val());
+                inputField.val(currentValue + 1);
+                updateCart(inputField);
             });
 
-            totalElement.textContent = `৳${new Intl.NumberFormat().format(newTotal)}`;
-        }
-
-        const quantityInputs = document.querySelectorAll('.quantity-input');
-        quantityInputs.forEach(input => {
-            input.addEventListener('input', updateTotal);
+            // Function to update the cart when quantity changes
+            function updateCart(inputField) {
+                const form = inputField.closest('form');
+                const id = form.find('input[name="id"]').val();
+                const quantity = inputField.val();
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('cart.update') }}",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        id: id,
+                        quantity: quantity
+                    },
+                    success: function(data) {
+                        // You can update the total or do other actions here
+                    },
+                    error: function() {
+                        // Handle errors here
+                    }
+                });
+            }
         });
     </script>
+
+
+
+
+
+
+
 @endsection

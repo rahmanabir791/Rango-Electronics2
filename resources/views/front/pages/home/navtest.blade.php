@@ -254,10 +254,15 @@
                             <!-- Existing carousel items -->
                             @foreach($sliders as $index => $slider)
                                 <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                    <img class="img-fluid" src="{{ asset($slider->slidImage) }}" style="height: 420px; width: 100%;" alt="Image">
+                                    @if($index === 0)
+                                        <img class="img-fluid" src="{{ asset($slider->slidImage) }}" style="height: 420px; width: 100%;" alt="Image">
+                                    @else
+                                        <img class="img-fluid" data-src="{{ asset($slider->slidImage) }}" style="height: 420px; width: 100%;" alt="Image">
+                                    @endif
                                 </div>
                             @endforeach
                         </div>
+
                         <!-- Existing carousel controls -->
                         <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
                             <div class="btn btn-dark" style="width: 45px; height: 45px;">
@@ -328,3 +333,19 @@
 </script>
 
 
+<script>
+    $(document).ready(function() {
+        // When the document is ready
+
+        // Find all images with the data-src attribute
+        $('img[data-src]').each(function() {
+            // Load the image from the data-src attribute
+            $(this).attr('src', $(this).attr('data-src'));
+
+            // Once the image is loaded, remove the data-src attribute
+            $(this).on('load', function() {
+                $(this).removeAttr('data-src');
+            });
+        });
+    });
+</script>
