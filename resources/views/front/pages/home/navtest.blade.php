@@ -190,28 +190,32 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2 d-none d-md-block px-1 mt-1" >
+        <div class="col-lg-2 d-none d-md-block px-1 mt-1">
             <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
-                <div class="navbar-nav w-100 overflow" >
-                    <!-- ... Existing category links ... -->
-                    <ul class="border" style="font-size: 10px; font-weight: bold;" >
+                <div class="navbar-nav w-100 overflow">
+                    <!-- Existing category links -->
+                    <ul class="border" style="font-size: 10px; font-weight: bold;">
                         {{-- Category --}}
                         @foreach($categories as $category)
-                            <li class="dropdown border"><a href="{{ route('Category-All', ['id' => $category->id]) }}">{{$category->CategoryName}}<span>&rsaquo;</span></a>
+                            <li class="dropdown border">
+                                <a href="{{ route('Category-All', ['id' => $category->id]) }}">
+                                    {{ $category->CategoryName }}<span>&rsaquo;</span>
+                                </a>
                                 <ul>
                                     {{-- Brands --}}
                                     @php
                                         $categoryBrands = $brands->where('category_id', $category->id);
                                     @endphp
-
                                     @foreach($categoryBrands as $brand)
-                                        <li class="dropdown_two border"><a href="{{ route('category.wise.brand', ['id' => $brand->id]) }}">{{$brand->BrandName}}<span>&rsaquo;</span></a>
+                                        <li class="dropdown_two border">
+                                            <a href="{{ route('category.wise.brand', ['id' => $brand->id]) }}">
+                                                {{ $brand->BrandName }}<span>&rsaquo;</span>
+                                            </a>
                                             <ul>
                                                 {{-- Type Of Products --}}
                                                 @php
                                                     $sameTypeIds = [];
                                                 @endphp
-
                                                 @foreach ($products as $product)
                                                     @if ($product->category_id == $category->id && $product->brand_id == $brand->id)
                                                         @if (!array_key_exists($product->product_type, $sameTypeIds))
@@ -224,10 +228,11 @@
                                                         @endphp
                                                     @endif
                                                 @endforeach
-
                                                 @foreach ($sameTypeIds as $productType => $ids)
                                                     <li class="border">
-                                                        <a href="{{ route('type.of.product', ['ids' => implode(',', $ids)]) }}">{{ $productType }}</a>
+                                                        <a href="{{ route('type.of.product', ['ids' => implode(',', $ids)]) }}">
+                                                            {{ $productType }}
+                                                        </a>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -241,19 +246,19 @@
                 </div>
             </nav>
         </div>
-        <div class="col-lg-10 mt-1" >
+        <div class="col-lg-10 mt-1">
             <div class="row">
-                <div class="col-lg-9 px-0 mt-0 ">
+                <div class="col-lg-9 px-0 ">
                     <div id="header-carousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" >
-                            <!-- ... Existing carousel items ... -->
-                            @foreach($sliders as $index =>$slider)
-                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}" >
-                                    <img class="img-fluid" src="{{asset($slider->slidImage)}}" style=" height: 410px;"  alt="Image">
+                        <div class="carousel-inner">
+                            <!-- Existing carousel items -->
+                            @foreach($sliders as $index => $slider)
+                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                    <img class="img-fluid" src="{{ asset($slider->slidImage) }}" style="height: 410px;" alt="Image">
                                 </div>
                             @endforeach
                         </div>
-                        <!-- ... Existing carousel controls ... -->
+                        <!-- Existing carousel controls -->
                         <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
                             <div class="btn btn-dark" style="width: 45px; height: 45px;">
                                 <span class="carousel-control-prev-icon mb-n2"></span>
@@ -266,20 +271,21 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 mt-0 mt-1">
-                    <!-- ... Empty column ... -->
-                    <img src="{{asset('/')}}assets/front-asset/img/Side-pic1.png" alt="" class="img-fluid d-none d-lg-block  " style="height: 200px; width: 600px; margin-bottom: 10px;">
-                    <img src="{{asset('/')}}assets/front-asset/img/Side-pic2.png" alt="" class="img-fluid d-none d-lg-block " style="height: 200px; width: 600px;">
+                <div class="col-lg-3 ">
+                    <!-- Empty column -->
+                    <img src="{{ asset('assets/front-asset/img/Side-pic1.png') }}" alt="" class="img-fluid d-none d-lg-block" style="height: 200px; width: 600px; margin-bottom: 10px;">
+                    <img src="{{ asset('assets/front-asset/img/Side-pic2.png') }}" alt="" class="img-fluid d-none d-lg-block" style="height: 200px; width: 600px;">
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 mt-0 ">
-                        <img src="{{ asset('/') }}assets/front-asset/img/Slider-down-pic.png" alt="" class="img-fluid d-none d-lg-block " style="width: 1038px; height:160px " >
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 mt-1">
+                    <img src="{{ asset('assets/front-asset/img/Slider-down-pic.png') }}" alt="" class="img-fluid d-none d-lg-block">
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 </div>
     <!-- ad3 -->
 
