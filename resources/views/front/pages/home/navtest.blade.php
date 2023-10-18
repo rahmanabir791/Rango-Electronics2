@@ -248,13 +248,13 @@
         </div>
         <div class="col-lg-10 mt-1">
             <div class="row">
-                <div class="col-lg-9 px-0 ">
+                <div class="col-lg-9 col-md-12 px-0">
                     <div id="header-carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <!-- Existing carousel items -->
                             @foreach($sliders as $index => $slider)
                                 <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                    <img class="img-fluid" src="{{ asset($slider->slidImage) }}" style="height: 410px;" alt="Image">
+                                    <img class="img-fluid" src="{{ asset($slider->slidImage) }}" style="height: 420px; width: 100%;" alt="Image">
                                 </div>
                             @endforeach
                         </div>
@@ -271,18 +271,18 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 ">
-                    <!-- Empty column -->
-                    <img src="{{ asset('assets/front-asset/img/Side-pic1.png') }}" alt="" class="img-fluid d-none d-lg-block" style="height: 200px; width: 600px; margin-bottom: 10px;">
-                    <img src="{{ asset('assets/front-asset/img/Side-pic2.png') }}" alt="" class="img-fluid d-none d-lg-block" style="height: 200px; width: 600px;">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <img src="{{ asset('assets/front-asset/img/Side-pic1.png') }}" alt="" class="img-fluid" style="height: 205px;  width: 100%; margin-bottom: 10px;">
+                    <img src="{{ asset('assets/front-asset/img/Side-pic2.png') }}" alt="" class="img-fluid" style="height: 205px; width: 100%;">
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 mt-1">
-                    <img src="{{ asset('assets/front-asset/img/Slider-down-pic.png') }}" alt="" class="img-fluid d-none d-lg-block">
+                <div class="col-lg-12 col-md-12 mt-1 d-none d-lg-block">
+                    <img src="{{ asset('assets/front-asset/img/Slider-down-pic.png') }}" alt="" class="img-fluid" style="height: auto; width: 100%;">
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 

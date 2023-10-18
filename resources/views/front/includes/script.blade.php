@@ -44,10 +44,10 @@
             dots:false,
             responsive:{
                 0:{
-                    items:4
+                    items:3
                 },
                 600:{
-                    items:4
+                    items:3
                 },
                 1000:{
                     items:8
