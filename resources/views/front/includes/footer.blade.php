@@ -1,4 +1,91 @@
 
+{{--<style>--}}
+{{--    /* Common styles */--}}
+{{--    .button {--}}
+{{--        padding: 3px;--}}
+{{--        border: 1px solid white;--}}
+{{--        color: white;--}}
+{{--        cursor: pointer;--}}
+{{--    }--}}
+
+{{--    .button:hover {--}}
+{{--        background-color: white;--}}
+{{--        color: black;--}}
+{{--    }--}}
+
+{{--    .buttonForIcon {--}}
+{{--        color: white;--}}
+{{--        font-size: 30px;--}}
+{{--        cursor: pointer;--}}
+{{--    }--}}
+
+{{--    .buttonForIcon:hover {--}}
+{{--        color: cornflowerblue;--}}
+{{--    }--}}
+
+{{--    .vl-one, .vl-two {--}}
+{{--        border-left: 2px solid gold;--}}
+{{--        height: 230px;--}}
+{{--        position: absolute;--}}
+{{--        top: 0;--}}
+{{--    }--}}
+
+{{--    /* Desktop styles */--}}
+{{--    @media (min-width: 992px) {--}}
+{{--        .vl-one {--}}
+{{--            left: 335px;--}}
+{{--            margin-left: -10px;--}}
+{{--        }--}}
+
+{{--        .vl-two {--}}
+{{--            left: 610px;--}}
+{{--            margin-left: -3px;--}}
+{{--        }--}}
+
+{{--        .ml-6 {--}}
+{{--            margin-left: 130px;--}}
+{{--        }--}}
+
+{{--        h3 {--}}
+{{--            margin-left: 140px;--}}
+{{--        }--}}
+{{--    }--}}
+
+{{--    /* Tablet styles */--}}
+{{--    @media (max-width: 991px) {--}}
+{{--        .vl-one, .vl-two {--}}
+{{--            display: none; /* Hide vertical lines on smaller screens */--}}
+{{--        }--}}
+
+{{--        h3 {--}}
+{{--            margin-left: 20px; /* Adjust the margin for headings */--}}
+{{--        }--}}
+{{--    }--}}
+
+{{--    /* Mobile styles */--}}
+{{--    @media (max-width: 767px) {--}}
+{{--        h3 {--}}
+{{--            margin-left: 10px; /* Further adjust the margin for headings */--}}
+{{--        }--}}
+
+{{--        .ml-6 {--}}
+{{--            margin-left: 10px; /* Adjust margin for smaller screens */--}}
+{{--        }--}}
+
+{{--        .buttonForIcon {--}}
+{{--            font-size: 20px; /* Reduce font size for smaller screens */--}}
+{{--        }--}}
+
+{{--        img {--}}
+{{--            max-width: 60%; /* Further reduce the image size for smaller screens */--}}
+{{--            height: auto; /* Maintain the image's aspect ratio */--}}
+{{--        }--}}
+{{--    }--}}
+
+{{--    /* Adjust other styles as needed for smaller screens */--}}
+{{--</style>--}}
+
+
 <style>
     /* Common styles */
     .button {
@@ -64,6 +151,10 @@
 
     /* Mobile styles */
     @media (max-width: 767px) {
+        .vl-one, .vl-two {
+            display: none; /* Hide vertical lines on smaller screens */
+        }
+
         h3 {
             margin-left: 10px; /* Further adjust the margin for headings */
         }
@@ -77,7 +168,7 @@
         }
 
         img {
-            max-width: 60%; /* Further reduce the image size for smaller screens */
+            max-width: 100%; /* Make images responsive to the screen width */
             height: auto; /* Maintain the image's aspect ratio */
         }
     }

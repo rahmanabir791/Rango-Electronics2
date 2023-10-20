@@ -98,7 +98,7 @@
                                         <input type="hidden" name="id" value="{{ $item->id }}">
                                         <div class="quantity-input-group">
                                             <button type="submit" class="decrease-quantity">-</button>
-                                            <input type="number" name="quantity" value="{{ $item->quantity }}" class="form-control text-center quantity-input" data-price="{{ $item->price }}">
+                                            <input type="text" name="quantity" value="{{ $item->quantity }}" class="form-control text-center quantity-input" data-price="{{ $item->price }}" readonly>
                                             <button type="submit" class="increase-quantity">+</button>
                                         </div>
                                     </form>

@@ -22,6 +22,11 @@ class SearchController extends Controller
 
         $productss = Products::where('productName', 'LIKE', "%$query%")
             ->orWhere('product_type', 'LIKE', "%$query%")
+            ->orWhere('focusKey', 'LIKE', "%$query%")
+            ->orWhere('metaKey', 'LIKE', "%$query%")
+            ->orWhere('metaTag', 'LIKE', "%$query%")
+            ->orWhere('specifications', 'LIKE', "%$query%")
+            ->orWhere('description', 'LIKE', "%$query%")
             ->orWhere('warranty', 'LIKE', "%$query%")
             // ... other product search criteria ...
             ->orWhereIn('category_id', $categoryIds)

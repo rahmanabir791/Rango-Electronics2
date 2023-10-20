@@ -247,20 +247,19 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
-            let products = <?php echo json_encode($products); ?>;
             let currentProductIndex = 0;
+            const productCards = $('.product-card');
 
             function showCurrentProduct() {
-                $('.product-card').addClass('hidden');
-                let productCard = $('.product-card:eq(' + currentProductIndex + ')');
-                productCard.removeClass('hidden');
+                productCards.addClass('hidden');
+                productCards.eq(currentProductIndex).removeClass('hidden');
             }
 
             showCurrentProduct();
 
             function nextProduct() {
                 currentProductIndex++;
-                if (currentProductIndex >= $('.product-card').length) {
+                if (currentProductIndex >= productCards.length) {
                     currentProductIndex = 0;
                 }
                 showCurrentProduct();
@@ -269,7 +268,7 @@
             function prevProduct() {
                 currentProductIndex--;
                 if (currentProductIndex < 0) {
-                    currentProductIndex = $('.product-card').length - 1;
+                    currentProductIndex = productCards.length - 1;
                 }
                 showCurrentProduct();
             }
@@ -277,22 +276,20 @@
             $('#nextProduct').click(nextProduct);
             $('#prevProduct').click(prevProduct);
 
-            // Lazy load images using Intersection Observer
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.add('image-loaded');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            $('.product-card img').each((_, img) => {
-                imageObserver.observe(img);
+            // Asynchronously load product data
+            $.ajax({
+                url: '/path-to-your-product-endpoint',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    // Update your product data here
+                },
+                error: function (error) {
+                    // Handle errors
+                }
             });
         });
+
     </script>
 
 
