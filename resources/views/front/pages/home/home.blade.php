@@ -6,7 +6,7 @@
 @section('body')
     @include('front.pages.home.navtest')
 
-    <p class="slider-name text-dark font-weight-bold ">Category</p>
+    <p class="slider-name text-dark font-weight-bold ">Shop By Category</p>
     <span class="divider"></span>
     <style>
         .owl-carousel .owl-item img {
@@ -19,18 +19,18 @@
     <div class="owl-carousel  image-slider" id="one">
         @foreach($categories as $category)
             @if($category->CategoryImage)
-            <div class="card product-item border-0 mb-4">
-                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <a href="{{ route('Category-All' , [ 'id' => $category->id ]) }}"><img src="{{asset($category->CategoryImage)}}" style="height: 150px; " alt="{{$category->ImgAlt}}"></a>
-                </div>
-                <div class="card-body border-left border-right text-center p-0 pt-4 ">
-                    <a href="{{ route('Category-All' , [ 'id' => $category->id ]) }}"> <h6 class="text-truncate mb-3">{{$category->CategoryName}}</h6></a>
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <a href="{{ route('Category-All' , [ 'id' => $category->id ]) }}"><img src="{{asset($category->CategoryImage)}}" style="height: 150px; " alt="{{$category->ImgAlt}}"></a>
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 ">
+                        <a href="{{ route('Category-All' , [ 'id' => $category->id ]) }}"> <h6 class="text-truncate mb-3">{{$category->CategoryName}}</h6></a>
 
-                    <div class="border">
+                        <div class="border">
 
+                        </div>
                     </div>
                 </div>
-            </div>
             @endif
         @endforeach
     </div>
@@ -39,63 +39,44 @@
     <span class="divider"></span>
     <p class="view-all"><a href="{{ route('Special-seeAll') }}">View All ></a></p>
     <!--slider row-1 for Special Offer Products -->
+    <div class="owl-carousel  image-slider" id="two">
 
-
-
-    <div class="owl-carousel image-slider" id="product-carousel"></div>
-
-    <script>
-        $(document).ready(function() {
-            // Get the container element
-            var productContainer = $("#product-carousel");
-
-            // Loop through the products
-            @foreach($products as $product)
+        @foreach($products as $product)
             @if($product->special_offer == 1)
-            var productCard = `
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <a href="{{ route('productDetail', ['id' => $product->id ]) }}">
-                            <img src="{{ asset($product->image) }}" style="height: 300px;" alt="{{$product->ImgAlt}}">
-                        </a>
+                        <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"><img src="{{asset($product->image)}}" style="height: 300px;"
+                                                                                               alt="image"></a>
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4">
-                        <a href="{{ route('productDetail', ['id' => $product->id ]) }}">
-                            <h6 class="text-truncate mb-3">{{ $product->productName }}</h6>
-                        </a>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 ">
+                        <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"><h6 class="text-truncate mb-3">{{$product->productName}}</h6></a>
                         <div class="d-flex justify-content-center">
-                            <h6>৳{{ number_format($product->O_price) }}</h6>
+                            <h6>৳{{number_format($product->O_price)}}</h6>
                             <h6 class="text-muted ml-2">
-                                <del>৳{{ number_format($product->MRP_price) }}</del>
+                                <del>৳{{number_format($product->MRP_price) }}</del>
                             </h6>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="{{ route('productDetail', ['id' => $product->id ]) }}"
-                               class="btn btn-sm text-dark p-0">
-                                <i class="fas fa-eye text-primary"></i> View Detail
-                            </a>
+                            <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary "></i>
+                                View Detail</a>
                             <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-            <input type="hidden" name="id" value="{{ $product->id }}">
-                                <input type="hidden" name="name" value="{{ $product->productName }}">
-                                <input type="hidden" name="image" value="{{ asset($product->image) }}">
-                                <input type="hidden" name="price" value="{{ $product->O_price }}">
-                                <input type="hidden" name="quantity" value="1">
-                                <button type="submit" class="btn btn-sm text-dark p-0">
-                                    <i class="fas fa-shopping-cart text-primary mr-1"></i> Add To Cart
+                                <input type="hidden" value="{{ $product->id }}" name="id">
+                                <input type="hidden" value="{{ $product->productName }}" name="name">
+                                <input type="hidden" value="{{ asset($product->image)}}" name="image">
+                                <input type="hidden" value="{{ $product->O_price }}" name="price">
+                                <input type="hidden" value="1" name="quantity">
+                                <button type="submit" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart
                                 </button>
                             </form>
                         </div>
                     </div>
                 </div>
-            `;
-
-            // Append the product card to the container
-            productContainer.append(productCard);
             @endif
-            @endforeach
-        });
-    </script>
+        @endforeach
+
+    </div>
 
 
 
@@ -152,7 +133,7 @@
                     <div class="card product-item border-0 mb-4">
                         <div
                             class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"><img src="{{asset($product->image)}} " style="height: 300px;" alt="{{$product->ImgAlt}}" ></a>
+                            <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"><img src="{{asset($product->image)}} " style="height: 300px;" alt="{{$product->ImgAlt}}"></a>
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 ">
                             <a href="{{ route('productDetail' , [ 'id' => $product->id ]) }}"> <h6 class="text-truncate mb-3">{{$product->productName}}</h6></a>
@@ -206,15 +187,15 @@
 
         @foreach ($sameBrandIds as $brandName => $ids)
             @if($brandImages[$brandName])
-            <div class="card product-item border-0 mb-4">
-                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <p>{{ $brandName }}</p>
-                    <a href="{{ route('brand.all.products', ['ids' => implode(',', $ids)]) }}">
-                        <img src="{{ asset($brandImages[$brandName]) }}" style="height: 150px;" width="150px;"
-                             alt="Brand image">
-                    </a>
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <p>{{ $brandName }}</p>
+                        <a href="{{ route('brand.all.products', ['ids' => implode(',', $ids)]) }}">
+                            <img src="{{ asset($brandImages[$brandName]) }}" style="height: 150px;" width="150px;"
+                                 alt="Brand image">
+                        </a>
+                    </div>
                 </div>
-            </div>
             @endif
         @endforeach
 
@@ -225,25 +206,25 @@
 
     </iframe>
 
-{{--    <div class="subscription-section bg-light py-4">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row justify-content-center align-items-center">--}}
-{{--                <div class="col-md-6">--}}
-{{--                    <h4 class="subscription-title mb-0" style="padding: 5px;">Join Us To Get A Special Gift</h4>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-6">--}}
-{{--                    <form class="subscription-form">--}}
-{{--                        <div class="input-group">--}}
-{{--                            <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="Email" aria-describedby="subscribe-button" style="border-radius: 20px; margin-right: 10px; font-size: 20px; border-color: maroon;">--}}
-{{--                            <div class="input-group-append">--}}
-{{--                                <button class="btn btn-subscribe" style="background-color: maroon; color: gold; border-radius: 20px; " type="submit">Subscribe</button>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    {{--    <div class="subscription-section bg-light py-4">--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="row justify-content-center align-items-center">--}}
+    {{--                <div class="col-md-6">--}}
+    {{--                    <h4 class="subscription-title mb-0" style="padding: 5px;">Join Us To Get A Special Gift</h4>--}}
+    {{--                </div>--}}
+    {{--                <div class="col-md-6">--}}
+    {{--                    <form class="subscription-form">--}}
+    {{--                        <div class="input-group">--}}
+    {{--                            <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="Email" aria-describedby="subscribe-button" style="border-radius: 20px; margin-right: 10px; font-size: 20px; border-color: maroon;">--}}
+    {{--                            <div class="input-group-append">--}}
+    {{--                                <button class="btn btn-subscribe" style="background-color: maroon; color: gold; border-radius: 20px; " type="submit">Subscribe</button>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                    </form>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -291,8 +272,5 @@
         });
 
     </script>
-
-
-
 
 @endsection

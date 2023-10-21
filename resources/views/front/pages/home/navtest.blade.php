@@ -194,15 +194,15 @@
             <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
                 <div class="navbar-nav w-100 overflow">
                     <!-- Existing category links -->
-                    <ul class="border" style="font-size: 10px; font-weight: bold;">
-                        {{-- Category --}}
+                    <ul class="border" style="font-size: 10px; font-weight: bold; color: white;">
+                         Category
                         @foreach($categories as $category)
                             <li class="dropdown border">
                                 <a href="{{ route('Category-All', ['id' => $category->id]) }}">
                                     {{ $category->CategoryName }}<span>&rsaquo;</span>
                                 </a>
                                 <ul>
-                                    {{-- Brands --}}
+                                     Brands
                                     @php
                                         $categoryBrands = $brands->where('category_id', $category->id);
                                     @endphp
@@ -212,7 +212,7 @@
                                                 {{ $brand->BrandName }}<span>&rsaquo;</span>
                                             </a>
                                             <ul>
-                                                {{-- Type Of Products --}}
+                                                 Type Of Products
                                                 @php
                                                     $sameTypeIds = [];
                                                 @endphp
@@ -241,23 +241,23 @@
                                 </ul>
                             </li>
                         @endforeach
-                        {{-- End Category Bar --}}
+                         End Category Bar
                     </ul>
                 </div>
             </nav>
         </div>
         <div class="col-lg-10 mt-1">
             <div class="row">
-                <div class="col-lg-9 col-md-12 px-0">
+                <div class="col-lg-9 col-md-12 ">
                     <div id="header-carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <!-- Existing carousel items -->
                             @foreach($sliders as $index => $slider)
                                 <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                     @if($index === 0)
-                                        <img class="img-fluid" src="{{ asset($slider->slidImage) }}" style="height: 420px; width: 100%;" alt="Image">
+                                        <img class="img-fluid" src="{{ asset($slider->slidImage) }}" style="height: auto; max-height: 420px; width: 100%;" alt="Image">
                                     @else
-                                        <img class="img-fluid" data-src="{{ asset($slider->slidImage) }}" style="height: 420px; width: 100%;" alt="Image">
+                                        <img class="img-fluid" data-src="{{ asset($slider->slidImage) }}" style="height: auto; max-height: 420px; width: 100%;" alt="Image">
                                     @endif
                                 </div>
                             @endforeach
@@ -276,16 +276,17 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 d-none d-lg-block">
+                <div class="col-lg-3 d-none d-lg-block px-1">
                     <img src="{{ asset('assets/front-asset/img/Side-pic1.png') }}" alt="" class="img-fluid" style="height: 205px;  width: 100%; margin-bottom: 10px;">
                     <img src="{{ asset('assets/front-asset/img/Side-pic2.png') }}" alt="" class="img-fluid" style="height: 205px; width: 100%;">
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 col-md-12 mt-1 d-none d-lg-block">
-                    <img src="{{ asset('assets/front-asset/img/Slider-down-pic.png') }}" alt="" class="img-fluid" style="height: auto; width: 100%;">
+                <div class="col-lg-12 col-md-12 mt-2 d-none d-lg-block" style="margin-right: 10px;">
+                    <img src="{{ asset('assets/front-asset/img/Slider-down.png') }}" alt="" class="img-fluid" style="height: auto; width: 100%; float: left;">
                 </div>
             </div>
+
         </div>
 
     </div>

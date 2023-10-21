@@ -31,8 +31,9 @@
 {{--                    <a class="dropdown-item bg-info" href="#">--}}
 {{--                        <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>--}}
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item bg-danger" href="#">
+                    <a class="dropdown-item bg-danger" href="#" onclick="event.preventDefault();document.getElementById('logoutabir').submit();">
                         <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
+                    <form action="{{ route('logout') }}" method="POST" id="logoutabir">@csrf</form>
                 </div>
             </li>
             <li class="nav-item d-none d-lg-block full-screen-link">
