@@ -49,9 +49,11 @@
                     </div>
                 @endif
             @endforeach
-                {!! $Category->catDescription  !!}
+                <div class="container-fluid text-center">
+                    {!! $Category->catDescription  !!}
+                </div>
         </div>
         </div>
-    </div>
+
 @endsection
 
