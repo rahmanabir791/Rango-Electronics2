@@ -55,6 +55,7 @@
     @media (max-width: 991px) {
         .vl-one, .vl-two {
             display: none; /* Hide vertical lines on smaller screens */
+
         }
 
         h3 {
@@ -67,6 +68,65 @@
         .vl-one, .vl-two {
             display: none; /* Hide vertical lines on smaller screens */
         }
+        .shop-header{
+            width: 100%;
+
+
+        }
+        .widthForCol-md-6inMobileView{
+            width: 100%;
+        }
+
+        .ForTwoWidth{
+            width: 100%;
+
+        }
+
+        .OneM{
+            margin-right: 30px;
+            margin-left: 50px;
+        }
+        .TwoM{
+            margin-right: 30px;
+
+        }
+        .ThreeM{
+            margin-left: 20px;
+        }
+        .FourM{
+            margin-left: 10px;
+        }
+        .OneC{
+            margin-right: 20px;
+
+        }
+
+        .centerinmobileview{
+            width: 320px;
+            margin-left: 40px;
+        }
+        .centerOne{
+            margin-left: 120px;
+        }
+        .centerTwo{
+            margin-left: 20px;
+        }
+        .centerThree{
+            margin-left: 125px;
+        }
+        .centerFour{
+            margin-left: 80px;
+        }
+        .centerFive{
+            margin-left: 120px;
+        }
+        .centerSix{
+            margin-left: 100px;
+        }
+        .centerSeven{
+            margin-left: 120px;
+        }
+
 
         h3 {
             margin-left: 10px; /* Further adjust the margin for headings */
@@ -130,32 +190,32 @@
         </div>
 
 
-        <div class="col-md-6">
-            <h3 class="mt-3 text-center">Shop With Us</h3>
+        <div class="col-md-6 col-12">
+            <h4 class="mt-3 shop-header text-center">Shop With Us</h4>
 
-            <div class="d-flex justify-content-center">
-                <div>
-                    <span class="mb-3" style="font-size: 14px;">Purchase Procedure</span>
-                    <span class="mb-3" style="font-size: 14px;">Contact Us</span>
-                    <span class="mb-3" style="font-size: 14px;">Contact Service Center</span>
-                    <span class="mb-3" style="font-size: 14px;">Term & Conditions</span>
+            <div class="d-flex justify-content-center ">
+                <div class="">
+                    <span class="mb-3 OneM" style="font-size: 14px;">Purchase Procedure</span>
+                    <span class="mb-3 TwoM" style="font-size: 14px;">Contact Us</span>
+                    <span class="mb-3 ThreeM" style="font-size: 14px;">Contact Service Center</span>
+                    <span class="mb-3 FourM" style="font-size: 14px;">Term & Conditions</span>
                 </div>
             </div>
 
-            <div class="d-flex justify-content-center flex-wrap">
-                <span class="mb-3" style="font-size: 14px;">Why shop at Rango Electronics?</span>
-                <span class="mb-3" style="font-size: 14px;">Purchase Procedure</span>
-                <span class="mb-3" style="font-size: 14px;">Payment Methods</span>
+            <div class="d-flex justify-content-center flex-wrap ForTwoWidth">
+                <span class="mb-3 OneC" style="font-size: 14px;">Why shop at Rango Electronics?</span>
+                <span class="mb-3 TwoC" style="font-size: 14px;">Purchase Procedure</span>
+                <span class="mb-3 ThreeC" style="font-size: 14px;">Payment Methods</span>
             </div>
 
             <div class="d-flex justify-content-center flex-column align-items-center">
-                <span class="mb-3" style="font-size: 14px;">Promotional Offers</span>
-                <span class="mb-3" style="font-size: 14px;">Privacy Policy</span>
+                <span class="mb-3 d" style="font-size: 14px;">Promotional Offers</span>
+                <span class="mb-3 d" style="font-size: 14px;">Privacy Policy</span>
             </div>
 
-            <h3 class="mt-3 text-center">Pay with</h3>
+            <h3 class="mt-3 text-center " style="margin-left: 3px">Pay with</h3>
 
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center centerinmobileview">
                 <a href="">
                     <img src="https://www.tvhut.com.bd/image/cache/catalog/AAA-TV-HUT/Emi/ssl-commerz-2line-logo-800px-599x70h.png.webp" alt="" style="max-width: 100%; height: auto;">
                 </a>
@@ -166,13 +226,13 @@
 
 
         <div class="col-md-3">
-            <h4 style="color: goldenrod">Shop Address</h4>
-            <p style="font-size: 14px;">House: 5, Road: 12, DIT project, Merul Badda, Dhaka</p>
-            <h5 style="color: goldenrod;">Shop Hour</h5>
-            <p style="font-size: 14px;">10-8pm | Saturday-Thursday</p>
-            <p style="font-size: 14px; color: red;">Weekend: Tuesday</p>
-            <h4 style="color: darkgoldenrod">Corporate Office</h4>
-            <p style="font-size: 14px;">Merul Badda, Dhaka</p>
+            <h4 class="centerOne" style="color: goldenrod">Shop Address</h4>
+            <p  class="centerTwo" style="font-size: 14px;">House: 5, Road: 12, DIT project, Merul Badda, Dhaka</p>
+            <h5  class="centerThree" style="color: goldenrod;">Shop Hour</h5>
+            <p  class="centerFour" style="font-size: 14px;">10-8pm | Saturday-Thursday</p>
+            <p class="centerFive" style="font-size: 14px; color: red;">Weekend: Tuesday</p>
+            <h4 class="centerSix" style="color: darkgoldenrod">Corporate Office</h4>
+            <p class="centerSeven" style="font-size: 14px;">Merul Badda, Dhaka</p>
         </div>
     </div>
 </div>
